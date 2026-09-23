@@ -9,10 +9,9 @@ import sympy as sp
 
 
 x, s, z = sp.symbols("x s z", real=True)
-beta, c, tau = sp.symbols("beta c tau", real=True, positive=True)
 
-# Normalize tau=1, c=beta=0 only after deriving primitive expressions.
-# Price entries below are net margins in these normalized units.
+# Normalize tau=1 and omit the common beta-c term, which cancels from CS
+# differences. Price entries below are net margins in these normalized units.
 a_u, b_u = 1 + s / 3, 1 - s / 3
 x_u = sp.Rational(1, 2) + s / 6
 
@@ -124,10 +123,13 @@ assert sp.factor(
 
 # Result 1's weak-branch share gap and the best-response kink factorization.
 share_uniform_switch = x_u
+share_uniform_no_switch = x
 share_hbp_weak = (2 - x) / 3
 share_hbp_strong = x_a
 assert sp.factor(share_uniform_switch - share_hbp_weak - (2 * x + s - 1) / 6) == 0
 assert sp.factor(share_uniform_switch - share_hbp_strong - (1 - x) / 3) == 0
+assert sp.factor(share_uniform_no_switch - share_hbp_weak - (4 * x - 2) / 3) == 0
+assert sp.factor(share_uniform_no_switch - share_hbp_strong - (4 * x - 1 - s) / 6) == 0
 
 x_l = sp.Rational(1, 2) - s / 3 - sp.sqrt(3 * s * (s + 6)) / 6
 x_h = sp.Rational(1, 2) - s / 3 + sp.sqrt(3 * s * (s + 6)) / 6
