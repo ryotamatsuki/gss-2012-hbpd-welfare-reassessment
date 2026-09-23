@@ -45,7 +45,7 @@ They cover:
 1. exact inherited-share pure-equilibrium threshold;
 2. pure nonexistence below the threshold;
 3. branch-correct weak consumer-surplus result;
-4. smaller-firm profit result on the coexistence domain;
+4. smaller-firm profit result on the corrected weak-dominance pure-equilibrium overlap;
 5. surviving welfare ranking.
 
 ## 5. Declarations
