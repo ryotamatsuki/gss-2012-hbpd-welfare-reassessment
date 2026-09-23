@@ -1,6 +1,6 @@
 # Stage 10 — Figure/Table Architecture Gate
 
-**Status:** PASS candidate pending clean manuscript build.  
+**Status:** PASS / CLOSED.  
 **Theory source:** Stage 8 canonical freeze.  
 **Rule:** every headline claim has one primary exposition vehicle. No visual is included merely to increase visual count.
 
@@ -31,4 +31,4 @@ Two tables and one quantitative figure are sufficient for the current manuscript
 
 A separate demand-regime figure is not required because Eq. (five-piece demand) is compact and the proof mechanism is explained immediately after Proposition 1. The Stage-9 demand SVG remains a diagnostic artifact but is not promoted to the paper.
 
-**Gate result:** PASS subject to final LaTeX build and claim-scope audit.
+**Gate result:** PASS / CLOSED. The full manuscript builds cleanly in CI, the claim-scope audit passes, and the quantitative figure is generated from the Stage-9 verified data.
