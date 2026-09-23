@@ -50,6 +50,45 @@ assert sp.factor(gap_weak_switch - expected_weak_switch) == 0
 assert sp.factor(gap_weak_no_switch - expected_weak_no_switch) == 0
 assert sp.factor(gap_weak_switch.subs(x, x_u) - gap_weak_no_switch.subs(x, x_u)) == 0
 
+
+# Accepted-manuscript Eq. (15) is exactly the switching-branch primitive gap.
+source_eq15 = (
+    -52 * x**2 + 52 * x + 1 + 36 * s * x - 34 * s + s**2
+) / 36
+assert sp.factor(source_eq15 - gap_weak_switch) == 0
+
+# Accepted-manuscript Eq. (16), after sigma=s*tau, adds an extra global minus.
+source_eq16_printed = -(
+    s**2 + 2 * s * (18 * x - 17) - 52 * x**2 + 52 * x + 1
+) / 36
+assert sp.factor(source_eq16_printed + source_eq15) == 0
+
+# Weak-HBP profits and branch-correct uniform-profile comparisons.
+pi_a_weak = (s**2 + 6*s*x - 2*s + 10*x**2 - 10*x + 5) / 9
+pi_b_weak = (s**2 - 6*s*x + 4*s + 10*x**2 - 10*x + 5) / 9
+pi_a_uniform_switch = (1 + s/3) * x_u
+pi_b_uniform_switch = (1 - s/3) * (1 - x_u)
+pi_a_uniform_no_switch = (1 + s/3) * x
+pi_b_uniform_no_switch = (1 - s/3) * (1 - x)
+
+gap_b_weak_switch = sp.factor(pi_b_weak - pi_b_uniform_switch)
+gap_b_weak_no_switch = sp.factor(pi_b_weak - pi_b_uniform_no_switch)
+assert sp.factor(
+    gap_b_weak_switch
+    - (s**2 - 12*s*x + 14*s + 20*x**2 - 20*x + 1) / 18
+) == 0
+assert sp.factor(
+    gap_b_weak_no_switch
+    - (s**2 - 9*s*x + 7*s + 10*x**2 - x - 4) / 9
+) == 0
+assert sp.factor(
+    gap_b_weak_switch.subs(x, x_u) - gap_b_weak_no_switch.subs(x, x_u)
+) == 0
+assert sp.factor(
+    gap_b_weak_no_switch.subs({s: sp.Rational(1,2), x: sp.Rational(51,100)})
+    + sp.Rational(227,4500)
+) == 0
+
 # Strong HBP candidate (q_A=c) against the two actual uniform allocation branches.
 p_a_s, q_a_s = p_a_w, sp.Integer(0)
 p_b_s, q_b_s = 2 * x - 1 + s, q_b_w
@@ -67,6 +106,23 @@ expected_strong_no_switch = (
 assert sp.factor(gap_strong_switch - expected_strong_switch) == 0
 assert sp.factor(gap_strong_no_switch - expected_strong_no_switch) == 0
 assert sp.factor(gap_strong_switch.subs(x, x_u) - gap_strong_no_switch.subs(x, x_u)) == 0
+
+
+# Small-firm profit under the source-selected strong-HBP profile can exceed
+# the uniform pure-equilibrium profit; weak-domain profit summaries must not be
+# generalized to strong dominance.
+pi_b_strong_source = -(
+    -s**2 + 26*s*x - 20*s + 20*x**2 - 46*x + 17
+) / 18
+gap_b_strong_switch = sp.factor(pi_b_strong_source - pi_b_uniform_switch)
+assert sp.factor(
+    gap_b_strong_switch
+    + (x - 1) * (13*s + 10*x - 13) / 9
+) == 0
+assert sp.factor(
+    gap_b_strong_switch.subs({s: sp.Rational(9,10), x: sp.Rational(19,20)})
+    - sp.Rational(41,900)
+) == 0
 
 # Social welfare from primitive transport and switching costs.
 cost_weak = (
