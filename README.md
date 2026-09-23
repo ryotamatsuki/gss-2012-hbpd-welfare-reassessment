@@ -2,53 +2,50 @@
 
 ## Target paper
 
-Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination.”
+Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination,” *Journal of Industry, Competition and Trade* 12(4), 373–393, DOI `10.1007/s10842-011-0111-8`.
 
 ## Project purpose
 
-Reconstruct the full piecewise uniform-price game, characterize the global pure-strategy equilibrium correspondence, and recompute consumer-surplus and welfare comparisons under corrected equilibria.
+Reconstruct the global uniform-price game, characterize its pure-strategy equilibrium correspondence, and recompute consumer-surplus and welfare comparisons only on certified equilibrium domains.
 
 ## Current status
 
-**Stage 0 — Evidence Freeze / independent re-verification.**
+**Canonical Stage 0 — HOLD.** The complete HECER 2010 author version is directly available and equation-level work is underway. The full Version of Record body has not been compared, and the prior-disclosure search is preliminary. Provisional Stage 4 mathematics is explicitly exploratory and does not bypass Stages 1–3.
 
-No publication-facing correction theorem is frozen yet. The master audit findings are transferred only as hypotheses/evidence to be independently reconstructed in this repository.
+No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
-## Starting evidence
+## Current mathematical lead (not yet certified)
 
-- Master audit provenance: `ryotamatsuki/ozshypapers — audits/welfare_history_based_price_discrimination_2012_final.md`
-- Source status: Complete author-working-paper lineage inspected; VOR body still requires direct equation-level verification.
-- Initial signal: The transferred audit found a profitable regime-crossing deviation from the published uniform-price profile and a separate sign/formula error in the consumer-surplus comparison.
+The clean-room full-demand derivation yields the provisional pure-equilibrium boundary
+
+\[
+x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
+\qquad s=\sigma/\tau\in(0,1).
+\]
+
+The candidate source profile is a pure equilibrium above this boundary, including equality; below it the current candidate result is no pure-strategy equilibrium. This remains subject to independent Stage 4A certification. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
+
+The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. The HECER Eq. (15) display is nevertheless false on a valid switching branch. See `derivations/consumer_surplus_primitive_reconstruction.md`.
 
 ## Repository policy
 
-1. Re-derive all publication-facing claims from the original model rather than copying the master-audit conclusion.
-2. Separate source transcription, derivation, counterexample, corrected theorem, and downstream implications.
-3. Treat local FOCs as insufficient when regime changes, clipping, entry/exit, or boundary actions are feasible.
-4. Preserve exact equality and boundary cases in the equilibrium correspondence.
-5. Numerical and symbolic checks support but do not replace analytical proof.
-6. Do not draft a submission claim until the Version-of-Record lineage and prior-disclosure search are frozen.
-7. Keep the master audit repository as provenance; this repository becomes canonical only for publication-facing development after Stage 0 passes.
+1. Re-derive publication-facing claims from primitive utilities and source text.
+2. Separate source transcription, derivation, counterexample, theorem, and downstream implications.
+3. Treat local FOCs as insufficient when clipping, regime changes, or boundary actions are feasible.
+4. Preserve exact equality and boundary cases.
+5. Treat symbolic and numerical checks as supporting evidence, not as global proofs.
+6. Keep the VOR and prepublication source claims version-qualified until compared.
+7. Do not extrapolate pure-equilibrium welfare into a pure-nonexistence region.
+8. Do not submit, perform Stage 15, merge into `main`, or alter the separate 2011 project.
 
-## Planned structure
+## Current artifacts
 
-```text
-README.md
-PROJECT_STATUS.md
-PROVENANCE.md
-CLAIM_BOUNDARY.md
-EVIDENCE_MAP.md
-docs/
-  STAGE_00_EVIDENCE_FREEZE.md
-derivations/
-code/
-results/
-sources/
-manuscript/
-submission/
-```
+* `docs/WORKFLOW.md` — canonical v2.4 workflow mapping.
+* `docs/STAGE_00_EVIDENCE_FREEZE.md` — current Stage 0 gate and source boundary.
+* `sources/gss_2012_version_boundary.md` — source lineage and version limitations.
+* `derivations/uniform_price_game_full_demand.md` — full clipped demand and provisional pure theorem.
+* `derivations/consumer_surplus_primitive_reconstruction.md` — direct CS integrals and branch formulas.
+* `code/uniform_game_cleanroom.py` — exact-rational clean-room regressions and primitive evaluators.
+* `results/stage04_global_uniform_game_progress.md` — work completed, checks, and open gates.
 
-## Immediate next step
-
-Complete `docs/STAGE_00_EVIDENCE_FREEZE.md`: freeze the exact source/version, independently reproduce the transferred discrepancy, run a fresh prior-disclosure search, and decide whether the project passes into theorem/proposition development.
-
+The canonical stage route and completion status are tracked in `PROJECT_STATUS.md`.
