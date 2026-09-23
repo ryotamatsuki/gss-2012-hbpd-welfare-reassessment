@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 8 — GO / CANONICAL THEORY FROZEN. Next gate: Stage 9 — Repository / Reproducibility Setup.**
+**Stage 9 — GO / REPRODUCIBILITY CLOSED. Next gate: Stage 10 — Section-by-Section Paper Construction.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -31,7 +31,8 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Stage 7.5 | GO / CLOSED | Full 15–20 page correction/reassessment architecture frozen; mixed pricing excluded. |
 | Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
 | Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
-| Stage 9 reproducibility | NEXT | Convert current research artifacts into a fresh-clone reproducible production setup without changing frozen theory. |
+| Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
+| Stage 10 manuscript construction | NEXT | Build sections in dependency order against the frozen theorem registry and figure/table architecture gate. |
 | Stage 14 / submission | NOT REACHED | No submission package or portal action. |
 | Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
@@ -92,3 +93,16 @@ No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change
 * `results/stage08_counterexample_registry.md`
 * `results/stage08_benchmark_selection_register.md`
 * `docs/THEORY_CHANGE_CONTROL.md`
+
+
+## Stage 9 reproducibility evidence
+
+* `results/stage09_reproducibility_report.md`
+* `docs/REPRODUCIBILITY.md`
+* `requirements.txt`
+* `Makefile`
+* `.github/workflows/reproducibility.yml`
+* `tests/test_frozen_regressions.py`
+* `generated/manifest.json`
+* `sources/SOURCE_MANIFEST.md`
+* `theorem_certificates/INDEX.md`
