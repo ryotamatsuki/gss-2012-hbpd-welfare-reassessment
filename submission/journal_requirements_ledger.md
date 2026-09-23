@@ -73,3 +73,45 @@ Stage 14 must check current Elsevier policies for:
 ## E. Fail-closed rule
 
 Stage 13 may integrate only currently verified or clearly noncontroversial requirements. Stage 14 may not close with a material journal-specific requirement left as UNVERIFIED if it affects the submission artifacts. Portal-only contact metadata that does not alter the manuscript theory may remain for the actual submission step, but must be explicitly identified rather than invented.
+
+
+## F. Stage-13 verified Elsevier-wide requirements
+
+Access date: 2026-09-23.
+
+| Requirement | State | Current evidence | Package response |
+|---|---|---|---|
+| GenAI disclosure in manuscript when used | VERIFIED CURRENT | Elsevier journals GenAI policy: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals | Added immediately before references in Declarations section; research-workflow use also described in reproducibility appendix |
+| AI tools cannot be authors; human author remains accountable | VERIFIED CURRENT | same Elsevier policy | Sole human author only; full-responsibility statement included |
+| competing interests disclosure | VERIFIED CURRENT | Elsevier Your Paper Your Way / publishing ethics | statement in manuscript and submission/declarations.md |
+| editable files required for production | VERIFIED CURRENT | Elsevier Your Paper Your Way | LaTeX + BibTeX + generated source files retained |
+| online system converts article to review PDF | VERIFIED CURRENT | Elsevier Your Paper Your Way | clean manuscript PDF is reproducibly built |
+| reviewer suggestions may be requested; conflicts should be avoided | VERIFIED CURRENT ELSEVIER-WIDE | Elsevier Your Paper Your Way | portal-only list to be prepared at Stage 14 if IEP requests it |
+| figure accessibility / color-blind-safe design recommended | VERIFIED CURRENT | Elsevier artwork policy | Figure uses distinguishable line types and remains intelligible without color |
+
+Current official policy URLs:
+- https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+- https://www.elsevier.com/subject/next/guide-for-authors
+- https://www.elsevier.com/about/policies-and-standards/author/artwork-and-media-instructions
+
+## G. Stage-13 conservative IEP packaging rule
+
+Because the live IEP Guide endpoint is inaccessible to the automated fetch, the package is deliberately prepared to satisfy the stricter intersection of:
+
+1. current official Elsevier-wide policy;
+2. current 2026 secondary IEP template corroboration; and
+3. the last fully indexed IEP-specific Author Information Pack.
+
+Accordingly the current package has:
+
+- 5 highlights, each <=85 characters;
+- 6 keywords;
+- abstract <=250 words;
+- identified title page;
+- full manuscript PDF and editable LaTeX/BibTeX sources;
+- figure/table captions in manuscript;
+- funding / competing interest / data-code / CRediT / GenAI declarations;
+- single-file review manuscript suitable for single-anonymized review;
+- separate cover letter and title page.
+
+Stage 14 must record the residual live-Guide access limitation explicitly; it must not invent any portal field not supported by evidence.
