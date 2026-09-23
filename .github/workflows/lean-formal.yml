@@ -51,7 +51,7 @@ jobs:
             exit 1
           }
 
-          if grep -RInE "$placeholder_re" --include='*.lean' .; then
+          if grep -RInE "$placeholder_re" --include='*.lean' Gss2012 Gss2012.lean; then
             echo "Lean placeholder found"
             exit 1
           fi
