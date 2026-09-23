@@ -1,65 +1,189 @@
-# Stage 4A — Independent mathematical adversarial certificate (in progress)
+# Stage 4A — Independent mathematical adversarial certificate
 
-**Verdict:** OPEN / CONDITIONAL. This file records an independent attack path; it does not claim canonical Stage 4A PASS.
+**Verdict:** PASS  
+**Certified claim:** complete **pure-strategy** uniform-price Nash correspondence UPE-2012-1  
+**Not certified here:** mixed-strategy equilibrium; full proof-assistant core (mandatory at Stage 7.5A); exact Springer VOR equation text.  
+**Source scope:** accepted manuscript / post-referee version.
 
-## Headline proposition under review
+## 1. Independence architecture
 
-For (0<s=\sigma/\tau<1), (1/2<x=x_0<1), and price strategies containing (p_i=c) and every (p_i>c), the provisional pure-strategy correspondence is
+The certification deliberately uses two paths.
+
+### Production analytic path
+
+\`derivations/uniform_price_game_full_demand.md\` and
+\`derivations/uniform_price_global_best_responses.md\` derive the five demand regimes in price-difference space and solve each firm's piecewise global maximization.
+
+### Independent clean-room path
+
+\`code/uniform_game_cleanroom.py\` reconstructs each history group's consumer choice directly from primitive utility thresholds and clipping. Its unilateral best-response evaluator does **not** call the production five-piece share formula. For a deviating firm's price, it obtains candidate breakpoints by making primitive thresholds hit history-segment endpoints, reconstructs the direct clipped demand between those knots, and evaluates every feasible endpoint and quadratic vertex using exact rational arithmetic.
+
+The independent path therefore does not inherit the production branch labels or its best-response algebra.
+
+## 2. Claim certified
+
+For
+\[
+x_0\in(1/2,1],\qquad s=\sigma/\tau\in[0,1),
+\]
+the complete pure uniform-price correspondence is
 
 \[
-\mathcal E^u(x,s)=
+\mathcal E^u(x_0,s)=
 \begin{cases}
-\{(1+s/3,1-s/3)\},&x\ge x_H(s),\\
-\varnothing,&x<x_H(s),
+\{(1,1)\},&s=0,\\[.4em]
+\{(1+s/3,1-s/3)\},&0<s<1,\ x_0\ge x_H(s),\\[.4em]
+\varnothing,&0<s<1,\ 1/2<x_0<x_H(s),
 \end{cases}
-\quad x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6.
+\]
+in normalized margins, with
+\[
+x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6.
 \]
 
-The claim concerns pure strategies only. Mixed equilibrium is not characterized.
+For \(0<s<1\), the equilibrium set is a singleton at \(x_0=x_H(s)\), although firm B has a second payoff-equal action against A's equilibrium price.
 
-## Production analytic path
+The claim is **not** “there is no Nash equilibrium” below \(x_H\); only pure-strategy nonexistence is certified.
 
-`derivations/uniform_price_game_full_demand.md` derives the clipped demand from the two history-specific primitive thresholds. It enumerates full capture, A-to-B-only switching, no-switch plateau, B-to-A-only switching, and the threshold equalities.
+## 3. Candidate-deviation audit (D1)
 
-`derivations/uniform_price_global_best_responses.md` uses price difference (d=b-a) as a separate proof path. It writes each firm's payoff on every demand piece, locates the concave-quadratic vertices, excludes capture/plateau/kink cases, derives both smooth-branch intersections, and checks the remaining global deviation to the no-poaching kink. The candidate boundary follows from an exact factorization, not from a numerical plot.
+Against the source candidate, the independent evaluator enumerates every unilateral clipping interval and its exact quadratic/affine maximum.
 
-## Independent computational path
+### Firm A
 
-`code/uniform_game_cleanroom.py` contains:
+For \(x>x_u=1/2+s/6\), A's source action is its unique lower-switching optimum. Its best plateau boundary is strictly worse by
+\[
+2(x-x_u)^2.
+\]
+The reverse-switch branch is decreasing over its feasible interval because its vertex lies below that interval. Capture/zero-demand alternatives give no improvement.
 
-* `share_a_direct`: computes market shares by clipping the two primitive utility thresholds to their own history intervals;
-* `share_a_piecewise`: a separately coded five-regime expression used only for cross-checks;
-* `direct_best_response_candidates`: forms unilateral price breakpoints from primitive threshold/end-point equalities, reconstructs direct clipped demand on each interval, and evaluates every feasible interval vertex and endpoint with exact rational arithmetic.
+### Firm B
 
-The direct maximizer does not call `share_a_piecewise`. Its finite candidate set follows because demand is affine between adjacent primitive clipping boundaries, so profit is quadratic there; after the final boundary the deviator's demand is zero. This argument, rather than any grid search, underlies the best-response candidate enumeration.
+The only globally competitive alternative to B's source action is the no-poaching plateau kink. Exact subtraction factors as
+\[
+2(x-x_L)(x-x_H),
+\]
+with \(x_L<1/2\). Hence the source action survives all unilateral deviations iff \(x\ge x_H\).
 
-## Adversarial cases already exercised
+At the exact counterexample
+\[
+(s,x)=(1/2,3/5),
+\]
+the independent primitive evaluator reproduces the source profit \(25/72\), the kink-deviation profit \(56/75\), and the strict gain \(719/1800\).
 
-* exact regime-crossing counterexample ((s,x)=(1/2,3/5)), including exact gain (719/1800);
-* exact equality point (s=6/47, x=67/94=x_H(s)), with source-price and no-poaching-kink B best responses, and a strict A deviation from the kink profile;
-* rational points immediately below the same equality boundary;
-* deterministic rational parameter sweep over (s\in\{1/20,1/10,1/2,9/10\}) and (x\in\{51/100,3/5,7/10,9/10,99/100\}), checking source best responses in the candidate domain and a profitable kink/plateau deviation outside it;
-* clipping boundaries and ε-neighborhoods at full capture, switching, and plateau thresholds;
-* (x\downarrow1/2), (x\uparrow1), (s\downarrow0), (s\uparrow1), equality plateaus, zero margins, and disappearing history segments in direct-demand checks.
-* strong-dominance CS regression at (s=99/100,x=51/100\), where the no-switch profile gap is (1/14400), while Eq. (25) gives (-539/22500); the same point is explicitly rejected as an equilibrium comparison because (x<x_H(s)).
+**D1 state: PASS.**
 
-The wider provisional Results 1–5 impact map, including corrected no-switch welfare branches for Results 3 and 5, is recorded in `derivations/welfare_and_result_impact.md`. These branch formulas do not change the pure-equilibrium theorem candidate because its domain satisfies (x\ge x_H(s)>x_u).
+## 4. Alternative-equilibrium / multiplicity audit (D2)
 
-All arithmetic regressions pass under `python code/uniform_game_cleanroom.py` (Python 3.12.14). These checks are adversarial regression evidence only; they do not replace the analytic correspondence proof.
+Every pure profile must fall into one of the five primitive demand pieces or their four boundaries.
 
-## Strategy-domain attack
+* full B capture: excluded by profitable entry or by the capturing firm's escape from a negative margin;
+* lower switching interior: local optimality uniquely gives the source profile;
+* lower plateau kink \(d=\alpha\): B has a strict same-share price increase;
+* plateau interior: a firm has a strict same-share price increase;
+* upper plateau kink \(d=\beta\): A has a strict same-share price increase;
+* upper switching interior: FOC intersection requires \(x<1/2-s/6\), incompatible with \(x>1/2\);
+* full A capture: symmetric exclusion argument;
+* zero margin: a sufficiently small positive price increase is profitable when demand is positive; zero demand reduces to capture;
+* negative margin with positive demand: charging cost is strictly better.
 
-The negative-margin reduction is recorded in the full-demand derivation. A firm with positive demand and a below-cost price can set (p_i=c) for zero profit. Full capture cannot be an equilibrium: if the winning firm has a nonnegative margin, the excluded firm can choose a positive margin just inside its demand threshold; if the winning margin is negative, it can instead move to cost. This reduction still needs a line-by-line independent review for all capture-boundary equalities.
+This is an exhaustive pure-strategy partition. No additional pure branch remains below \(x_H\).
 
-## Zero-margin boundary lemma (explicitly closed in this proof record)
+**D2 state: PASS — UNIQUE where a pure equilibrium exists; EMPTY below \(x_H\).**
 
-Clipped demand is continuous in (d). If a firm has zero margin but positive demand, it can increase its own price by a sufficiently small amount, preserve positive demand, and obtain positive profit. If its demand is zero, the profile is full capture by the rival, already excluded by a positive-margin entry deviation. Therefore no zero-margin profile can be a pure equilibrium. This closes the price-floor boundary before using smooth-branch FOCs; it does not close the remaining capture-domain, source-strategy-space, or formalization obligations.
+## 5. Indifference / zero-payoff trigger audit (D3)
 
-## Remaining certification obligations
+### Equality \(x=x_H\)
 
-1. Have the exhaustive price-difference proof checked line by line against every boundary and feasible-set endpoint.
-2. Prove the negative-margin reduction under the exact source strategy space, including the source's unspecified price constraints.
-3. Add a Lean 4/mathlib certificate for (x_H), the payoff factorization, equality logic, and exact counterexample. The current environment has neither `lean` nor `lake`; no formal verification pass is claimed.
-4. Reconcile the theorem and every notation/quantifier with the version-qualified source text after VOR comparison.
+B is indifferent between its source action and the no-poaching kink. The audit changes B's action to that payoff-equal kink and recomputes A's best response. A can raise its margin by \(2s\), keep share \(x\), and gain \(2sx>0\). Therefore the payoff-equal B action does not generate a second Nash profile.
 
-Until these are closed, the candidate theorem must remain “provisional pure-strategy characterization under independent review,” not a certified complete equilibrium claim.
+### Capture / zero demand
+
+Zero-demand actions were varied rather than dismissed. They either admit positive-margin entry by the excluded firm or force the capturing firm to improve away from a negative margin.
+
+### Strong-HBP zero-sale family
+
+The separate HBP game has a genuine indifference trigger if below-cost poaching prices are permitted. On the strong branch,
+\[
+3-s-4x\le u=(q_A-c)/\tau\le0
+\]
+supports a payoff-equivalent zero-sales family with
+\[
+(p_B-c)/\tau=u+2x-1+s.
+\]
+Changing \(u\) changes prices, consumer surplus, and profit distribution but not allocation or social welfare. Under a nonnegative-margin/no-loss restriction the family collapses to the source member \(u=0\).
+
+This HBP selection issue is retained explicitly; it is not used to manufacture a uniform-price equilibrium.
+
+**D3 state: PASS.**
+
+## 6. Strategy-domain audit
+
+The accepted manuscript does not explicitly state a lower price bound in the inspected model text. The uniform pure-equilibrium theorem is invariant between unrestricted real prices and \(p_i\ge c\) because every pure equilibrium is endogenously forced to have positive margins and positive demand.
+
+This robustness does **not** automatically extend to the strong-HBP price vector: below-cost poaching prices generate the zero-sales family described above. Therefore all source-specific HBP consumer-surplus/profit claims must either use a documented nonnegative-margin convention or state the selection dependence. Strong-HBP social welfare is invariant across that family.
+
+**Strategy-domain state: PASS with an explicit HBP selection qualification.**
+
+## 7. Boundary-targeted attacks
+
+The production proof and independent evaluator have attacked:
+
+* \(x\downarrow1/2\);
+* \(x\uparrow1\) and the zero-measure B-history limit;
+* \(s\downarrow0\);
+* \(s\uparrow1\) from below;
+* \(x=x_u\);
+* \(x=x_H\);
+* \(x=\bar x=(3-s)/4\);
+* each price-difference boundary \(L,\alpha,\beta,U\);
+* both sides of every clipping boundary;
+* full capture by either firm;
+* zero margin;
+* negative margins;
+* large positive prices and zero-demand tails;
+* consumer ties;
+* history segment disappearance;
+* exact rational points above and below \(x_H\).
+
+The exact evaluator uses \`Fraction\` arithmetic; floating-point grid evidence is not used as a proof.
+
+## 8. Exact-regression inventory
+
+Permanent regressions in \`code/uniform_game_cleanroom.py\` include:
+
+1. demand-piece vs direct-clipping equality at all regime boundaries;
+2. accepted-version Eq. (12) counterexample \((1,1/2,3/5,0)\);
+3. rational points on both sides of the \(x_H\) inequality;
+4. exact equality witness \(s=6/47,\ x=67/94=x_H(s)\);
+5. B's two best responses at equality and A's strict deviation from the kink profile;
+6. rejected upstream CS-sign regression at \(s=99/100,x=501/1000\);
+7. a valid one-way-switch Eq. (15) discrepancy point;
+8. weak-welfare endpoint identities;
+9. strong-HBP below-cost selection family;
+10. strong-branch CS/welfare profile regressions.
+
+## 9. Formal-verification applicability
+
+**APPLICABLE.** The project is a published-result correction involving a square-root threshold, exact inequalities, piecewise demand, equality logic, and welfare identities.
+
+Stage 4A records the target map; Stage 7.5A must close it with a compiled Lean 4/mathlib certificate, statement-fidelity audit, no-\`sorry\`/\`admit\` audit, and toolchain provenance.
+
+Formal verification is deliberately not counted as the independent Stage-4A path.
+
+## 10. Surviving limitations
+
+1. The theorem is pure-strategy only; mixed pricing below \(x_H\) is unresolved and outside the selected paper architecture.
+2. Exact typeset VOR mathematics is not directly inspected; source-facing language remains accepted-manuscript-qualified.
+3. Strong-HBP CS/profit comparisons depend on the price-domain/selection convention if below-cost poaching prices are allowed.
+4. Formal proof-assistant certification remains a mandatory downstream gate.
+
+None of these limitations invalidates the certified pure correspondence.
+
+## Stage-4A gate
+
+**PASS / GO to Stage 6 after the mixed-scope decision is frozen.**
+
+Evidence chain:
+
+\`UPE-2012-1 -> exhaustive global-deviation + alternative-equilibrium + indifference attacks -> production derivations + independently coded primitive evaluator + exact regressions -> pure-only / accepted-manuscript / HBP-selection limitations explicit\`.
