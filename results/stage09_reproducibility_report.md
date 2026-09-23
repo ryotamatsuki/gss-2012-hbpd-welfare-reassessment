@@ -1,6 +1,6 @@
 # Stage 9 — Repository / Reproducibility Setup
 
-**Verdict:** GO / CLOSED  
+**Verdict:** ORIGINAL PASS; 2026-09-23 RE-CERTIFICATION IN PROGRESS  
 **Theory input:** Stage-8 freeze commit b5bb95f083d4c855647314f90ba735eabf2476d3  
 **Production branch:** research/stage-09-reproducibility  
 **Reproducibility code head certified by CI:** ff695a6722bc7e17c7b8325db4eb947198a0e5ca  
@@ -54,7 +54,7 @@ code/uniform_game_cleanroom.py
 
 Certified output: all exact clean-room checks passed.
 
-This covers primitive clipping, price-regime boundaries, exact Eq. (12) counterexample, x_H sides/equality, best-response attacks, Eq. (15) regressions, welfare identities, and strong-HBP selection regressions.
+The original suite covered primitive clipping, price-regime boundaries, the exact Eq. (12) counterexample, x_H sides/equality, best-response attacks, CS regressions, welfare identities, and strong-HBP selection regressions. The 2026-09-23 repair replaces the stale Eq. (15) discrepancy regression with a source-fidelity Eq. (15)/Eq. (16) regression and adds realized-profit branch and strong-domain scope regressions.
 
 ### Symbolic primitive layer
 
@@ -74,7 +74,7 @@ Stage 9 exposed a SymPy representation-sensitivity bug in the prior auxiliary sc
 
 tests/test_frozen_regressions.py
 
-CI result: 4 tests run; all pass.
+Original CI result: 4 tests run; all passed. The repaired suite contains 7 permanent unittests, including Eq. (15) source fidelity, the weak no-switch Result-4 witness, and the strong-profit non-portability witness; fresh CI confirmation is required before re-closing Stage 9.
 
 ## 5. Deterministic generated artifacts
 
@@ -194,11 +194,11 @@ Neither event is a Stage-8 theory regression.
 | theorem certificate index | PASS |
 | CI from clean checkout | PASS |
 
-## 13. Stage-9 gate
+## 13. Stage-9 re-certification gate
 
-**GO / CLOSED.**
+The original Stage-9 gate passed. The independent submission audit changed source-fidelity definitions and permanent regression expectations, so that historical pass cannot certify the repaired head.
 
-The repository is reproducible at the frozen-theory level. No mathematical result was changed.
+**RE-CERTIFICATION IN PROGRESS.** Re-close only after `make python-checks` and `make verify-generated` pass from a fresh checkout with the repaired 7-test suite and regenerated regression ledger.
 
 ## 14. Next-stage contract
 
