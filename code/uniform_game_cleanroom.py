@@ -72,6 +72,29 @@ def source_uniform_prices(s: F) -> tuple[F, F]:
     return 1 + s / 3, 1 - s / 3
 
 
+def source_eq15_switch_cs(x: F, s: F) -> F:
+    """Accepted-manuscript Eq. (15), normalized by tau, on its switching branch."""
+    return (-52 * x * x + 52 * x + 1 + 36 * s * x - 34 * s + s * s) / 36
+
+
+def source_eq16_printed_cs(x: F, s: F) -> F:
+    """Accepted-manuscript Eq. (16) as printed after sigma=s*tau substitution."""
+    return -(
+        s * s + 2 * s * (18 * x - 17) - 52 * x * x + 52 * x + 1
+    ) / 36
+
+
+def source_uniform_profile_profits(x: F, s: F) -> tuple[F, F]:
+    """Actual profits at the accepted Eq. (12) price vector, using clipped demand."""
+    a, b = source_uniform_prices(s)
+    return profit_a(a, b, x, s), profit_b(a, b, x, s)
+
+
+def weak_hbp_source_profits(x: F, s: F) -> tuple[F, F]:
+    """Actual weak-HBP source-profile profits from primitive segment demands."""
+    return hbp_profits_direct(*hbp_weak_prices(x, s), x, s)
+
+
 def hbp_weak_prices(x: F, s: F) -> tuple[F, F, F, F]:
     """Return (pA, qA, pB, qB), all as net margins, in tau=1 units."""
     return (
@@ -96,8 +119,8 @@ def hbp_strong_unrestricted_family(
     x >= (3-s)/4.  Its source-paper member is u=0.
     """
     delta = 3 - s - 4 * x
-    if not (x >= (3 - s) / 4 and delta <= u <= 0):
-        raise ValueError("u must lie in [3-s-4x, 0] on the strong branch")
+    if not ((3 - s) / 4 <= x < 1 and delta <= u <= 0):
+        raise ValueError("u must lie in [3-s-4x, 0] with x<1 on the nondegenerate strong branch")
     return u, u + 2 * x - 1 + s
 
 
@@ -314,27 +337,70 @@ def self_check() -> None:
     kink_below = a + 2 * x_below - 1 + s
     assert br_b_m == (kink_below,)
 
-    # Eq. (15): invalid regression point is no-switch, with direct sign positive.
-    tau, s, x = F(1), F(99, 100), F(501, 1000)
-    p_a, p_b = (1 + s / 3), (1 - s / 3)
-    p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
-    direct_gap = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s, tau) - \
-        uniform_cs_direct(p_a, p_b, x, s, tau)
-    printed_eq15 = (-52 * x * x + 52 * x + 1 + 34 * s - 36 * s * x - s * s) / 36
-    assert direct_gap == F(17993, 4500000)
-    assert printed_eq15 == F(1801513, 2250000)
-
-    # Eq. (15) is also wrong on a valid weak-HBP / pure-uniform-NE point.
+    # Accepted Eq. (15) is source-faithful on its valid switching branch.
     tau, s, x = F(1), F(1, 10), F(7, 10)
     assert x < (3 - s) / 4 and x_h_condition(x, s)
     p_a, p_b = source_uniform_prices(s)
     p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
     direct_gap = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s, tau) - \
         uniform_cs_direct(p_a, p_b, x, s, tau)
-    printed_eq15 = (-52 * x * x + 52 * x + 1 + 34 * s - 36 * s * x - s * s) / 36
     assert direct_gap == F(221, 720)
-    assert printed_eq15 == F(1279, 3600)
-    assert direct_gap > 0 and printed_eq15 > 0
+    assert source_eq15_switch_cs(x, s) == F(221, 720)
+    # The printed Eq. (16) is the negative of the normalized Eq. (15).
+    assert source_eq16_printed_cs(x, s) == F(-221, 720)
+    assert source_eq16_printed_cs(x, s) == -source_eq15_switch_cs(x, s)
+
+    # The high-s/low-x regression is a no-switch allocation: Eq. (15) is not
+    # the realized profile formula there, while the primitive gap stays positive.
+    tau, s, x = F(1), F(99, 100), F(501, 1000)
+    p_a, p_b = source_uniform_prices(s)
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
+    direct_gap = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s, tau) - \
+        uniform_cs_direct(p_a, p_b, x, s, tau)
+    assert direct_gap == F(17993, 4500000) > 0
+
+    # Result 4 profile comparison must also respect the uniform allocation branch.
+    # At this weak-domain no-switch point, extending Eq. (22)'s switching formula
+    # gives the wrong sign.
+    s, x = F(1, 2), F(51, 100)
+    assert x < F(1, 2) + s / 6 and x < (3 - s) / 4
+    pi_a_d, pi_b_d = weak_hbp_source_profits(x, s)
+    pi_a_u, pi_b_u = source_uniform_profile_profits(x, s)
+    assert pi_b_d == F(3221, 9000)
+    assert pi_b_u == F(49, 120)
+    assert pi_b_d - pi_b_u == F(-227, 4500)
+    eq22_switch_extension = (
+        s * s - 12 * s * x + 14 * s + 20 * x * x - 20 * x + 1
+    ) / 18
+    assert eq22_switch_extension == F(4, 375) > 0
+
+    # On the certified weak pure-equilibrium overlap, the switching branch is
+    # the realized branch and B earns less under HBP.
+    s, x = F(1, 10), F(7, 10)
+    assert x_h_condition(x, s) and x < (3 - s) / 4
+    _, pi_b_d = weak_hbp_source_profits(x, s)
+    _, pi_b_u = source_uniform_profile_profits(x, s)
+    assert pi_b_d < pi_b_u
+
+    # Strong dominance can reverse the small-firm profit ranking even when the
+    # uniform pure equilibrium exists. This guards against overbroad summaries.
+    s, x = F(9, 10), F(19, 20)
+    assert x_h_condition(x, s) and x >= (3 - s) / 4
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_strong_profile_unrestricted(x, s, F(0))
+    _, pi_b_d = hbp_profits_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    _, pi_b_u = source_uniform_profile_profits(x, s)
+    assert pi_b_d - pi_b_u == F(41, 900) > 0
+
+    # At x=1 the B-history segment is empty. The unused q_A and p_B prices are
+    # not pinned, even under nonnegative margins, while allocation/profits/CS
+    # remain unchanged when only those empty-segment prices are varied.
+    s, x = F(1, 2), F(1)
+    p_a = (2 * x + 1 + s) / 3
+    q_b = (4 * x - 1 - s) / 3
+    base = (p_a, F(0), 1 + s, q_b)
+    alt = (p_a, F(7), F(9), q_b)
+    assert hbp_profits_direct(*base, x, s) == hbp_profits_direct(*alt, x, s)
+    assert hbp_cs_direct(*base, x, s) == hbp_cs_direct(*alt, x, s)
 
     # Algebraic endpoint substitution into Eq. (23)'s switching-branch formula.
     # For s > 3/5, xbar lies below x_u, so this is not the actual no-switch
@@ -350,7 +416,7 @@ def self_check() -> None:
                          - 32 * xbar + 7) / 18
         assert no_switch_gap == (s - 1) * (7 * s - 1) / 18 < 0
 
-    # Strong HBP: the candidate q_A=c is unique when margins must be nonnegative.
+    # Strong HBP for x<1: the candidate q_A=c is selected when margins must be nonnegative.
     # If below-cost poaching is allowed, a bounded no-demand equilibrium family
     # appears; sales stay zero on the segment, so price transfers cancel in W.
     x, s = F(4, 5), F(1, 2)
