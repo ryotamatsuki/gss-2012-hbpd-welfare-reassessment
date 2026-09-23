@@ -43,13 +43,13 @@ The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails di
 * `docs/WORKFLOW.md` — canonical v2.4 workflow mapping.
 * `docs/STAGE_00_EVIDENCE_FREEZE.md` — current Stage 0 gate and source boundary.
 * `sources/gss_2012_version_boundary.md` — source lineage and version limitations.
-* `derivations/uniform_price_game_full_demand.md` — full clipped demand and provisional pure theorem.
+* `derivations/uniform_price_game_full_demand.md` — full clipped demand and certified pure-theorem derivation.
 * `derivations/uniform_price_global_best_responses.md` — global piecewise best-response proof.
 * `derivations/consumer_surplus_primitive_reconstruction.md` — direct CS integrals and branch formulas.
-* `derivations/welfare_and_result_impact.md` — primitive welfare branches and provisional Results 1–5 map.
+* `derivations/welfare_and_result_impact.md` — primitive welfare branches; accepted-manuscript Results 1–7 are canonically mapped in `results/stage07_downstream_impact.md`.
 * `code/uniform_game_cleanroom.py` — exact-rational clean-room regressions and primitive evaluators.
 * `code/symbolic_reconstruction.py` — SymPy integration and welfare identity checks.
-* `results/stage04_global_uniform_game_progress.md` — work completed, checks, and open gates.
+* `results/stage04_global_uniform_game_progress.md` — Stage 4 GO/CLOSED record.
 * `results/stage04a_independent_certificate.md` — closed independent adversarial certificate.
 * `results/stage04a_formal_verification_target_map.md` — mandatory Stage-7.5A Lean handoff map.
 * `results/mixed_equilibrium_scope_decision.md` — frozen Route-B scope decision.
