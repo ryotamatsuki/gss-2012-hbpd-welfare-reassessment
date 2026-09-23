@@ -1,0 +1,13 @@
+[tool.stage09]
+python = "3.12"
+sympy = "1.14.0"
+
+[tool.stage09.commands]
+exact = "python code/uniform_game_cleanroom.py"
+symbolic = "python code/symbolic_reconstruction.py"
+downstream = "python code/downstream_impact_symbolic.py"
+tests = "PYTHONPATH=code python -m unittest discover -s tests -v"
+generate = "python code/generate_stage09_artifacts.py --output generated"
+verify_generated = "python code/verify_generated_artifacts.py"
+lean = "cd formal && lake update && lake exe cache get && lake build"
+latex = "pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex"
