@@ -207,8 +207,8 @@ def direct_best_response_candidates(
     """
     if firm not in {"A", "B"}:
         raise ValueError("firm must be 'A' or 'B'")
-    if not (F(0) < x < F(1) and F(0) <= s < F(1)):
-        raise ValueError("expected 0 < x < 1 and 0 <= s < 1")
+    if not (F(0) < x <= F(1) and F(0) <= s < F(1)):
+        raise ValueError("expected 0 < x <= 1 and 0 <= s < 1")
 
     if firm == "A":
         # Vary a with b fixed. These solve t_A=0,x and t_B=x,1.
@@ -314,6 +314,17 @@ def self_check() -> None:
                 assert best_a > candidate_a
             else:
                 assert best_b > candidate_b
+
+    # Exact disappearing-history endpoint x=1: the accepted uniform candidate
+    # remains a global best-response intersection even though B's inherited
+    # history segment has zero measure.
+    for s in (F(0), F(1, 10), F(1, 2), F(9, 10)):
+        x = F(1)
+        a, b = source_uniform_prices(s)
+        best_a, br_a = direct_best_response_candidates("A", b, x, s)
+        best_b, br_b = direct_best_response_candidates("B", a, x, s)
+        assert best_a == profit_a(a, b, x, s) and a in br_a
+        assert best_b == profit_b(a, b, x, s) and b in br_b
 
     # An exact equality-boundary point: the small firm is indifferent between
     # its interior response and the no-poaching kink, but only the interior
