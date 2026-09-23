@@ -1,0 +1,78 @@
+\section{Global proof of Proposition~\ref{prop:uniform}}
+\label{app:uniform-proof}
+
+This appendix records the complete pure-strategy branch argument. Normalize \(\tau=1\). For fixed rival price, write unilateral payoffs as functions of \(d=b-a\). On the five demand pieces in \eqref{eq:five-piece-demand},
+\[
+\begin{array}{c|c|c}
+\text{region} & \pi_A(d;b) & \pi_B(d;a)\\
+\hline
+d\le L & 0 & a+d\\
+L<d<\alpha &
+(b-d)(d-L)/2 &
+(a+d)(1-s-d)/2\\
+\alpha\le d\le\gamma &
+x_0(b-d) &
+(1-x_0)(a+d)\\
+\gamma<d<U &
+(b-d)(d+1-s)/2 &
+(a+d)(1+s-d)/2\\
+d\ge U &
+b-d & 0
+\end{array}
+\]
+Every switching-branch payoff is a concave quadratic and the plateau payoff is affine. A global best response therefore occurs at a feasible quadratic vertex or at a regime endpoint.
+
+\paragraph{Capture and zero margins.}
+If \(d\le L\), firm \(A\) has zero demand and can choose a positive-margin price that enters the lower switching branch and yields positive profit. The case \(d\ge U\) is symmetric for \(B\). If a firm serves positive demand at a negative margin, charging \(c\) weakly raises profit to zero. If its margin is exactly zero and demand is positive, a sufficiently small price increase preserves positive demand and yields strictly positive profit. Hence every pure equilibrium candidate has positive margins and lies outside the full-capture tails.
+
+\paragraph{No-switch plateau.}
+On \(\alpha\le d\le\gamma\), firm \(A\)'s payoff \(x_0(b-d)\) decreases in \(d\), so any interior point is improved by moving toward \(\alpha\). Firm \(B\)'s payoff \((1-x_0)(a+d)\) increases in \(d\), so any interior point is improved by moving toward \(\gamma\). At \(d=\alpha\), \(B\) can move to \(\gamma\), keep share \(1-x_0\), and gain \(2s(1-x_0)>0\). At \(d=\gamma\), \(A\) can move to \(\alpha\), keep share \(x_0\), and gain \(2sx_0>0\). Thus neither the plateau nor either kink is a Nash profile.
+
+\paragraph{Lower switching branch.}
+For \(L<d<\alpha\), first-order conditions yield
+\[
+a=d+1+s,\qquad b=1-s-d.
+\]
+Combining them with \(d=b-a\) gives
+\[
+d^*=-\frac{2s}{3},\qquad
+a^*=1+\frac{s}{3},\qquad
+b^*=1-\frac{s}{3}.
+\]
+The branch condition is \(x_0>x_u(s)=1/2+s/6\).
+
+Against \(b^*\), firm \(A\)'s lower-branch quadratic has its unique maximum at \(d^*\). Its best plateau payoff occurs at \(d=\alpha\), and
+\[
+\frac{\pi_A(a^*,b^*)-\pi_A(\alpha;b^*)}{\tau}
+=
+2(x_0-x_u)^2>0.
+\]
+The upper switching branch is decreasing from its left endpoint against \(b^*\), so its best value is bounded by the plateau endpoint. Therefore \(a^*\) is \(A\)'s unique global best response whenever \(x_0>x_u\).
+
+Against \(a^*\), firm \(B\)'s best plateau action is the no-poaching kink \(d=\gamma\), with
+\[
+b_k=a^*+\gamma=2x_0+\frac{4s}{3}.
+\]
+The upper switching branch is decreasing from \(\gamma\), and full capture yields zero. The relevant global comparison is therefore exactly \eqref{eq:kink-factor}. Since \(x_L<1/2<x_0\), \(b^*\) is a global best response if and only if \(x_0\ge x_H\).
+
+At equality \(x_0=x_H\), \(B\) is indifferent between \(b^*\) and \(b_k\). But \((a^*,b_k)\) is not Nash: firm \(A\) can move the price difference from \(\gamma\) to \(\alpha\), raise its own margin by \(2s\), keep share \(x_0\), and gain \(2sx_0>0\).
+
+\paragraph{Upper switching branch.}
+For \(\gamma<d<U\), the two first-order conditions imply
+\[
+d=\frac{2s}{3},\qquad
+a=1-\frac{s}{3},\qquad
+b=1+\frac{s}{3}.
+\]
+The branch condition would require
+\[
+\frac{2s}{3}>\gamma=2x_0-1+s
+\quad\Longleftrightarrow\quad
+x_0<\frac12-\frac{s}{6},
+\]
+which is impossible for \(x_0>1/2\).
+
+\paragraph{Conclusion.}
+If \(x_0\le x_u\), the source candidate lies on or at the no-switch plateau and is not Nash. If \(x_u<x_0<x_H\), the source candidate is the only possible smooth-branch intersection but \(B\) strictly prefers the no-poaching kink. If \(x_0\ge x_H\), both source actions are global best responses and all other branches have been excluded. This proves Proposition~\ref{prop:uniform}.
+
+The proof remains valid if the uniform-price strategy space is all of \(\mathbb R\): any negative-margin action with positive demand is dominated by charging \(c\), while zero-demand capture profiles have already been excluded. Hence restricting uniform prices to \(p_i\ge c\) does not change the pure equilibrium set.
