@@ -1,6 +1,6 @@
 # Stage 7 — Downstream welfare and source-result impact
 
-**Verdict:** GO  
+**Verdict:** RE-CERTIFIED GO after source-fidelity and realized-profit branch re-audit  
 **Source:** post-referee accepted manuscript; exact VOR equation text remains unverified.  
 **Equilibrium scope:** pure uniform-price equilibrium only. Mixed pricing is outside scope.  
 **HBP price-domain convention for CS/profit:** source member \(q_A=c\), equivalently nonnegative net margins on the strong-HBP poaching price; unrestricted below-cost selection is reported separately.
@@ -56,7 +56,7 @@ Its actual allocation is piecewise:
 * \(x_0\ge x_u\): A-history consumers on \((x_u,x_0]\) switch to B;
 * \(x_0<x_u\): no consumer switches.
 
-The accepted-manuscript Eq. (13) writes the first allocation and therefore cannot be used unchanged when \(x_0<x_u\).
+The accepted-manuscript Eq. (13) writes the first allocation and therefore cannot be used unchanged when \(x_0<x_u\). Image-level reinspection also establishes that Eq. (15) itself is algebraically correct on this one-way-switch branch. The separate source-algebra issue is the displayed Eq. (15)→Eq. (16) normalization, which reverses the sign; Result 3 then additionally applies the switching allocation outside its realized-demand branch.
 
 ### Weak HBP
 
@@ -291,10 +291,10 @@ Thus Result 7 survives on the corrected pure-equilibrium domain and is robust to
 |---|---:|---|---|
 | **Result 1** — if \(\sigma>\tau\), history-based poaching ceases | No | lies outside the maintained Assumption-1 domain \(\sigma<\tau\) used for the reassessment | **OUTSIDE MAINTAINED DOMAIN / NOT AFFECTED BY UPE CORRECTION** |
 | **Result 2** — dominant firm's share is larger under uniform pricing | Yes | displayed weak-branch difference is wrong; correct weak difference is \((2x_0+s-1)/6\) | **QUALITATIVE SIGN SURVIVES; EQUILIBRIUM CLAIM RESTRICTED TO \(x_0\ge x_H\)** |
-| **Result 3** — weak-HBP CS is higher iff condition (17) | Yes | Eq. (13) branch ordering + Eq. (15) algebra | **INVALIDATED AS STATED**; primitive CS gives \(CS^d>CS^u\) throughout weak profile domain; equilibrium comparison only on pure overlap |
+| **Result 3** — weak-HBP CS is higher iff condition (17) | Yes | Eq. (15) is source-faithful on the switching branch; Eq. (16) displays the opposite normalized sign, and Eq. (13)/(15) are inapplicable when `x_0<x_u` | **INVALIDATED AS STATED**; primitive CS gives \(CS^d>CS^u\) throughout weak profile domain; equilibrium comparison only on pure overlap |
 | **Result 4** — smaller firm benefits from HBP iff switching cost is high enough | Yes | Eq. (22) also uses the switching-allocation uniform profit and fails as a profile formula when `x_0<x_u` | **RESTRICTED / BRANCH-DEPENDENT**; on every weak-domain pure-equilibrium comparison, \(\pi_B^d<\pi_B^u\); outside it, profile profit must be evaluated piecewise |
 | **Result 5** — weak-dominance social welfare is higher under uniform pricing | Yes | accepted endpoint substitution is algebraically wrong and branch qualification is needed | **SURVIVES ON RESTRICTED PURE-EQUILIBRIUM DOMAIN** |
-| **Result 6** — strong-dominance CS can be lower under HBP above a threshold | Yes | depends on strong-HBP price selection if below-cost prices are allowed | **SURVIVES ON CORRECTED PURE DOMAIN UNDER SOURCE/NONNEGATIVE-MARGIN HBP SELECTION** |
+| **Result 6** — strong-dominance CS can be lower under HBP above a threshold | Yes | for `x_0<1`, depends on strong-HBP price selection if below-cost prices are allowed; at `x_0=1` the B-history market is empty | **SURVIVES FOR NONDEGENERATE `x_0<1` ON THE CORRECTED PURE DOMAIN UNDER SOURCE/NONNEGATIVE-MARGIN SELECTION; GAP IS ZERO AT `x_0=1`** |
 | **Result 7** — strong-dominance social welfare is higher under uniform pricing | Yes | strictness fails only at degenerate \(x_0=1\); HBP price selection changes transfers but not W | **SURVIVES ON CORRECTED PURE DOMAIN; SELECTION-INVARIANT WELFARE** |
 
 ## 7. Market-share correction corresponding to Result 2
