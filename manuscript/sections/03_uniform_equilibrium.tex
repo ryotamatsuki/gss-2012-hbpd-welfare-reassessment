@@ -1,0 +1,160 @@
+\section{The uniform-price game}
+\label{sec:uniform}
+
+The accepted manuscript reports the normalized price pair
+\[
+a^*=1+\frac{s}{3},
+\qquad
+b^*=1-\frac{s}{3},
+\]
+and treats it as the unique Nash--Bertrand equilibrium in uniform prices. Those prices solve the first-order conditions on the lower switching branch of \eqref{eq:five-piece-demand}. Global optimality, however, also requires comparison with the no-switch kink.
+
+Define
+\[
+x_u(s)=\frac12+\frac{s}{6}
+\]
+and
+\begin{equation}
+x_H(s)
+=
+\frac12-\frac{s}{3}
++\frac{\sqrt{3s(s+6)}}{6}.
+\label{eq:xH}
+\end{equation}
+For every \(0<s<1\),
+\[
+\frac12<x_u(s)<x_H(s)<1.
+\]
+
+\begin{proposition}[Complete pure uniform-price correspondence]
+\label{prop:uniform}
+Let \(x_0\in(1/2,1]\), \(\tau>0\), \(c\in\mathbb R\), and \(0\le\sigma<\tau\). For \(s=0\), the unique pure uniform-price equilibrium has normalized margins \((a,b)=(1,1)\). For \(0<s<1\),
+\[
+\E^u(x_0,s)
+=
+\begin{cases}
+\left\{\left(1+s/3,\,1-s/3\right)\right\},
+&x_0\ge x_H(s),\\[0.4em]
+\varnothing,
+&1/2<x_0<x_H(s).
+\end{cases}
+\]
+Equivalently, whenever the pure equilibrium exists,
+\[
+p_A^u=c+\tau+\frac{\sigma}{3},
+\qquad
+p_B^u=c+\tau-\frac{\sigma}{3}.
+\]
+At \(x_0=x_H(s)\), firm \(B\) has an additional payoff-equal kink best response against \(A\)'s equilibrium price, but that kink action does not generate a second Nash profile.
+\end{proposition}
+
+\paragraph{Mechanism.}
+On the lower switching branch, the two smooth first-order conditions have the unique intersection above. Firm \(A\)'s source action is globally optimal once the candidate lies on that branch. Firm \(B\), however, can instead move to the right edge of the no-switch plateau and raise its price while retaining all inherited \(B\)-history consumers. Against \(a^*\), this no-poaching kink price is
+\[
+b_k=a^*+\gamma=2x_0+\frac{4s}{3}.
+\]
+Let
+\[
+x_L(s)=
+\frac12-\frac{s}{3}
+-\frac{\sqrt{3s(s+6)}}{6}.
+\]
+The exact payoff comparison factors as
+\begin{equation}
+\frac{\pi_B(a^*,b^*)-\pi_B(a^*,b_k)}{\tau}
+=
+2\bigl(x_0-x_L(s)\bigr)\bigl(x_0-x_H(s)\bigr).
+\label{eq:kink-factor}
+\end{equation}
+Since \(x_L(s)<1/2<x_0\), firm \(B\)'s source price is globally optimal if and only if \(x_0\ge x_H(s)\). The complete exclusion of capture, plateau, kink, and upper-switching alternatives is given in Appendix~\ref{app:uniform-proof}.
+
+\begin{remark}[Pure rather than general Nash nonexistence]
+For \(1/2<x_0<x_H(s)\), Proposition~\ref{prop:uniform} establishes the nonexistence of a \emph{pure-strategy} price equilibrium. We do not characterize mixed pricing and make no statement that Nash equilibrium itself fails to exist.
+\end{remark}
+
+\subsection{An exact counterexample}
+
+Take
+\[
+\tau=1,\qquad
+\sigma=\frac12,\qquad
+x_0=\frac35,\qquad
+c=0.
+\]
+The accepted source candidate is
+\[
+p_A=\frac76,\qquad p_B=\frac56.
+\]
+Firm \(B\)'s profit is \(25/72\). Moving to the no-poaching kink
+\[
+p_B'=\frac{28}{15}
+\]
+raises its profit to \(56/75\), so the exact gain is
+\[
+\frac{56}{75}-\frac{25}{72}
+=
+\frac{719}{1800}>0.
+\]
+This point lies inside the accepted weak-dominance domain, so the issue is a global best-response failure rather than an inadmissible parameter choice.
+
+\begin{table}[t]
+\centering
+\caption{Exact global-deviation counterexample to the unrestricted uniform-price claim}
+\label{tab:counterexample}
+\begin{tabular}{lccc}
+\toprule
+ & \(p_B\) & \(q_B\) & \(\pi_B\)\\
+\midrule
+Accepted Eq.~(12) candidate & \(5/6\) & \(5/12\) & \(25/72\)\\
+No-poaching kink deviation & \(28/15\) & \(2/5\) & \(56/75\)\\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+The deviation gain is \(719/1800\). Quantities are calculated from the primitive clipped demand.
+\end{table}
+
+\subsection{The corrected comparison domain}
+
+The accepted weak-HBP domain is \(1/2<x_0<\bar x(s)\), where \(\bar x(s)=(3-s)/4\). Comparing it with Proposition~\ref{prop:uniform} yields an overlap only when
+\begin{equation}
+0\le s<s_c,
+\qquad
+s_c=-3+\frac{6\sqrt{33}}{11}
+\approx0.1333978.
+\label{eq:sc}
+\end{equation}
+For \(0<s<s_c\), two pure equilibria can be compared only on
+\[
+x_H(s)\le x_0<\bar x(s).
+\]
+At \(s=s_c\), the two boundaries coincide and the weak-HBP inequality is strict, so the overlap is empty.
+
+Figure~\ref{fig:domains} plots the three relevant boundaries. The figure is generated from the verified Stage-9 data file rather than from hand-entered curves.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.88\textwidth,
+  height=0.50\textwidth,
+  xlabel={normalized switching cost \(s=\sigma/\tau\)},
+  ylabel={inherited share \(x_0\)},
+  xmin=0,xmax=1,
+  ymin=0.5,ymax=1,
+  legend style={draw=none,at={(0.98,0.98)},anchor=north east},
+  grid=major
+]
+\addplot+[thick,mark=none] table[x=s,y=x_H,col sep=comma]{generated/parameter_domains.csv};
+\addlegendentry{\(x_H(s)\): pure-uniform threshold}
+\addplot+[dashed,thick,mark=none] table[x=s,y=x_bar,col sep=comma]{generated/parameter_domains.csv};
+\addlegendentry{\(\bar x(s)\): weak/strong HBP boundary}
+\addplot+[dotted,thick,mark=none] table[x=s,y=x_u,col sep=comma]{generated/parameter_domains.csv};
+\addlegendentry{\(x_u(s)\): uniform switching cutoff}
+\addplot+[only marks,mark=*,mark size=1.8pt] coordinates {(0.1333978072,0.7166505482)};
+\end{axis}
+\end{tikzpicture}
+\caption{Corrected equilibrium and source-branch boundaries. The weak-HBP/pure-uniform equilibrium overlap lies between \(x_H(s)\) and \(\bar x(s)\) and exists only for \(s<s_c\).}
+\label{fig:domains}
+\end{figure}
