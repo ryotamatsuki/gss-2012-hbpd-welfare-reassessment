@@ -9,43 +9,43 @@
 
 For
 [
-s=sigma/	auin(0,1),
+s=sigma/\tauin(0,1),
 ]
 the uniform-price pure equilibrium exists iff
 [
 x_0ge x_H(s)
 =
-rac12-rac{s}{3}
-+rac{sqrt{3s(s+6)}}6.
+\frac12-\frac{s}{3}
++\frac{sqrt{3s(s+6)}}6.
 ]
 
 The accepted weak-HBP domain is
 [
-rac12<x_0<ar x(s),
+\frac12<x_0<\bar x(s),
 qquad
-ar x(s)=rac{3-s}{4}.
+\bar x(s)=\frac{3-s}{4}.
 ]
 
 The domains overlap iff
 [
 0le s<s_c,
 qquad
-s_c=-3+rac{6sqrt{33}}{11}
+s_c=-3+\frac{6sqrt{33}}{11}
 approx0.1333978072.
 ]
 
 For (0<s<s_c), equilibrium comparisons are restricted to
 [
-x_H(s)le x_0<ar x(s).
+x_H(s)le x_0<\bar x(s).
 ]
 
-At (s=s_c), (x_H=ar x) and the weak-domain inequality is strict, so the overlap is empty.
+At (s=s_c), (x_H=\bar x) and the weak-domain inequality is strict, so the overlap is empty.
 
 ## 2. Consumer surplus from primitives
 
 Define
 [
-x_u=rac12+rac{s}{6}.
+x_u=\frac12+\frac{s}{6}.
 ]
 
 At the accepted uniform price vector:
@@ -61,11 +61,11 @@ Direct primitive integration gives
 [
 CS^d-CS^u
 =
-rac{
--	au^2(52x_0^2-52x_0-1)
-+2sigma	au(18x_0-17)
+\frac{
+-\tau^2(52x_0^2-52x_0-1)
++2sigma\tau(18x_0-17)
 +sigma^2
-}{36	au}.
+}{36\tau}.
 ]
 
 This is exactly the accepted-manuscript Eq. (15) after its outer minus sign is distributed. Thus the previous project claim that Eq. (15) itself was algebraically wrong is retired.
@@ -79,7 +79,7 @@ both primitive integration and accepted Eq. (15) equal
 221/720.
 ]
 
-After substituting (sigma=s	au), however, the accepted printed Eq. (16) places a further global minus sign in front of the same normalized bracket. At the same exact point Eq. (16) equals
+After substituting (sigma=s\tau), however, the accepted printed Eq. (16) places a further global minus sign in front of the same normalized bracket. At the same exact point Eq. (16) equals
 [
 -221/720.
 ]
@@ -92,10 +92,10 @@ When (x_0<x_u), actual primitive integration instead gives
 [
 CS^d-CS^u
 =
-rac{
-sigma^2+12sigma	au x_0-14sigma	au
--8	au^2x_0^2+8	au^2x_0+5	au^2
-}{18	au}.
+\frac{
+sigma^2+12sigma\tau x_0-14sigma\tau
+-8\tau^2x_0^2+8\tau^2x_0+5\tau^2
+}{18\tau}.
 ]
 
 At
@@ -122,14 +122,14 @@ throughout the accepted weak-HBP profile domain. As an equilibrium statement, th
 
 The weak-HBP source-profile profits are
 [
-rac{pi_A^d}{	au}
+\frac{pi_A^d}{\tau}
 =
-rac{s^2+6sx_0-2s+10x_0^2-10x_0+5}{9},
+\frac{s^2+6sx_0-2s+10x_0^2-10x_0+5}{9},
 ]
 [
-rac{pi_B^d}{	au}
+\frac{pi_B^d}{\tau}
 =
-rac{s^2-6sx_0+4s+10x_0^2-10x_0+5}{9}.
+\frac{s^2-6sx_0+4s+10x_0^2-10x_0+5}{9}.
 ]
 
 At the accepted uniform price vector the realized profit formulas are branch dependent.
@@ -137,14 +137,14 @@ At the accepted uniform price vector the realized profit formulas are branch dep
 ### 3.1 Switching branch (x_0ge x_u)
 
 [
-rac{pi_A^d-pi_A^u}{	au}
+\frac{pi_A^d-pi_A^u}{\tau}
 =
-rac{s^2+12sx_0-10s+20x_0^2-20x_0+1}{18},
+\frac{s^2+12sx_0-10s+20x_0^2-20x_0+1}{18},
 ]
 [
-rac{pi_B^d-pi_B^u}{	au}
+\frac{pi_B^d-pi_B^u}{\tau}
 =
-rac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
+\frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
 ]
 
 Accepted Eq. (22) corresponds to the B-profit expression on this branch.
@@ -153,14 +153,14 @@ Accepted Eq. (22) corresponds to the B-profit expression on this branch.
 
 The same accepted uniform prices imply shares (x_0) and (1-x_0). Hence
 [
-rac{pi_A^d-pi_A^u}{	au}
+\frac{pi_A^d-pi_A^u}{\tau}
 =
-rac{s^2+3sx_0-2s+10x_0^2-19x_0+5}{9},
+\frac{s^2+3sx_0-2s+10x_0^2-19x_0+5}{9},
 ]
 [
-rac{pi_B^d-pi_B^u}{	au}
+\frac{pi_B^d-pi_B^u}{\tau}
 =
-rac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9}.
+\frac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9}.
 ]
 
 Both profit branches join continuously at (x_0=x_u).
@@ -171,11 +171,11 @@ s=1/2,qquad x_0=51/100.
 ]
 Primitive demand gives
 [
-pi_B^d=rac{3221}{9000},
+pi_B^d=\frac{3221}{9000},
 qquad
-pi_B^u=rac{49}{120},
+pi_B^u=\frac{49}{120},
 qquad
-pi_B^d-pi_B^u=-rac{227}{4500}<0.
+pi_B^d-pi_B^u=-\frac{227}{4500}<0.
 ]
 
 Extending the switching-branch Eq. (22) formula to this no-switch point would instead give
@@ -191,11 +191,11 @@ On the corrected weak pure-equilibrium overlap,
 [
 0le s<s_c,
 qquad
-x_H(s)le x_0<ar x(s),
+x_H(s)le x_0<\bar x(s),
 ]
 the realized uniform branch is the switching branch and
 [
-oxed{pi_B^d<pi_B^u}.
+\boxed{pi_B^d<pi_B^u}.
 ]
 
 This is the manuscript's only smaller-firm profit theorem.
@@ -206,32 +206,32 @@ With full coverage,
 [
 W=CS+pi_A+pi_B
 =
-eta-c
--	auint_0^1 |z-y(z)|,dz
--sigma N_{m sw}.
+\beta-c
+-\tauint_0^1 |z-y(z)|,dz
+-sigma N_{\rm sw}.
 ]
 
 On the only uniform allocation branch compatible with a weak-domain pure equilibrium,
 [
 W^d-W^u
 =
-rac{	au}{36}
+\frac{\tau}{36}
 left[
 28x_0^2-28x_0+5
 +2s(18x_0-13)+5s^2
-ight].
+\right].
 ]
 
 At the weak upper boundary,
 [
-(W^d-W^u)|_{ar x}
+(W^d-W^u)|_{\bar x}
 =
--rac{	au(1+s)(1+9s)}{144}<0.
+-\frac{\tau(1+s)(1+9s)}{144}<0.
 ]
 
 Hence throughout the corrected weak pure overlap,
 [
-oxed{W^d<W^u}.
+\boxed{W^d<W^u}.
 ]
 
 The accepted endpoint-substitution expression is algebraically wrong, but the qualitative Result-5 welfare ranking survives on the restricted pure-equilibrium domain.
@@ -240,13 +240,13 @@ The accepted endpoint-substitution expression is algebraically wrong, but the qu
 
 For nondegenerate strong dominance,
 [
-ar x(s)le x_0<1,
+\bar x(s)le x_0<1,
 ]
 the source-selected HBP member has (q_A=c). Under this selection and where the uniform pure equilibrium exists,
 [
 CS^d-CS^u
 =
-rac{	au(1-x_0)(16-7x_0-13s)}9.
+\frac{\tau(1-x_0)(16-7x_0-13s)}9.
 ]
 
 Thus accepted Result 6 survives on the corrected pure domain under the source/nonnegative-margin selection.
@@ -259,14 +259,14 @@ s=9/10,qquad x_0=19/20>x_H(s),
 ]
 the source-selected strong-HBP profile and uniform pure equilibrium coexist, yet
 [
-pi_B^d-pi_B^u=rac{41}{900}	au>0.
+pi_B^d-pi_B^u=\frac{41}{900}\tau>0.
 ]
 
 Strong social welfare satisfies
 [
 W^d-W^u
 =
--rac{	au(1-x_0)(1-x_0+2s)}9.
+-\frac{\tau(1-x_0)(1-x_0+2s)}9.
 ]
 It is strictly negative for (x_0<1) and equals zero at (x_0=1).
 
@@ -287,7 +287,7 @@ Therefore at (x_0=1):
 
 | Result | Recertified status |
 |---|---|
-| Result 1 | **OUTSIDE MAINTAINED DOMAIN.** The (sigma>	au) result lies outside the maintained (sigma<	au) reassessment domain and is not altered by the uniform-price correction. |
+| Result 1 | **OUTSIDE MAINTAINED DOMAIN.** The (sigma>\tau) result lies outside the maintained (sigma<\tau) reassessment domain and is not altered by the uniform-price correction. |
 | Result 2 | **SURVIVES WITH RESTRICTED DOMAIN.** The dominant-firm share ranking survives on the corrected pure domain; it is strict for nondegenerate comparisons and becomes equality at (x_0=1). The accepted weak displayed difference is not the difference implied by its own shares. |
 | Result 3 | **INVALID AS STATED.** Eq. (15) itself is correct on its switching branch; printed Eq. (16) reverses its sign, and the no-switch region requires a separate realized-allocation expression. |
 | Result 4 | **INVALID AS STATED OVER THE FULL WEAK DOMAIN.** Eq. (22) is a switching-branch formula. On the corrected weak pure overlap, (pi_B^d<pi_B^u); outside it, profile profits must be evaluated on the realized branch. |
