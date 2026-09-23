@@ -274,6 +274,24 @@ def self_check() -> None:
     assert not x_h_condition(F(4, 5), F(1, 2))
     assert x_h_condition(F(1, 2), F(0))
 
+    # Deterministic rational adversarial sweep: the primitive-cutoff global
+    # maximizer agrees with the candidate correspondence or finds a profitable
+    # kink/plateau deviation. This is regression evidence, not the analytic proof.
+    for s in (F(1, 20), F(1, 10), F(1, 2), F(9, 10)):
+        a, b = source_uniform_prices(s)
+        xu = F(1, 2) + s / 6
+        for x in (F(51, 100), F(3, 5), F(7, 10), F(9, 10), F(99, 100)):
+            best_a, _ = direct_best_response_candidates("A", b, x, s)
+            best_b, _ = direct_best_response_candidates("B", a, x, s)
+            candidate_a = profit_a(a, b, x, s)
+            candidate_b = profit_b(a, b, x, s)
+            if x_h_condition(x, s):
+                assert best_a == candidate_a and best_b == candidate_b
+            elif x <= xu:
+                assert best_a > candidate_a
+            else:
+                assert best_b > candidate_b
+
     # An exact equality-boundary point: the small firm is indifferent between
     # its interior response and the no-poaching kink, but only the interior
     # response intersects A's best response.
@@ -318,12 +336,19 @@ def self_check() -> None:
     assert printed_eq15 == F(1279, 3600)
     assert direct_gap > 0 and printed_eq15 > 0
 
-    # Weak-welfare endpoint identity from Eq. (23), evaluated exactly.
+    # Algebraic endpoint substitution into Eq. (23)'s switching-branch formula.
+    # For s > 3/5, xbar lies below x_u, so this is not the actual no-switch
+    # profile welfare gap; the latter is checked separately below.
     for s in (F(0), F(1, 10), F(1, 2), F(99, 100)):
         xbar = (3 - s) / 4
         eq23 = (28 * xbar * xbar - 28 * xbar + 5
                 + 2 * s * (18 * xbar - 13) + 5 * s * s) / 36
         assert eq23 == -(1 + s) * (1 + 9 * s) / 144
+    for s in (F(7, 10), F(99, 100)):
+        xbar = (3 - s) / 4
+        no_switch_gap = (5 * s * s - 4 * s + 32 * xbar * xbar
+                         - 32 * xbar + 7) / 18
+        assert no_switch_gap == (s - 1) * (7 * s - 1) / 18 < 0
 
     # Strong HBP: the candidate q_A=c is unique when margins must be nonnegative.
     # If below-cost poaching is allowed, a bounded no-demand equilibrium family
@@ -375,6 +400,28 @@ def self_check() -> None:
     pi_b_u = p_b_u * (1 - share_a_direct(p_a_u, p_b_u, x, s))
     welfare_gap = cs_d + pi_a_d + pi_b_d - cs_u - pi_a_u - pi_b_u
     assert welfare_gap == -(1 - x) * ((1 - x) + 2 * s) / 9
+
+    # Strong-dominance CS/Welfare branch regression: the uniform candidate has
+    # no switching when x < x_u. Eq. (25)/(28) are not the actual profile
+    # formulas there, although the welfare sign survives.
+    x, s = F(51, 100), F(99, 100)
+    assert x >= (3 - s) / 4 and x < F(1, 2) + s / 6
+    assert not x_h_condition(x, s)
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_strong_profile_unrestricted(x, s, F(0))
+    p_a_u, p_b_u = source_uniform_prices(s)
+    cs_d = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    cs_u = uniform_cs_direct(p_a_u, p_b_u, x, s)
+    assert cs_d - cs_u == F(1, 14400)
+    eq25 = (1 - x) * (16 - 7 * x - 13 * s) / 9
+    assert eq25 == F(-539, 22500)
+    pi_a_d, pi_b_d = hbp_profits_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    q_u = share_a_direct(p_a_u, p_b_u, x, s)
+    pi_a_u = p_a_u * q_u
+    pi_b_u = p_b_u * (1 - q_u)
+    welfare_gap = cs_d + pi_a_d + pi_b_d - cs_u - pi_a_u - pi_b_u
+    assert welfare_gap == F(-587, 72000)
+    eq28 = -(1 - x) * ((1 - x) + 2 * s) / 9
+    assert eq28 == F(-12103, 90000)
 
 
 if __name__ == "__main__":

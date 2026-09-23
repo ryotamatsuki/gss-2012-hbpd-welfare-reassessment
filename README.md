@@ -25,7 +25,7 @@ x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
 
 The candidate source profile is a pure equilibrium above this boundary, including equality; below it the current candidate result is no pure-strategy equilibrium. This remains subject to independent Stage 4A certification. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
 
-The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. The HECER Eq. (15) display is nevertheless false on a valid switching branch. See `derivations/consumer_surplus_primitive_reconstruction.md`.
+The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the printed Result 2 sign reversal does not survive. An analogous strong-HBP branch error affects Result 4 outside the uniform pure-equilibrium region. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
 
 ## Repository policy
 
@@ -44,8 +44,12 @@ The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails di
 * `docs/STAGE_00_EVIDENCE_FREEZE.md` — current Stage 0 gate and source boundary.
 * `sources/gss_2012_version_boundary.md` — source lineage and version limitations.
 * `derivations/uniform_price_game_full_demand.md` — full clipped demand and provisional pure theorem.
+* `derivations/uniform_price_global_best_responses.md` — global piecewise best-response proof.
 * `derivations/consumer_surplus_primitive_reconstruction.md` — direct CS integrals and branch formulas.
+* `derivations/welfare_and_result_impact.md` — primitive welfare branches and provisional Results 1–5 map.
 * `code/uniform_game_cleanroom.py` — exact-rational clean-room regressions and primitive evaluators.
+* `code/symbolic_reconstruction.py` — SymPy integration and welfare identity checks.
 * `results/stage04_global_uniform_game_progress.md` — work completed, checks, and open gates.
+* `results/stage04a_independent_certificate.md` — current adversarial certification record.
 
 The canonical stage route and completion status are tracked in `PROJECT_STATUS.md`.
