@@ -51,6 +51,10 @@ All arithmetic regressions pass under `python code/uniform_game_cleanroom.py` (P
 
 The negative-margin reduction is recorded in the full-demand derivation. A firm with positive demand and a below-cost price can set (p_i=c) for zero profit. Full capture cannot be an equilibrium: if the winning firm has a nonnegative margin, the excluded firm can choose a positive margin just inside its demand threshold; if the winning margin is negative, it can instead move to cost. This reduction still needs a line-by-line independent review for all capture-boundary equalities.
 
+## Zero-margin boundary lemma (explicitly closed in this proof record)
+
+Clipped demand is continuous in (d). If a firm has zero margin but positive demand, it can increase its own price by a sufficiently small amount, preserve positive demand, and obtain positive profit. If its demand is zero, the profile is full capture by the rival, already excluded by a positive-margin entry deviation. Therefore no zero-margin profile can be a pure equilibrium. This closes the price-floor boundary before using smooth-branch FOCs; it does not close the remaining capture-domain, source-strategy-space, or formalization obligations.
+
 ## Remaining certification obligations
 
 1. Have the exhaustive price-difference proof checked line by line against every boundary and feasible-set endpoint.

@@ -30,6 +30,8 @@ If (d\le L), A has zero demand. Since (b\ge0), it can choose (a'=(b+1+s)/2>0), g
 
 If a firm has positive demand and a negative net margin, it earns a negative payoff and can instead set (p_i=c), obtaining zero. The capture cases just excluded also rule out zero-demand boundary profiles. Therefore any equilibrium lies in a positive-demand switching or plateau region and has nonnegative margins; all smooth-branch FOCs below are interior.
 
+More explicitly, the zero-margin boundary cannot be an equilibrium. The clipped share (q_A(d)) is continuous; if (a=0) with (q_A>0), a sufficiently small increase (a'=\epsilon>0) preserves positive demand and yields positive profit. If (q_A=0), the profile is full capture by B and has already been excluded. Symmetrically, if (b=0) with (q_B>0), a small positive increase in (b) preserves positive demand and yields positive profit; if (q_B=0), full capture by A has already been excluded. Thus every equilibrium candidate has (a,b>0). Combined with the capture, plateau, and kink exclusions, the first-order conditions are applied only on strict interiors of the switching branches.
+
 ## Exclude the no-switch plateau and both kinks
 
 On (\alpha\le d\le\beta), A's payoff (x(b-d)) decreases in (d). At any (d>\alpha), A raises its own price to move (d) down to (\alpha), keeping share (x) and increasing profit. At (d=\alpha), B raises its own price to reach (\beta), keeps share (1-x), and increases profit by ((\beta-\alpha)(1-x)=2s(1-x)>0). At (d=\beta), A raises its price to reach (\alpha), keeping share (x) and increasing profit by (x(\beta-\alpha)=2sx>0). Thus no plateau point or plateau kink is a Nash equilibrium.

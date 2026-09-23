@@ -144,6 +144,8 @@ The author-version model text explicitly states full market coverage and the uti
 
 Thus no pure equilibrium uses negative net margins. This establishes that the candidate pure correspondence is the same on the unrestricted real-price domain and on (p_i\ge c). The exact Eq. (12) profitable-deviation counterexample below is itself strictly above cost and does not depend on this reduction.
 
+The zero-margin boundary is also excluded. The clipped share (q_A(d)) is continuous. If (a=0) and (q_A(d)>0), raising A's margin to a sufficiently small (\epsilon>0) changes (d) continuously and preserves positive A demand, yielding positive profit instead of zero. If (q_A=0), the profile is full capture by B, already excluded. Symmetrically, if (b=0) and (q_B>0), a small positive increase in B's margin preserves positive B demand and yields positive profit; if (q_B=0), the profile is full capture by A, already excluded. Hence all equilibrium candidates have (a,b>0).
+
 ## 6. Exact source-candidate deviation
 
 For ((\tau,\sigma,x,c)=(1,1/2,3/5,0)), the source candidate is ((p_A,p_B)=(7/6,5/6)), with B profit (25/72). The deviation (p'_B=28/15) makes (d=\beta), so the allocation is at the no-switch kink and B's profit is (56/75). The exact gain is
