@@ -118,29 +118,46 @@ The previous upstream regression at \(s=.99,x_0=.501\) is permanently rejected a
 
 ## 3. Profit accounting under weak dominance
 
-The weak-HBP minus uniform-candidate normalized profit differences are
+The accepted Eq. (18) uniform profits presuppose the one-way-switch allocation. Therefore the weak-HBP minus uniform-source-profile profit differences are piecewise.
 
+For \(x_0\ge x_u\), the switching-branch expressions are
 \[
 \frac{\pi_A^d-\pi_A^u}{\tau}
 =
 \frac{s^2+12sx_0-10s+20x_0^2-20x_0+1}{18},
 \]
-
 \[
 \frac{\pi_B^d-\pi_B^u}{\tau}
 =
 \frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18},
 \]
-
 and
-
 \[
 \frac{(\pi_A^d+\pi_B^d)-(\pi_A^u+\pi_B^u)}{\tau}
 =
 \frac{s^2+2s+20x_0^2-20x_0+1}{9}.
 \]
 
-The accepted manuscript's Result 4 identifies a high-\(s\) profile region where B's HBP profit exceeds its uniform-candidate profit. That region is disjoint from the corrected weak-HBP / pure-uniform equilibrium overlap.
+For \(x_0<x_u\), realized uniform demand remains at the inherited shares and the correct differences are
+\[
+\frac{\pi_A^d-\pi_A^u}{\tau}
+=
+\frac{s^2+3sx_0-2s+10x_0^2-19x_0+5}{9},
+\]
+\[
+\frac{\pi_B^d-\pi_B^u}{\tau}
+=
+\frac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9},
+\]
+and
+\[
+\frac{(\pi_A^d+\pi_B^d)-(\pi_A^u+\pi_B^u)}{\tau}
+=
+\frac{2s^2-6sx_0+5s+20x_0^2-20x_0+1}{9}.
+\]
+All three pairs join continuously at \(x_0=x_u\).
+
+Hence accepted Result 4 cannot be preserved globally merely by calling it a profile comparison: accepted Eq. (22) is itself branch-specific.
 
 Indeed, for all \(0\le s<s_c\), the numerator of B's gap is a convex quadratic in \(x\). On the larger interval \([1/2,\bar x]\) its endpoint values are
 \[
@@ -160,7 +177,18 @@ Thus, whenever both regimes admit the pure equilibria being compared under weak 
 \boxed{\pi_B^d<\pi_B^u}.
 \]
 
-The accepted manuscript's high-switching-cost Result-4 region remains interpretable only as a comparison with the Eq. (12) **counterfactual price profile**, not as a comparison of two pure equilibria.
+As an exact branch-regression witness, at
+\[
+s=\frac12,\qquad x_0=\frac{51}{100}<x_u
+\]
+primitive demand gives
+\[
+\pi_B^d=\frac{3221}{9000}\tau,\qquad
+\pi_B^u=\frac{49}{120}\tau,
+\]
+so \(\pi_B^d-\pi_B^u=-227\tau/4500<0\). Extending Eq. (22)'s switching expression instead gives \(4\tau/375>0\). The source threshold in Result 4 therefore is not a branch-unrestricted profile threshold.
+
+On the corrected weak pure-equilibrium overlap, however, \(x_0\ge x_H>x_u\), so the first branch applies and the smaller-firm loss result above is unchanged.
 
 ## 4. Social welfare from real resource costs
 
@@ -264,7 +292,7 @@ Thus Result 7 survives on the corrected pure-equilibrium domain and is robust to
 | **Result 1** — if \(\sigma>\tau\), history-based poaching ceases | No | lies outside the maintained Assumption-1 domain \(\sigma<\tau\) used for the reassessment | **OUTSIDE MAINTAINED DOMAIN / NOT AFFECTED BY UPE CORRECTION** |
 | **Result 2** — dominant firm's share is larger under uniform pricing | Yes | displayed weak-branch difference is wrong; correct weak difference is \((2x_0+s-1)/6\) | **QUALITATIVE SIGN SURVIVES; EQUILIBRIUM CLAIM RESTRICTED TO \(x_0\ge x_H\)** |
 | **Result 3** — weak-HBP CS is higher iff condition (17) | Yes | Eq. (13) branch ordering + Eq. (15) algebra | **INVALIDATED AS STATED**; primitive CS gives \(CS^d>CS^u\) throughout weak profile domain; equilibrium comparison only on pure overlap |
-| **Result 4** — smaller firm benefits from HBP iff switching cost is high enough | Yes | high-\(s\) benefit region is outside the corrected weak pure-equilibrium overlap | **INVALIDATED AS AN EQUILIBRIUM CLAIM**; on every weak-domain pure-equilibrium comparison, \(\pi_B^d<\pi_B^u\) |
+| **Result 4** — smaller firm benefits from HBP iff switching cost is high enough | Yes | Eq. (22) also uses the switching-allocation uniform profit and fails as a profile formula when `x_0<x_u` | **RESTRICTED / BRANCH-DEPENDENT**; on every weak-domain pure-equilibrium comparison, \(\pi_B^d<\pi_B^u\); outside it, profile profit must be evaluated piecewise |
 | **Result 5** — weak-dominance social welfare is higher under uniform pricing | Yes | accepted endpoint substitution is algebraically wrong and branch qualification is needed | **SURVIVES ON RESTRICTED PURE-EQUILIBRIUM DOMAIN** |
 | **Result 6** — strong-dominance CS can be lower under HBP above a threshold | Yes | depends on strong-HBP price selection if below-cost prices are allowed | **SURVIVES ON CORRECTED PURE DOMAIN UNDER SOURCE/NONNEGATIVE-MARGIN HBP SELECTION** |
 | **Result 7** — strong-dominance social welfare is higher under uniform pricing | Yes | strictness fails only at degenerate \(x_0=1\); HBP price selection changes transfers but not W | **SURVIVES ON CORRECTED PURE DOMAIN; SELECTION-INVARIANT WELFARE** |
@@ -311,7 +339,7 @@ The most material changes are:
 
 1. the weak-dominance pure-equilibrium comparison exists only for \(s<s_c\approx0.1334\);
 2. the accepted Result-3 weak CS reversal disappears;
-3. the accepted Result-4 small-firm HBP-profit region disappears as a pure-equilibrium comparison;
+3. accepted Result 4 is not branch-unrestricted even as a profile claim, while on the weak pure-equilibrium overlap the smaller firm strictly loses from HBP;
 4. weak and strong social-welfare signs survive on the corrected pure domains;
 5. strong CS Result 6 survives only with its equilibrium-domain and HBP-selection qualifications.
 

@@ -339,6 +339,22 @@ def self_check() -> None:
     assert direct_gap == source_eq15 == F(221, 720)
     assert source_eq16_lhs == -F(221, 720)
 
+    # Weak-HBP smaller-firm profit must use the realized uniform allocation.
+    # This point is on the no-switch branch. Extending accepted Eq. (22)'s
+    # switching-branch expression gives the wrong sign.
+    s, x = F(1, 2), F(51, 100)
+    p_a_u, p_b_u = source_uniform_prices(s)
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
+    _, pi_b_d = hbp_profits_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    pi_b_u = profit_b(p_a_u, p_b_u, x, s)
+    switching_extension = (
+        s * s - 12 * s * x + 14 * s + 20 * x * x - 20 * x + 1
+    ) / 18
+    assert pi_b_d == F(3221, 9000)
+    assert pi_b_u == F(49, 120)
+    assert pi_b_d - pi_b_u == -F(227, 4500)
+    assert switching_extension == F(4, 375) > 0
+
     # Algebraic endpoint substitution into Eq. (23)'s switching-branch formula.
     # For s > 3/5, xbar lies below x_u, so this is not the actual no-switch
     # profile welfare gap; the latter is checked separately below.
@@ -390,6 +406,17 @@ def self_check() -> None:
     assert profit_au == profit_a0
     assert profit_bu - profit_b0 == u * (1 - x)
     assert (csu + profit_au + profit_bu) == (cs0 + profit_a0 + profit_b0)
+
+    # Strong dominance is a separate profit regime: the weak-overlap smaller-firm
+    # loss must not be generalized. At this source-selected strong-HBP point,
+    # both pure equilibria exist and B gains from HBP.
+    x, s = F(19, 20), F(9, 10)
+    assert x_h_condition(x, s) and x > (3 - s) / 4
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_strong_profile_unrestricted(x, s, F(0))
+    _, pi_b_d = hbp_profits_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    p_a_u, p_b_u = source_uniform_prices(s)
+    pi_b_u = profit_b(p_a_u, p_b_u, x, s)
+    assert pi_b_d - pi_b_u == F(41, 900)
 
     # Direct welfare identity in a strong region that also has a uniform pure NE.
     x, s = F(19, 20), F(1, 2)

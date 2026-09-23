@@ -50,9 +50,9 @@ CS^d-CS^u=\frac{\tau[(1-s)(7-s)+\text{a strictly positive increase in }x_0]}{18}
 
 More explicitly the numerator is (s^2+12sx_0-14s-8x_0^2+8x_0+5), with derivative (12s+8-16x_0>0) for (1/2<x_0<x_u), and at (x_0=1/2) it equals ((1-s)(7-s)>0).
 
-On (x_0\ge x_u), the corrected switching-branch difference is concave in (x_0), agrees with the no-switch branch at (x_u), and at the weak upper endpoint (xbar=(3-s)/4) equals ((1+s)(43-45s)/144>0) whenever that branch reaches the endpoint ((s\le3/5)). Hence direct profile integration gives (CS^d>CS^u) throughout the weak-dominance parameter domain. The HECER Eq. (15)/Result 2 sign reversal does not survive the primitive branch-correct calculation.
+On (x_0\ge x_u), the corrected switching-branch difference is concave in (x_0), agrees with the no-switch branch at (x_u), and at the weak upper endpoint (xbar=(3-s)/4) equals ((1+s)(43-45s)/144>0) whenever that branch reaches the endpoint ((s\le3/5)). Hence direct profile integration gives (CS^d>CS^u) throughout the weak-dominance parameter domain. Accepted Eq. (15) matches the primitive switching-branch expression; the Eq. (15)→Eq. (16) sign inversion and the separate no-switch branch are what invalidate the stated consumer-surplus reversal.
 
-This is equilibrium CS ordering only where (x_0\ge x_H(s)); outside it the uniform candidate is not a pure equilibrium. The upstream claimed negative exact value at ((s,x_0)=(.99,.501)) is a branch extension error. A valid-branch exact point ((.1,.7)) confirms that the printed Eq. (15) also has an independent sign/algebra error, although the gap remains positive there.
+This is equilibrium CS ordering only where (x_0\ge x_H(s)); outside it the uniform candidate is not a pure equilibrium. The upstream claimed negative exact value at ((s,x_0)=(.99,.501)) is a branch-extension error. At the valid switching point ((.1,.7)), accepted Eq. (15) and the primitive integral both equal (221/720); the source algebraic error is the subsequent sign inversion in Eq. (16).
 
 ## 5. Result 3 — weak-branch social welfare
 

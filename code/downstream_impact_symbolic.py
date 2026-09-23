@@ -53,6 +53,30 @@ industry_weak_gap = (
     s**2 + 2*s + 20*x**2 - 20*x + 1
 ) / 9
 
+# Realized no-switch uniform profile. These replace the switching formulas
+# whenever x < x_u.
+pi_a_weak_gap_noswitch = (
+    s**2 + 3*s*x - 2*s + 10*x**2 - 19*x + 5
+) / 9
+pi_b_weak_gap_noswitch = (
+    s**2 - 9*s*x + 7*s + 10*x**2 - x - 4
+) / 9
+industry_weak_gap_noswitch = (
+    2*s**2 - 6*s*x + 5*s + 20*x**2 - 20*x + 1
+) / 9
+
+assert_zero((pi_a_weak_gap_noswitch - pi_a_weak_gap).subs(x, xu))
+assert_zero((pi_b_weak_gap_noswitch - pi_b_weak_gap).subs(x, xu))
+assert_zero((industry_weak_gap_noswitch - industry_weak_gap).subs(x, xu))
+assert_zero(
+    pi_b_weak_gap_noswitch.subs({s: sp.Rational(1, 2), x: sp.Rational(51, 100)})
+    + sp.Rational(227, 4500)
+)
+assert_zero(
+    pi_b_weak_gap.subs({s: sp.Rational(1, 2), x: sp.Rational(51, 100)})
+    - sp.Rational(4, 375)
+)
+
 # Endpoint identities used to show B's gap is strictly negative throughout
 # the corrected weak-HBP / pure-uniform overlap.
 assert_zero(
@@ -87,6 +111,13 @@ pi_a_strong_gap = 2*(x-1)*(s+x+2)/9
 pi_b_strong_gap = (1-x)*(13*s+10*x-13)/9
 industry_strong_gap = (1-x)*(11*s+8*x-17)/9
 w_strong_gap = -(1-x)*(1-x+2*s)/9
+
+# The smaller-firm ranking can reverse under strong dominance even where the
+# uniform pure equilibrium exists.
+assert_zero(
+    pi_b_strong_gap.subs({s: sp.Rational(9, 10), x: sp.Rational(19, 20)})
+    - sp.Rational(41, 900)
+)
 
 # Equality of social welfare across the below-cost strong-HBP zero-sales
 # selection family is checked in uniform_game_cleanroom.py.
