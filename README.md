@@ -10,7 +10,7 @@ Reconstruct the global uniform-price game, characterize its pure-strategy equili
 
 ## Current status
 
-**Stage 8 is CLOSED/GO — CANONICAL THEORY FROZEN.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, and 8 have passed; the next canonical gate is Stage 9 — Repository / Reproducibility Setup. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
+**Stage 9 is CLOSED/GO — REPRODUCIBILITY PASS.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, 8, and 9 have passed; the next canonical gate is Stage 10 — Section-by-Section Paper Construction. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
 No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
@@ -65,3 +65,8 @@ The final contribution is certified as **MODEL-SPECIFIC** rather than generic. L
 ## Stage 8 freeze
 
 The canonical theorem set, accepted-manuscript Results 1–7 impact, mixed-strategy exclusion, strong-HBP selection condition, MODEL-SPECIFIC contribution classification, formal-verification scope, benchmark definitions, and permanent counterexample regressions are frozen in `results/stage08_canonical_theory_freeze.md`. Post-freeze substantive changes are governed by `docs/THEORY_CHANGE_CONTROL.md`.
+
+
+## Stage 9 reproducibility
+
+The frozen theory now reproduces from clean CI checkout with Python 3.12/SymPy 1.14.0 exact and symbolic checks, permanent unittests, deterministic CSV/SVG regeneration, source-PDF guard, Lean 4.19.0/mathlib pinned build, and a pdfLaTeX manuscript scaffold. See `results/stage09_reproducibility_report.md` and `docs/REPRODUCIBILITY.md`.
