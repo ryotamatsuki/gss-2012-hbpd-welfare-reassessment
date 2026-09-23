@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: python-checks exact symbolic downstream tests generate verify-generated lean manuscript all clean
+.PHONY: python-checks exact symbolic downstream tests generate verify-generated manuscript-audit lean manuscript all clean
 
 python-checks: exact symbolic downstream tests
 
@@ -22,11 +22,16 @@ generate:
 verify-generated:
 	$(PYTHON) code/verify_generated_artifacts.py
 
+manuscript-audit:
+	$(PYTHON) code/audit_manuscript_claims.py
+
 lean:
 	cd formal && lake update && lake exe cache get && lake build
 
-manuscript:
+manuscript: manuscript-audit
 	mkdir -p build/manuscript
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
+	bibtex build/manuscript/main
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
 
