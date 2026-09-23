@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 7.5A — GO / CLOSED. Next gate: Stage 8 — Canonical Theory Freeze.**
+**Stage 8 — GO / CANONICAL THEORY FROZEN. Next gate: Stage 9 — Repository / Reproducibility Setup.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -30,7 +30,8 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Formal verification | PASS | Lean 4.19.0 / mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`; clean CI build, no project placeholders/axioms. |
 | Stage 7.5 | GO / CLOSED | Full 15–20 page correction/reassessment architecture frozen; mixed pricing excluded. |
 | Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
-| Stage 8 theory freeze | NEXT | All pre-freeze mathematical/scope/formal gates are now closed. |
+| Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
+| Stage 9 reproducibility | NEXT | Convert current research artifacts into a fresh-clone reproducible production setup without changing frozen theory. |
 | Stage 14 / submission | NOT REACHED | No submission package or portal action. |
 | Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
@@ -68,9 +69,9 @@ At \(x=x_H(s)\), B has a second payoff-equal kink best response, but it does not
 * \`code/symbolic_reconstruction.py\`
 * \`results/mixed_equilibrium_scope_decision.md\`
 
-## Remaining qualification before Stage 8
+## Post-freeze state
 
-No mathematical gate remains open. Stage 8 must freeze the certified theorem set, the MODEL-SPECIFIC contribution scope, mixed-strategy exclusion, strong-HBP selection qualification, and accepted-manuscript/VOR wording boundary without changing theory.
+No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change repository/reproducibility infrastructure only; substantive theory changes require rollback under `docs/THEORY_CHANGE_CONTROL.md`.
 
 
 ## Stage 7.5A evidence
@@ -82,3 +83,12 @@ No mathematical gate remains open. Stage 8 must freeze the certified theorem set
 * `results/stage075a_formal_verification_certificate.md`
 * `formal/Gss2012/Core.lean`
 * `.github/workflows/lean-formal.yml`
+
+
+## Stage 8 freeze evidence
+
+* `results/stage08_canonical_theory_freeze.md`
+* `results/stage08_theorem_registry.md`
+* `results/stage08_counterexample_registry.md`
+* `results/stage08_benchmark_selection_register.md`
+* `docs/THEORY_CHANGE_CONTROL.md`
