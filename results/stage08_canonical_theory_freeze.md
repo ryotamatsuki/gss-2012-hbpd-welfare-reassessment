@@ -253,7 +253,7 @@ At \(s=s_c\), \(x_H=\bar x\) and the weak-domain inequality is strict, so the ov
 
 Let
 [
-x_u=rac12+rac{s}{6}.
+x_u=\frac12+\frac{s}{6}.
 ]
 
 The accepted uniform-price vector induces:
@@ -265,28 +265,28 @@ On the switching branch,
 [
 CS^d-CS^u
 =
-rac{
--	au^2(52x_0^2-52x_0-1)
-+2sigma	au(18x_0-17)
+\frac{
+-\tau^2(52x_0^2-52x_0-1)
++2sigma\tau(18x_0-17)
 +sigma^2
 }{
-36	au
+36\tau
 }.
 ]
 
 This expression is exactly accepted-manuscript Eq. (15) after distributing its outer minus sign. The previous project claim that Eq. (15) itself was algebraically wrong is withdrawn.
 
-After substituting (sigma=s	au), accepted printed Eq. (16) adds a further global minus sign to the same bracket. At (s=1/10,x_0=7/10), primitive integration and Eq. (15) both equal (221/720), whereas printed Eq. (16) equals (-221/720).
+After substituting (sigma=s\tau), accepted printed Eq. (16) adds a further global minus sign to the same bracket. At (s=1/10,x_0=7/10), primitive integration and Eq. (15) both equal (221/720), whereas printed Eq. (16) equals (-221/720).
 
 On the no-switch branch,
 [
 CS^d-CS^u
 =
-rac{
-sigma^2+12sigma	au x_0-14sigma	au
--8	au^2x_0^2+8	au^2x_0+5	au^2
+\frac{
+sigma^2+12sigma\tau x_0-14sigma\tau
+-8\tau^2x_0^2+8\tau^2x_0+5\tau^2
 }{
-18	au
+18\tau
 }.
 ]
 
@@ -300,16 +300,16 @@ At the accepted uniform price vector, realized profit is branch dependent.
 
 For (x_0ge x_u),
 [
-rac{pi_B^d-pi_B^u}{	au}
+\frac{pi_B^d-pi_B^u}{\tau}
 =
-rac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
+\frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
 ]
 
 For (x_0<x_u),
 [
-rac{pi_B^d-pi_B^u}{	au}
+\frac{pi_B^d-pi_B^u}{\tau}
 =
-rac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9}.
+\frac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9}.
 ]
 
 The formulas agree at (x_0=x_u). Accepted Eq. (22) is the switching-branch expression and cannot be extrapolated into the no-switch region.
@@ -345,11 +345,11 @@ The accepted endpoint-substitution expression is algebraically incorrect, but th
 
 ## 14. Refrozen strong-HBP selection qualification
 
-For nondegenerate strong dominance (ar x(s)le x_0<1), unrestricted real prices generate a zero-sales poaching-price family.
+For nondegenerate strong dominance (\bar x(s)le x_0<1), unrestricted real prices generate a zero-sales poaching-price family.
 
 In normalized notation
 [
-u=rac{q_A-c}{	au},
+u=\frac{q_A-c}{\tau},
 ]
 the family satisfies
 [
@@ -357,7 +357,7 @@ the family satisfies
 ]
 with corresponding B loyalty price
 [
-rac{p_B-c}{	au}=u+2x_0-1+s.
+\frac{p_B-c}{\tau}=u+2x_0-1+s.
 ]
 
 Across this nondegenerate family:
@@ -378,7 +378,7 @@ For nondegenerate (x_0<1), under the source/nonnegative-margin strong-HBP select
 [
 CS^d-CS^u
 =
-rac{	au(1-x_0)(16-7x_0-13s)}9.
+\frac{\tau(1-x_0)(16-7x_0-13s)}9.
 ]
 
 The accepted strong-HBP CS threshold survives on the corrected pure-uniform domain under this selection.
@@ -406,7 +406,7 @@ This result is selection-invariant.
 
 | Result | Refrozen corrected status |
 |---|---|
-| Result 1 | outside maintained (sigma<	au) reassessment domain; not affected by UPE correction |
+| Result 1 | outside maintained (sigma<\tau) reassessment domain; not affected by UPE correction |
 | Result 2 | survives on the corrected pure domain; strict share ranking applies only to nondegenerate comparisons and becomes equality at (x_0=1); displayed weak-branch difference is wrong |
 | Result 3 | invalidated as stated; Eq. (15) itself is correct on the switching branch, Eq. (16) reverses its sign, and no-switch branch accounting differs |
 | Result 4 | invalidated as stated over the full weak domain because Eq. (22) is a switching-branch formula; on the weak pure overlap (pi_B^d<pi_B^u) |
