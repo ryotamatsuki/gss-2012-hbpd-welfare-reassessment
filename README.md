@@ -10,7 +10,7 @@ Reconstruct the global uniform-price game, characterize its pure-strategy equili
 
 ## Current status
 
-**Stage 7.5A is CLOSED/GO.** Stages 1–4, 4A, 6, 7, 7.5, and 7.5A have passed; the next canonical gate is Stage 8 — Theory Freeze. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
+**Stage 8 is CLOSED/GO — CANONICAL THEORY FROZEN.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, and 8 have passed; the next canonical gate is Stage 9 — Repository / Reproducibility Setup. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
 No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
@@ -60,3 +60,8 @@ The canonical stage route and completion status are tracked in `PROJECT_STATUS.m
 ## Stage 7.5A closure
 
 The final contribution is certified as **MODEL-SPECIFIC** rather than generic. Lean 4.19.0 with mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b` formally verifies the selected proof-critical algebraic/inequality core. The full continuum demand/Nash model remains analytically certified rather than fully encoded in Lean.
+
+
+## Stage 8 freeze
+
+The canonical theorem set, accepted-manuscript Results 1–7 impact, mixed-strategy exclusion, strong-HBP selection condition, MODEL-SPECIFIC contribution classification, formal-verification scope, benchmark definitions, and permanent counterexample regressions are frozen in `results/stage08_canonical_theory_freeze.md`. Post-freeze substantive changes are governed by `docs/THEORY_CHANGE_CONTROL.md`.
