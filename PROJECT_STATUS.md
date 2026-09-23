@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 10 — GO / MANUSCRIPT CONSTRUCTION CLOSED. Next gate: Stage 11 — Robustness / Referee Attack Gate.**
+**Stage 11 — GO / REFEREE ATTACK CLOSED. Next gate: Stage 12 — Journal Positioning.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -33,7 +33,8 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
 | Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
 | Stage 10 manuscript construction | GO / CLOSED | Full 18-page manuscript build, 5 propositions/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
-| Stage 11 referee attack | NEXT | Independently attack the full manuscript for theorem absorption, scope inflation, boundary errors, exposition drift, welfare mechanicality, and journal-fit vulnerabilities. |
+| Stage 11 referee attack | GO / CLOSED | No certification regression; three close-literature omissions fixed; no theory rollback required. |
+| Stage 12 journal positioning | NEXT | Build broad journal universe and select target from current official scope/evidence. |
 | Stage 14 / submission | NOT REACHED | No submission package or portal action. |
 | Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
