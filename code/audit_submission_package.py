@@ -23,6 +23,10 @@ assert 3 <= len(HIGHLIGHTS) <= 5, HIGHLIGHTS
 for bullet in HIGHLIGHTS:
     assert len(bullet) <= 85, (len(bullet), bullet)
 
+# Audit-repair guards: keep the weak-profit claim scoped and prevent the
+# retired Eq. (15) mis-transcription from re-entering submission materials.
+assert "The smaller firm loses from HBP on the weak pure-equilibrium overlap." in HIGHLIGHTS
+
 abstract_match = re.search(
     r"\\begin\{abstract\}(.*?)\\end\{abstract\}", MAIN, flags=re.S
 )
@@ -47,6 +51,15 @@ required_main = [
     "pure-strategy",
 ]
 combined = MAIN + "\n" + DECL + "\n" + (ROOT / "manuscript/sections/06_scope_robustness.tex").read_text(encoding="utf-8")
+all_submission_text = "\n".join(
+    p.read_text(encoding="utf-8", errors="replace")
+    for root in (ROOT / "manuscript", ROOT / "submission")
+    for p in root.rglob("*")
+    if p.is_file() and p.suffix.lower() in {".tex", ".md", ".txt", ".bib"}
+)
+assert "1279/3600" not in all_submission_text
+assert "accepted Eq.~(15) is nevertheless algebraically wrong" not in all_submission_text
+assert "corrected weak-dominance pure-equilibrium overlap" in MAIN + "\n" + COVER
 for phrase in required_main:
     assert phrase in combined, phrase
 
