@@ -169,7 +169,7 @@ Permanent regressions in \`code/uniform_game_cleanroom.py\` include:
 
 **APPLICABLE.** The project is a published-result correction involving a square-root threshold, exact inequalities, piecewise demand, equality logic, and welfare identities.
 
-Stage 4A records the target map; Stage 7.5A must close it with a compiled Lean 4/mathlib certificate, statement-fidelity audit, no-\`sorry\`/\`admit\` audit, and toolchain provenance.
+Stage 4A records the target map in `results/stage04a_formal_verification_target_map.md`; Stage 7.5A must close it with a compiled Lean 4/mathlib certificate, statement-fidelity audit, no-`sorry`/`admit` audit, and toolchain provenance.
 
 Formal verification is deliberately not counted as the independent Stage-4A path.
 
