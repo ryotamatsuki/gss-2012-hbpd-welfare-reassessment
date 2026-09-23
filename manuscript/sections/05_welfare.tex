@@ -1,0 +1,95 @@
+\section{Social welfare and the accepted Results}
+\label{sec:welfare}
+
+Because the market is fully covered and each consumer buys one unit, prices are transfers in aggregate welfare. Let \(y(z)\in\{0,1\}\) denote the chosen firm's location and let \(N_{\rm sw}\) denote the mass of consumers who switch away from their inherited supplier. Then
+\begin{equation}
+W=CS+\pi_A+\pi_B
+=
+\beta-c
+-\tau\int_0^1 |z-y(z)|\,dz
+-\sigma N_{\rm sw}.
+\label{eq:welfare-resource}
+\end{equation}
+Thus the welfare comparison can be checked directly from real transport and switching costs, independently of price-transfer accounting.
+
+\subsection{Weak dominance}
+
+On the only uniform allocation branch compatible with a weak-domain pure equilibrium,
+\begin{equation}
+W^d-W^u
+=
+\frac{\tau}{36}
+\left[
+28x_0^2-28x_0+5
++2s(18x_0-13)+5s^2
+\right].
+\label{eq:weak-welfare}
+\end{equation}
+
+\begin{proposition}[Weak-dominance welfare]
+\label{prop:weak-welfare}
+On the corrected weak-HBP/pure-uniform overlap,
+\[
+W^d<W^u.
+\]
+\end{proposition}
+
+Expression~\eqref{eq:weak-welfare} is increasing in \(x_0>1/2\). At the weak-dominance upper boundary \(x_0=\bar x=(3-s)/4\),
+\[
+W^d-W^u
+=
+-\frac{\tau(1+s)(1+9s)}{144}<0.
+\]
+The equilibrium overlap lies weakly below that boundary, so the gap is strictly negative throughout. The accepted manuscript's endpoint substitution following its weak-welfare formula is algebraically incorrect, but the qualitative welfare conclusion in Result~5 survives after imposing the corrected equilibrium domain.
+
+\subsection{Strong dominance}
+
+For the source strong-HBP member \(q_A^d=c\), and on the corrected uniform pure-equilibrium domain, direct integration gives
+\begin{equation}
+CS^d-CS^u
+=
+\frac{\tau(1-x_0)(16-7x_0-13s)}9.
+\label{eq:strong-cs}
+\end{equation}
+Therefore the accepted strong-dominance consumer-surplus threshold survives under the source/nonnegative-margin HBP selection, conditional on the corrected uniform pure-existence condition.
+
+Social welfare is cleaner. Across the entire strong-HBP zero-sales price family described in Section~\ref{sec:scope}, the allocation is unchanged. On the corrected uniform pure-equilibrium domain,
+\begin{equation}
+W^d-W^u
+=
+-\frac{\tau(1-x_0)(1-x_0+2s)}9.
+\label{eq:strong-welfare}
+\end{equation}
+
+\begin{proposition}[Strong-dominance welfare]
+\label{prop:strong-welfare}
+For \(x_0\ge\bar x(s)\) such that the uniform pure equilibrium exists,
+\[
+W^d\le W^u,
+\]
+with strict inequality for \(x_0<1\) and equality only at \(x_0=1\). This welfare ranking is invariant to the strong-HBP below-cost zero-sales price selection.
+\end{proposition}
+
+\subsection{Impact on the accepted manuscript}
+
+Table~\ref{tab:result-map} summarizes the corrected status of the seven numbered Results in the accepted manuscript.
+
+\begin{table}[t]
+\centering
+\caption{Impact on numbered Results in the accepted manuscript}
+\label{tab:result-map}
+\small
+\begin{tabular}{p{0.10\textwidth}p{0.32\textwidth}p{0.50\textwidth}}
+\toprule
+Result & Subject & Reassessment\\
+\midrule
+1 & Switching costs above the maintained \(\sigma<\tau\) domain & Outside the maintained reassessment domain; no correction claim. \\
+2 & Dominant firm's market share & Qualitative sign survives; the weak-branch displayed difference is inconsistent with the source shares. Equilibrium wording requires \(x_0\ge x_H\). \\
+3 & Weak consumer surplus & Does not survive as stated. Branch-correct primitive integration gives \(CS^d>CS^u\) throughout the weak source profile domain. \\
+4 & Smaller-firm profit & The source high-switching-cost benefit region does not overlap the corrected weak pure-equilibrium domain; on that overlap \(\pi_B^d<\pi_B^u\). \\
+5 & Weak social welfare & Qualitative ranking in favor of uniform pricing survives on the corrected pure overlap; the source endpoint substitution is algebraically incorrect. \\
+6 & Strong consumer surplus & Survives on the corrected pure domain under the source/nonnegative-margin strong-HBP selection; unrestricted below-cost pricing introduces selection dependence. \\
+7 & Strong social welfare & Survives on the corrected pure domain and is selection-invariant; equality occurs at \(x_0=1\). \\
+\bottomrule
+\end{tabular}
+\end{table}
