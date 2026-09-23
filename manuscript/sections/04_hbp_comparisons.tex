@@ -43,11 +43,21 @@ CS^d-CS^u=
 The two expressions agree at \(x_0=x_u\), and \(CS^d-CS^u>0\) throughout the accepted weak-dominance profile domain \(1/2<x_0<\bar x(s)\).
 \end{proposition}
 
-The first branch differs algebraically from accepted Eq.~(15). More importantly, the accepted one-way-switch integral cannot be extended into \(x_0<x_u\), because its switching interval is then reversed. The exact point \((s,x_0)=(0.99,0.501)\), for example, lies on the no-switch branch and gives
+The switching-branch expression is exactly accepted Eq.~(15) after distributing its outer minus sign. Thus Eq.~(15) itself is not the source error. Two separate problems follow it. First, after substituting \(\sigma=s\tau\), the accepted Eq.~(16) display introduces the opposite sign. Second, Eq.~(13), and therefore Eq.~(15), describes the one-way-switch allocation and cannot be extended into \(x_0<x_u\), where the switching interval is reversed and realized demand is no-switch.
+
+The exact point \((s,x_0)=(0.99,0.501)\) lies on the no-switch branch. Direct integration gives
 \[
-CS^d-CS^u=\frac{17993}{4500000}>0.
+CS^d-CS^u=\frac{17993}{4500000}>0,
 \]
-At a valid switching-branch point inside the corrected pure-equilibrium overlap, \((s,x_0)=(0.1,0.7)\), direct integration yields \(221/720\), while the accepted Eq.~(15) expression evaluates to \(1279/3600\). Both are positive, but they are not equal.
+whereas the out-of-domain extension of accepted Eq.~(15) gives
+\[
+-\frac{103039}{4500000}<0.
+\]
+At the valid switching-branch point \((s,x_0)=(0.1,0.7)\), accepted Eq.~(15) and direct primitive integration both give
+\[
+CS^d-CS^u=\frac{221}{720}>0.
+\]
+These two regressions separate source fidelity from allocation-branch validity.
 
 \begin{corollary}[Weak-HBP equilibrium consumer surplus]
 \label{cor:weak-cs}
@@ -60,15 +70,36 @@ Thus the consumer-surplus sign reversal stated in accepted Result~3 is not repro
 
 \subsection{The smaller firm's profit under weak dominance}
 
-Using the accepted weak-HBP prices and the corrected uniform equilibrium prices, the normalized profit difference for firm \(B\) is
+The accepted Eq.~(22) uses the switching allocation of the uniform candidate. For profile comparisons outside the pure-equilibrium overlap, the uniform candidate must instead be evaluated on its realized branch. Direct demand gives
+\[
+\frac{\pi_A^d-\pi_A^u}{\tau}
+=
+\begin{cases}
+\displaystyle
+\frac{s^2+12sx_0-10s+20x_0^2-20x_0+1}{18},
+&x_0\ge x_u,\\[0.9em]
+\displaystyle
+\frac{s^2+3sx_0-2s+10x_0^2-19x_0+5}{9},
+&x_0<x_u,
+\end{cases}
+\]
+and
 \begin{equation}
 \frac{\pi_B^d-\pi_B^u}{\tau}
 =
-\frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
+\begin{cases}
+\displaystyle
+\frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18},
+&x_0\ge x_u,\\[0.9em]
+\displaystyle
+\frac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9},
+&x_0<x_u.
+\end{cases}
 \label{eq:B-profit-gap}
 \end{equation}
+Both firms' profit-gap formulas are continuous at \(x_0=x_u\).
 
-\begin{proposition}[Smaller-firm profit on the pure overlap]
+\begin{proposition}[Smaller-firm profit on the weak pure overlap]
 \label{prop:B-profit}
 For every \(0\le s<s_c\) and every \(x_H(s)\le x_0<\bar x(s)\),
 \[
@@ -76,23 +107,28 @@ For every \(0\le s<s_c\) and every \(x_H(s)\le x_0<\bar x(s)\),
 \]
 \end{proposition}
 
-The numerator of \eqref{eq:B-profit-gap} is convex in \(x_0\). On the larger interval \([1/2,\bar x]\), its endpoint values are
+On the pure overlap, \(x_0\ge x_H>x_u\), so the first branch of \eqref{eq:B-profit-gap} applies. Its numerator is convex in \(x_0\). On the larger interval \([1/2,\bar x]\), its endpoint values are
 \[
 s^2+8s-4<0
 \quad\text{and}\quad
 \frac{(1+s)(21s-11)}4<0
 \]
-for \(0\le s<s_c\). Convexity then implies negativity throughout the interval. Outside the pure overlap, accepted Eq.~(22) cannot simply be relabeled a profile comparison. When (x_0<x_u), the second branch in eqref{eq:B-profit-gap} must be used. For example,
-[
-(s,x_0)=left(rac12,rac{51}{100}ight)
-]
-gives
-[
-pi_B^d=rac{3221}{9000}	au,qquad
-pi_B^u=rac{49}{120}	au,qquad
-pi_B^d-pi_B^u=-rac{227}{4500}	au<0,
-]
-whereas extending accepted Eq.~(22) into this no-switch region would give (4	au/375>0). Result~4 therefore requires branch-correct profile accounting outside the equilibrium overlap.
+for \(0\le s<s_c\). Convexity therefore implies negativity throughout the weak pure-equilibrium overlap.
+
+Outside that overlap, accepted Eq.~(22) cannot simply be relabeled as a profile result. For example, at
+\[
+(s,x_0)=\left(\frac12,\frac{51}{100}\right),
+\]
+the realized uniform candidate is on the no-switch branch and
+\[
+\pi_B^d=\frac{3221}{9000}\tau,\qquad
+\pi_B^u=\frac{49}{120}\tau,
+\]
+so
+\[
+\pi_B^d-\pi_B^u=-\frac{227}{4500}\tau<0.
+\]
+Extending the switching-branch expression into the same point would instead give \(4\tau/375>0\). This sign reversal is precisely why Result~4 must be separated into realized profile branches and the smaller weak-domain pure-equilibrium overlap.
 
 \subsection{What the equilibrium correction does}
 
@@ -102,4 +138,4 @@ The distinction between profile and equilibrium comparisons is central. Proposit
 \qquad
 x_H(s)\le x_0<\bar x(s).
 \]
-No consumer-surplus or profit value is attributed to an uncharacterized mixed uniform-pricing equilibrium below \(x_H\).
+No consumer-surplus or profit value is attributed to an uncharacterized mixed uniform-pricing equilibrium below \(x_H\). The smaller-firm loss in Proposition~\ref{prop:B-profit} is a weak-dominance result only; it is not extended to strong dominance, where the source-selected HBP profit comparison can have the opposite sign.
