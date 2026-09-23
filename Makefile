@@ -37,7 +37,13 @@ manuscript: manuscript-audit
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
 	@if grep -Eq 'There were undefined references|There were undefined citations|Label\(s\) may have changed' build/manuscript/main.log; then cat build/manuscript/main.log; exit 1; fi
 
-all: python-checks generate verify-generated lean manuscript
+submission:
+	mkdir -p build/submission
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/submission submission/title_page.tex
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/submission submission/cover_letter.tex
+	$(PYTHON) code/audit_submission_package.py
+
+all: python-checks generate verify-generated lean manuscript submission
 
 clean:
 	rm -rf build .stage09-regenerate
