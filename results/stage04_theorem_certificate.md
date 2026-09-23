@@ -227,14 +227,14 @@ All prices are above cost and the point is inside the accepted manuscript's weak
 The proof and the independent exact evaluator cover:
 
 * \(x\downarrow1/2\): for every \(s>0\), \(x_H(s)>1/2\), so sufficiently weak inherited asymmetry is in the no-pure region.
-* \(x\uparrow1\): \(x_H(s)<1\), so the accepted profile remains the unique pure equilibrium, including the zero-measure B-history limit.
+* \(x\uparrow1\): treated separately rather than by the plateau argument. At \(x=1\), demand is \(\operatorname{clip}((d+1+s)/2,0,1)\); direct global maximization gives the same unique source profile. The usual plateau gain for B vanishes because its inherited segment has zero mass.
 * \(s\downarrow0\): \(x_H(s)\downarrow1/2\), joining the standard Hotelling equilibrium.
 * \(s\uparrow1\): excluded by the strict maintained source assumption \(s<1\); one-sided limits are tested.
 * \(x=x_u\): the candidate is on the no-switch kink and is not Nash.
 * \(x=x_H\): the B-indifference trigger is audited and Nash remains unique.
 * \(x=\bar x=(3-s)/4\): this changes HBP classification, not the uniform demand partition.
 * \(d=L,\alpha,\beta,U\): every clipping equality is treated explicitly.
-* zero margins, negative margins, large positive prices, full capture, and zero-demand tails: excluded by the strategy-domain/capture arguments.
+* zero margins, negative margins, large positive prices, full capture, and zero-demand tails: excluded by a joint margin--demand argument. The proof does not assume that an excluded firm can always enter at a positive margin when the capturing rival itself prices below cost.
 * measure-zero consumer ties: do not change market shares or profits.
 * disappearing inherited B-history segment at \(x=1\): the direct clipped demand remains well-defined and the theorem continues.
 
@@ -257,7 +257,7 @@ Formal verification is **APPLICABLE**. Stage 7.5A must include at least:
 1. the \(x_L/x_H\) payoff factorization and threshold orderings;
 2. the exact rational counterexample;
 3. equality-boundary best-response algebra;
-4. corrected Eq. (15) branch identities;
+4. accepted Eq. (15) source-fidelity identity and the Eq. (16) sign transformation;
 5. the rejected upstream CS regression's positive direct value;
 6. the weak-welfare endpoint identity;
 7. the pure-overlap boundary \(x_H\le\bar x\) iff \(s\le -3+6\sqrt{33}/11\).

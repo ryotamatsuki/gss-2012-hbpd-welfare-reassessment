@@ -52,7 +52,7 @@ At \(x=x_H(s)\), firm B has a second payoff-equal kink best response, but that a
 - Eq. (12) failure point: \(25/72 \to 56/75\), gain \(719/1800>0\).
 - Equality witness: \(s=6/47,\ x=67/94=x_H(s)\).
 - Upstream CS negative regression rejected: branch-correct primitive gap at \(s=99/100,x=501/1000\) is positive.
-- Valid one-way-switch Eq. (15) discrepancy retained separately.
+- Valid one-way-switch Eq. (15) source-fidelity regression retained; the source error is the Eq. (16) sign transformation.
 
 ## Formal-verification state
 

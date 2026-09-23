@@ -19,11 +19,9 @@ Equilibrium comparisons to uniform pricing require simultaneous satisfaction of 
 
 ## 3. Strong-HBP benchmark and selection
 
-If below-cost poaching prices are admitted, strong HBP contains a payoff-equivalent zero-sales family.
+For \(\bar x(s)\le x_0<1\), admitting below-cost poaching prices creates a payoff-equivalent zero-sales family. For CS/profit comparisons in this nondegenerate range, the canonical manuscript benchmark is the **source/nonnegative-margin member \(q_A=c\)**. This is a selection convention and must be disclosed.
 
-For CS/profit comparisons, the canonical manuscript benchmark is the **source/nonnegative-margin member \(q_A=c\)**.
-
-This is a selection convention and must be disclosed.
+At \(x_0=1\), the \(B\)-history segment is empty. Its prices \(q_A\) and \(p_B\) are unused and remain indeterminate even under nonnegative margins. The allocation, realized profits, consumer surplus, and welfare are nevertheless unique; source-vs-uniform share and CS gaps are zero at the endpoint.
 
 For social welfare, all members of the family induce the same allocation and real resource cost, so the welfare comparison is selection-invariant.
 
@@ -50,7 +48,7 @@ Accordingly, no planner benchmark is part of the frozen theory.
 - uniform pure equilibrium: singleton where it exists;
 - uniform pure equilibrium below \(x_H\): empty;
 - uniform mixed equilibrium below \(x_H\): unresolved/out of scope;
-- strong-HBP unrestricted-price equilibrium price vector: potentially multiple through the zero-sales family;
+- strong-HBP unrestricted-price equilibrium price vector: multiple through the zero-sales family for (x_0<1), and additionally indeterminate in unused B-history prices at (x_0=1);
 - strong-HBP allocation/social welfare across that family: invariant;
 - strong-HBP CS/profits across that family: selection-dependent.
 

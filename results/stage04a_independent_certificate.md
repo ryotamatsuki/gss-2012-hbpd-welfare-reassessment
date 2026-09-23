@@ -79,7 +79,7 @@ the independent primitive evaluator reproduces the source profit \(25/72\), the 
 
 Every pure profile must fall into one of the five primitive demand pieces or their four boundaries.
 
-* full B capture: excluded by profitable entry or by the capturing firm's escape from a negative margin;
+* full B capture: excluded by a joint margin--demand argument: positive-margin capture admits profitable entry, while zero/negative-margin capture is improved by the capturing firm;
 * lower switching interior: local optimality uniquely gives the source profile;
 * lower plateau kink \(d=\alpha\): B has a strict same-share price increase;
 * plateau interior: a firm has a strict same-share price increase;
@@ -113,7 +113,7 @@ supports a payoff-equivalent zero-sales family with
 \[
 (p_B-c)/\tau=u+2x-1+s.
 \]
-Changing \(u\) changes prices, consumer surplus, and profit distribution but not allocation or social welfare. Under a nonnegative-margin/no-loss restriction the family collapses to the source member \(u=0\).
+Changing \(u\) changes prices, consumer surplus, and profit distribution but not allocation or social welfare. For \(x<1\), a nonnegative-margin/no-loss restriction collapses the family to the source member \(u=0\). At \(x=1\), the B-history segment disappears and its two quoted prices are payoff-irrelevant, so the four-price vector remains nonunique even under nonnegative margins.
 
 This HBP selection issue is retained explicitly; it is not used to manufacture a uniform-price equilibrium.
 
@@ -160,7 +160,7 @@ Permanent regressions in \`code/uniform_game_cleanroom.py\` include:
 4. exact equality witness \(s=6/47,\ x=67/94=x_H(s)\);
 5. B's two best responses at equality and A's strict deviation from the kink profile;
 6. rejected upstream CS-sign regression at \(s=99/100,x=501/1000\);
-7. a valid one-way-switch Eq. (15) discrepancy point;
+7. a valid one-way-switch Eq. (15) source-fidelity point plus the Eq. (16) sign-flip regression;
 8. weak-welfare endpoint identities;
 9. strong-HBP below-cost selection family;
 10. strong-branch CS/welfare profile regressions.

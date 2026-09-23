@@ -12,7 +12,7 @@
 | CS-W | weak-HBP branch-correct CS gap positive over source weak profile domain | source weak domain; equilibrium claim only on pure overlap | primitive integration + symbolic regression | PROVED | selected identities formally checked |
 | PROF-B-W | \(\pi_B^d<\pi_B^u\) on weak pure overlap | \(0<s<s_c,\ x_H\le x_0<\bar x\) | Stage 7 analytic proof | PROVED | analytic only |
 | W-W | \(W^d<W^u\) on weak pure overlap | same | resource-cost accounting | PROVED | endpoint identity formalized |
-| CS-S | strong-HBP CS threshold survives | corrected pure domain + source/nonnegative-margin HBP selection | Stage 7 + selection audit | CONDITIONAL | analytic only |
+| CS-S | strong-HBP CS threshold survives for nondegenerate inherited shares; gap is zero at the empty-market endpoint | corrected pure domain with \(x_0<1\) + source/nonnegative-margin HBP selection; \(x_0=1\) handled separately | Stage 7 + endpoint/selection audit | CONDITIONAL | analytic only |
 | W-S | strong-HBP welfare lower than uniform for \(x_0<1\) | corrected pure domain | Stage 7 resource accounting | PROVED | analytic only |
 | MIXED | mixed pricing below \(x_H\) | no theorem | intentionally excluded | UNRESOLVED / OUT OF SCOPE | none |
 
