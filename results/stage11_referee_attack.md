@@ -1,16 +1,16 @@
 # Stage 11 — Robustness / Referee Attack Gate
 
-**Verdict:** GO / CLOSED  
+**Verdict:** RE-CERTIFIED GO / CLOSED after independent submission-audit remediation  
 **Attack date:** 2026-09-23  
-**Input:** Stage-10 full manuscript and Stage-8 frozen theory  
-**Certification regression:** NONE  
-**Theory rollback:** NOT REQUIRED.
+**Input:** Stage-10 full manuscript, Stage-8 frozen theory, and independent submission audit `gss2012_independent_submission_audit_20260923.md`  
+**Certification regression:** FOUND AND REPAIRED  
+**Theory rollback:** LIMITED rollback/re-certification through Stages 1, 4/4A, 7, 7.5A, and 8; the headline `x_H(s)` pure-equilibrium theorem was unchanged.
 
 ## Executive adversarial verdict
 
-No FATAL or MAJOR mathematical/scope defect was found in the full manuscript. The manuscript remains inside the Stage-8 theorem freeze and Stage-7.5A MODEL-SPECIFIC claim classification.
+The first Stage-11 pass did not detect several submission-blocking defects later found by an independent clean-room audit. The later audit identified one FATAL source-fidelity failure and multiple MAJOR scope/proof/formal-verification issues. Those findings triggered change control rather than being treated as prose-only edits.
 
-Three close literature items omitted from the Stage-10 related-literature section were classified MINOR and added: Umezawa (2022), Shrivastav (2023), and Umezawa–Yamakawa (2025). This is an exposition/literature-completeness repair only.
+The repaired state preserves the central pure-equilibrium threshold theorem but changes downstream certification in five material ways: accepted Eq. (15) is recognized as source-faithful on its switching branch and the source error is relocated to the Eq. (15)→Eq. (16) sign transformation; Result 4 profile profits are evaluated on realized allocation branches; the smaller-firm loss claim is explicitly weak-domain only; `x_0=1` is separated as an empty-history-market endpoint for strong HBP; and the unrestricted-price capture proof plus Lean statement-fidelity/CI guards are repaired. Related-literature positioning was also strengthened with the Umezawa corrigendum and explicit non-nesting caution.
 
 ## Mandatory attack matrix
 
@@ -32,7 +32,7 @@ Three close literature items omitted from the Stage-10 related-literature sectio
 | benchmark terminology drift | PASS | No first-best/planner terminology is used; welfare is (CS+pi_A+pi_B) under full coverage. |
 | global-equilibrium overclaim | PASS | Below (x_H), wording is only “no pure-strategy equilibrium”; mixed pricing remains unresolved. |
 | formal-verification inflation | PASS | Lean is described as checking selected proof-critical algebra, not the full economic model or Nash definition. |
-| stale formal theorem | PASS | No Stage-10/11 theory change alters formalized definitions or theorem signatures. |
+| stale formal theorem | REPAIRED / PASS | The previous Eq. (15) formal target was invalidated, replaced by source-fidelity Eq. (15)/Eq. (16) targets, and rebuilt under the repaired sentinel guard. |
 | source/VOR inflation | PASS | Disputed equations/results are attributed to the accepted manuscript; exact Springer VOR body remains unverified. |
 | journal-fit/contribution-level risk | MINOR | A model-specific correction needs a field/general-theory outlet receptive to focused rigorous reassessments; handled at Stage 12 rather than by inflating theory. |
 
@@ -60,12 +60,24 @@ The referee audit rechecked the decisive finite deviation conceptually from prim
 
 This reproduces the economic mechanism without relying on numerical sampling.
 
+## Independent submission-audit remediation
+
+The later independent audit findings are closed as follows:
+
+1. **Source fidelity (FATAL):** Eqs. (13)–(17) were re-read from the accepted-manuscript image. The false claim that Eq. (15) was misprinted was removed from manuscript, Python, Lean, regression records, and certificates. Eq. (16)'s sign inversion and the allocation-branch issue are now separated.
+2. **Result 4 profit scope (MAJOR):** weak-HBP versus uniform-source-profile profits are piecewise in the realized uniform allocation. The exact no-switch witness `(s,x_0)=(1/2,51/100)` is permanent regression evidence.
+3. **Submission claim scope (MAJOR):** abstract, highlights, cover letter, conclusion, and claim ledgers restrict the smaller-firm loss to the weak pure-equilibrium overlap.
+4. **Strong endpoint (MAJOR):** `x_0=1` is treated separately; unused HBP quotes are nonunique while realized allocation/payoffs/CS/W are invariant, with zero share/CS gap.
+5. **Proof completeness (MAJOR):** Appendix A and Stage-4/4A records use a joint margin–demand capture exclusion, isolate `s=0` and `x_0=1`, and state reverse-branch monotonicity explicitly.
+6. **Formal verification (MAJOR):** stale Eq. (15) definitions were replaced, the over-escaped grep guard was repaired with sentinels, and Lean 4.19.0/pinned-mathlib builds pass.
+7. **Literature/non-absorption (MAJOR/MINOR):** the Umezawa corrigendum is cited as a methodological analogue; nearby models are distinguished by primitives/timing/information and no formal non-nesting theorem is claimed.
+
 ## Repairs authorized and completed
 
-Only literature-positioning repairs were made. No equation, proposition, quantifier, domain, benchmark, selection convention, welfare identity, or formal theorem changed.
+The above mathematical/scope repairs were authorized under theory change control and re-certified at their earliest affected stages. The headline `x_H(s)` theorem, exact Eq. (12) counterexample, mixed-strategy exclusion, and welfare resource-accounting mechanism remain unchanged.
 
 ## Stage-11 gate
 
-**GO / CLOSED.**
+**RE-CERTIFIED GO / CLOSED.**
 
 Route to Stage 12 — Journal Positioning.

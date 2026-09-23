@@ -25,8 +25,8 @@ The accepted manuscript contains seven numbered Results:
 |---|---|---|
 | Result 1 | `σ>τ` and profitable history-based poaching | outside maintained Assumption 1 after it is imposed; no correction claim |
 | Result 2 | dominant firm's share larger under uniform pricing | qualitative sign survives; displayed weak-branch share difference is algebraically wrong |
-| Result 3 | weak-dominance consumer-surplus iff condition (17) | formula/branch error; the stated reversal is not reproduced by primitive integration |
-| Result 4 | weak-dominance small-firm profit comparison | downstream equilibrium interpretation restricted by corrected uniform pure-equilibrium domain |
+| Result 3 | weak-dominance consumer-surplus iff condition (17) | Eq. (15) is source-faithful on its one-way-switch branch; Eq. (16) reverses the normalized sign, and the one-way-switch allocation is invalid when `x_0<x_u`; the stated reversal is not reproduced by primitive integration |
+| Result 4 | weak-dominance small-firm profit comparison | Eq. (22) is switching-branch-specific; realized profile profit is piecewise, and the equilibrium comparison is restricted to the corrected weak pure-overlap |
 | Result 5 | weak-dominance social welfare higher under uniform pricing | sign survives on branch-correct accounting; accepted-manuscript endpoint substitution is algebraically wrong |
 | Result 6 | strong-dominance consumer-surplus threshold | source formula is branch-sensitive; outside uniform pure-existence region it is only a profile comparison |
 | Result 7 | strong-dominance social welfare higher under uniform pricing | sign survives branch-correct accounting; equilibrium interpretation restricted to corrected uniform pure-existence region |
@@ -116,15 +116,16 @@ x_u=1/2+s/6,
 ]
 where the actual uniform allocation has no switching. Direct primitive integration gives a positive gap, not the previously claimed negative value.
 
-A valid one-way-switch point such as `s=1/10,x_0=7/10` confirms that the accepted-manuscript Eq. (15) is nevertheless algebraically wrong: the primitive integral and printed formula differ exactly, but both have the same positive sign there.
+A valid one-way-switch point such as `s=1/10,x_0=7/10` instead confirms source fidelity: direct primitive integration and accepted Eq. (15) both equal `221/720`. The source-facing algebraic error occurs in the next step: after substituting `σ=sτ`, accepted Eq. (16) displays the negative of Eq. (15)'s normalized expression. Separately, Eq. (13)/(15) cannot be extended to `x_0<x_u`, where realized uniform demand is no-switch.
 
 Thus the Stage-1 correction is:
 
-* **formula error:** survives;
-* **upstream claimed exact sign-reversal regression:** rejected;
+* **Eq. (15) formula-error claim:** withdrawn; Eq. (15) is correct on its valid one-way-switch branch;
+* **Eq. (15)→Eq. (16) normalization:** sign inconsistency confirmed;
+* **upstream claimed exact sign-reversal regression:** rejected as a branch-extension error;
 * **accepted-manuscript Result-3 reversal region:** not supported by branch-correct primitive integration.
 
-This negative finding is permanent project evidence.
+This corrected source mapping is permanent project evidence.
 
 ## 7. HBP audit
 

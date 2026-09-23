@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - research/stage-09-reproducibility
+      - research/stage-14-submission-qa
   pull_request:
   workflow_dispatch:
 

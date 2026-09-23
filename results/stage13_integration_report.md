@@ -1,9 +1,9 @@
 # Stage 13 — Information Economics and Policy Integration
 
-**Verdict:** GO / CLOSED subject to CI confirmation  
+**Verdict:** RE-CERTIFIED GO / CLOSED after independent-audit reintegration  
 **Target journal:** Information Economics and Policy  
-**Theory changes:** NONE  
-**Input:** Stage-12 journal positioning + Stage-8 frozen theory.
+**Theory changes:** downstream source/scope repairs re-integrated; headline pure-equilibrium theorem unchanged  
+**Input:** Stage-12 journal positioning + repaired Stage-8 theory freeze.
 
 ## 1. Journal-facing integration
 
@@ -89,8 +89,18 @@ Current Elsevier-wide submission, competing-interest, artwork-accessibility, and
 
 The live IEP Guide for Authors body is access-restricted in the automated environment. The package therefore satisfies the stricter known IEP-specific requirements from the indexed Author Information Pack plus a 2026 secondary template corroboration. Stage 14 will retain this provenance limitation explicitly.
 
-## 8. Stage-13 gate
+## 8. Post-audit reintegration
 
-No journal-integration edit changes a frozen theorem, equation, domain, benchmark, selection rule, or formal theorem.
+After the independent submission audit, Stage 13 was reopened for semantic synchronization rather than journal repositioning. The IEP-facing package now reflects the repaired theory state:
 
-**GO / CLOSED once the Stage-13 CI head is green.**
+- abstract and cover letter state that accepted Eq. (15) is correct on its valid switching branch and identify the Eq. (16) sign reversal separately;
+- highlights restrict the smaller-firm loss claim to the weak pure-equilibrium overlap;
+- Result 4 is not described as a branch-unrestricted profile result;
+- strong-HBP endpoint language separates the empty-market (x_0=1) case;
+- formal-verification wording remains limited to the proof-critical core.
+
+The target journal, article type, author metadata, declarations, and contribution framing are unchanged.
+
+## 9. Stage-13 gate
+
+**RE-CERTIFIED GO / CLOSED**, subject only to the final Stage-14 package QA and authenticated portal preflight.
