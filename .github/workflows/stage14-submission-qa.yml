@@ -56,7 +56,8 @@ jobs:
           mkdir -p build/stage14/rendered
           pdfinfo build/manuscript/main.pdf > build/stage14/manuscript_pdfinfo.txt
           pdffonts build/manuscript/main.pdf > build/stage14/manuscript_pdffonts.txt
-          awk 'NR>2 && NF>3 && $4 != "yes" {bad=1} END {exit bad}' build/stage14/manuscript_pdffonts.txt
+          cat build/stage14/manuscript_pdffonts.txt
+          awk 'NR>2 && NF>3 && $4 != "yes" {print "UNEMBEDDED:", $0; bad=1} END {exit bad}' build/stage14/manuscript_pdffonts.txt
           pdftoppm -png -r 110 build/manuscript/main.pdf build/stage14/rendered/page >/dev/null 2>&1
           test "$(find build/stage14/rendered -name 'page-*.png' | wc -l)" -ge 1
 
@@ -86,6 +87,7 @@ jobs:
           sha256sum build/submission/cover_letter.pdf > build/stage14/COVER_LETTER_SHA256.txt
 
       - name: Upload final QA artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: stage14-final-package
