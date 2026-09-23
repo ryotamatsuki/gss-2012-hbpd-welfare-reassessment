@@ -1,6 +1,6 @@
 # Stage 8 — Canonical Theory Freeze
 
-**Verdict:** GO / THEORY FROZEN  
+**Verdict:** RE-CERTIFICATION IN PROGRESS after 2026-09-23 independent submission audit  
 **Freeze branch:** \`research/stage-08-theory-freeze\`  
 **Stage-8 input branch:** \`research/stage-075a-freeze-gate\`  
 **Stage-7.5A input head:** \`d159a6d286d5547873decceb4cc26e6d3e0871ef\`  
@@ -20,7 +20,7 @@ Its contribution is:
 1. reconstruct the complete uniform-price demand correspondence from primitive consumer choice;
 2. show that accepted-manuscript Eq. (12) is a smooth one-way-switch branch solution whose global pure-Nash validity requires an additional exact parameter restriction;
 3. characterize the complete pure-strategy price correspondence;
-4. correct the accepted-manuscript consumer-surplus branch/algebra;
+4. separate the source-faithful switching-branch Eq. (15), the displayed Eq. (15)→Eq. (16) sign inconsistency, and the no-switch allocation branch;
 5. propagate the corrected equilibrium domain through accepted-manuscript Results 1–7;
 6. identify which qualitative welfare conclusions survive and which equilibrium comparisons do not.
 
@@ -260,6 +260,8 @@ The accepted uniform-price profile has:
 
 Hence accepted Eq. (13) cannot be extrapolated through \(x_0=x_u\).
 
+Image-level reinspection confirms that accepted Eq. (15) is algebraically identical to the primitive switching-branch expression below. The source-facing algebraic inconsistency is the next displayed normalization: after setting \(s=\sigma/\tau\), accepted Eq. (16) carries the opposite sign. This Eq. (15)→Eq. (16) issue must be kept separate from the economically distinct branch-extension error.
+
 On the switching branch,
 \[
 CS^d-CS^u
@@ -306,7 +308,13 @@ On every weak-HBP / pure-uniform equilibrium comparison,
 \pi_B^d<\pi_B^u.
 \]
 
-Thus the accepted high-switching-cost region in which the smaller firm allegedly benefits from HBP does not survive as a comparison of two pure equilibria.
+This equilibrium statement is restricted to the weak-dominance pure overlap. Outside that overlap, accepted Eq. (22) is not a branch-unrestricted profile formula: when \(x_0<x_u\), realized uniform demand is no-switch and the profit comparison must be recomputed from that branch. The exact regression \((s,x_0)=(1/2,51/100)\) gives
+\[
+\pi_B^d-\pi_B^u=-\frac{227}{4500}\tau<0,
+\]
+whereas extension of the switching-branch expression gives \(4\tau/375>0\). Strong dominance is a separate regime: at the source-selected strong point \((s,x_0)=(9/10,19/20)\), both pure equilibria exist and \(\pi_B^d-\pi_B^u=41\tau/900>0\).
+
+Thus the smaller-firm loss conclusion is frozen only for the weak pure-equilibrium overlap.
 
 ## 13. Frozen weak welfare result
 
@@ -330,41 +338,33 @@ The accepted endpoint-substitution expression is algebraically incorrect, but th
 
 ## 14. Frozen strong-HBP selection qualification
 
-Under unrestricted real prices, the strong-HBP branch contains a payoff-equivalent zero-sales poaching-price family.
-
-In normalized notation
+For \(\bar x(s)\le x_0<1\), unrestricted real prices generate a payoff-equivalent zero-sales poaching-price family. In normalized notation
 \[
 u=\frac{q_A-c}{\tau},
-\]
-the family satisfies
-\[
+\qquad
 3-s-4x_0\le u\le0,
 \]
-with corresponding B loyalty price
+with
 \[
 \frac{p_B-c}{\tau}=u+2x_0-1+s.
 \]
 
-Across this family:
+Across this nondegenerate family, allocation and social welfare are unchanged, while consumer surplus and the distribution of firm profits can change. Under the source/nonnegative-margin convention \(q_A\ge c\), the family collapses to the source member \(u=0\).
 
-- allocation is unchanged;
-- social welfare is unchanged;
-- consumer surplus and firm-profit distribution can change.
+The endpoint \(x_0=1\) must be separated. The B-history segment is empty, so \(q_A\) and \(p_B\) are unused quotes and the four-price HBP vector remains nonunique even under nonnegative margins. Allocation, realized profits, consumer surplus, and welfare are unique and independent of those unused prices.
 
-Under the source/nonnegative-margin convention \(q_A\ge c\), the family collapses to the source member \(u=0\), i.e. \(q_A=c\).
-
-Therefore strong-HBP CS/profit statements are selection-conditional unless the nonnegative-margin/source selection is imposed.
+Therefore strong-HBP CS/profit statements are selection-conditional for \(x_0<1\), while the empty-market endpoint is handled by outcome equivalence rather than price-vector uniqueness.
 
 ## 15. Frozen strong consumer-surplus result
 
-Under the source/nonnegative-margin strong-HBP selection,
+For \(x_0<1\), under the source/nonnegative-margin strong-HBP selection,
 \[
 CS^d-CS^u
 =
 \frac{\tau(1-x_0)(16-7x_0-13s)}9.
 \]
 
-The accepted strong-HBP CS threshold survives on the corrected pure-uniform domain under this selection.
+The accepted strong-HBP CS threshold survives on the corrected pure-uniform domain under this selection. At \(x_0=1\), the CS difference is zero and the unused HBP prices are indeterminate.
 
 ## 16. Frozen strong welfare result
 
@@ -389,10 +389,10 @@ This result is selection-invariant.
 |---|---|
 | Result 1 | outside maintained \(\sigma<\tau\) reassessment domain; not affected by UPE correction |
 | Result 2 | qualitative market-share sign survives; displayed weak-branch difference is wrong; equilibrium statement restricted to \(x_0\ge x_H\) |
-| Result 3 | invalidated as stated; weak CS reversal disappears under primitive branch-correct integration |
-| Result 4 | invalidated as a weak-domain pure-equilibrium claim; on the pure overlap \(\pi_B^d<\pi_B^u\) |
+| Result 3 | invalidated as stated; Eq. (15) is source-faithful on its switching branch, Eq. (16) displays the opposite normalized sign, and the reversal disappears under realized branch-correct integration |
+| Result 4 | restricted and branch-dependent; on the weak pure overlap \(\pi_B^d<\pi_B^u\), while profile comparisons outside it require realized branch demand and the weak result is not generalized to strong dominance |
 | Result 5 | survives on corrected weak pure-equilibrium domain |
-| Result 6 | survives on corrected pure domain under source/nonnegative-margin HBP selection |
+| Result 6 | survives for nondegenerate \(x_0<1\) on the corrected pure domain under source/nonnegative-margin HBP selection; CS gap is zero and unused HBP prices are indeterminate at \(x_0=1\) |
 | Result 7 | survives on corrected pure domain; welfare is selection-invariant |
 
 ## 18. Proposition maturity classification
@@ -453,7 +453,7 @@ Machine-checked components include:
 - \(x_u<x_H<1\);
 - exact \(719/1800\) counterexample;
 - equality-kink A gain;
-- exact Eq. (15) discrepancy point;
+- accepted Eq. (15) source-fidelity identity and the Eq. (16) sign-flip identity;
 - rejected upstream CS regression exact positive value;
 - weak-welfare endpoint identity;
 - weak/pure overlap polynomial and closed-form root.
@@ -556,8 +556,8 @@ requires explicit change control and rollback to the earliest affected stage.
 
 Stage 9–14 may improve reproducibility, exposition, journal fit, formatting, figures, references, and submission compliance, but may not silently change the frozen theory.
 
-## 26. Stage-8 verdict
+## 26. Stage-8 re-certification status
 
-**GO — CANONICAL THEORY FROZEN.**
+The 2026-09-23 independent submission audit reopened the source-fidelity, weak-profit-branch, endpoint-selection, proof-completeness, and selected formal-verification portions of the freeze. The mathematical repairs above supersede the earlier statements that Eq. (15) itself was erroneous and that Result 4 could be retained as a branch-unrestricted profile result.
 
-The project may enter Stage 9.
+**RE-CERTIFICATION IN PROGRESS.** This freeze may be closed again only after the updated Lean source passes a fresh pinned build with working placeholder/axiom sentinels, the permanent Python regressions pass, and the repaired manuscript/package passes Stage-14 QA.
