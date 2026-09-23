@@ -17,48 +17,48 @@ Eq. (15):
 [
 CS^d-CS^u
 =
--rac{
-	au^2(52x_0^2-52x_0-1)
-+2sigma	au(17-18x_0)
+-\frac{
+\tau^2(52x_0^2-52x_0-1)
++2sigma\tau(17-18x_0)
 -sigma^2
-}{36	au}.
+}{36\tau}.
 ]
 
 Expanding the outer minus gives
 [
 CS^d-CS^u
 =
-rac{
--	au^2(52x_0^2-52x_0-1)
-+2sigma	au(18x_0-17)
+\frac{
+-\tau^2(52x_0^2-52x_0-1)
++2sigma\tau(18x_0-17)
 +sigma^2
-}{36	au},
+}{36\tau},
 ]
 which is exactly the independently reconstructed primitive switching-branch expression.
 
 Therefore **Eq. (15) is not algebraically wrong on its valid switching branch**.
 
-With (s=sigma/	au), the correct normalization of Eq. (15) is
+With (s=sigma/\tau), the correct normalization of Eq. (15) is
 [
 CS^d-CS^u
 =
-rac{	au}{36}
+\frac{\tau}{36}
 left[
 -52x_0^2+52x_0+1+36sx_0-34s+s^2
-ight].
+\right].
 ]
 
 The accepted manuscript's printed Eq. (16), however, places an additional minus sign in front of that same bracket:
 [
 CS^d-CS^u
 =
--rac{	au}{36}
+-\frac{\tau}{36}
 left[
 s^2+2s(18x_0-17)-52x_0^2+52x_0+1
-ight] >0.
+\right] >0.
 ]
 
-The bracket is algebraically the same as the correct normalized Eq. (15) numerator. Hence the printed Eq. (16) is the **negative** of Eq. (15), not a valid substitution of (sigma=s	au).
+The bracket is algebraically the same as the correct normalized Eq. (15) numerator. Hence the printed Eq. (16) is the **negative** of Eq. (15), not a valid substitution of (sigma=s\tau).
 
 Condition (17), Figure 5, and Result 3 are downstream of that sign reversal.
 
@@ -110,32 +110,32 @@ Thus Result 3 fails for two distinct reasons that must not be conflated:
 
 Accepted Eq. (18) substitutes Eq. (12) together with the one-way-switch allocation and therefore gives
 [
-pi_B^u=(3	au-sigma)^2/(18	au).
+pi_B^u=(3\tau-sigma)^2/(18\tau).
 ]
 
 As a profile formula this is valid only when the accepted uniform price vector actually induces the switching branch, i.e. (x_0ge x_u).
 
 If (x_0<x_u), the same price vector induces no switching and instead
 [
-rac{pi_B^u}{	au}
+\frac{pi_B^u}{\tau}
 =
-left(1-rac{s}{3}ight)(1-x_0).
+left(1-\frac{s}{3}\right)(1-x_0).
 ]
 
 Consequently accepted Eq. (22) and Result 4 cannot be extrapolated through (x_0=x_u).
 
 For weak HBP, direct primitive profits give
 [
-rac{pi_B^d}{	au}
+\frac{pi_B^d}{\tau}
 =
-rac{s^2-6sx_0+4s+10x_0^2-10x_0+5}{9}.
+\frac{s^2-6sx_0+4s+10x_0^2-10x_0+5}{9}.
 ]
 
 Hence the actual source-profile difference is
 [
-rac{pi_B^d-pi_B^u}{	au}
+\frac{pi_B^d-pi_B^u}{\tau}
 =
-egin{cases}
+\begin{cases}
 dfrac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18},
 &x_0ge x_u,\[0.9em]
 dfrac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9},
@@ -160,7 +160,7 @@ At (x_0=1), the inherited B-history segment is empty. Therefore the prices direc
 
 The nondegenerate strong-HBP selection statement must therefore be written for
 [
-ar x(s)le x_0<1.
+\bar x(s)le x_0<1.
 ]
 
 At (x_0=1):
