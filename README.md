@@ -10,7 +10,7 @@ Reconstruct the global uniform-price game, characterize its pure-strategy equili
 
 ## Current status
 
-**Stage 9 is CLOSED/GO — REPRODUCIBILITY PASS.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, 8, and 9 have passed; the next canonical gate is Stage 10 — Section-by-Section Paper Construction. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
+**Stage 10 is CLOSED/GO — MANUSCRIPT CONSTRUCTION PASS.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, 8, 9, and 10 have passed; the next canonical gate is Stage 11 — Robustness / Referee Attack Gate. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
 No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
@@ -25,7 +25,7 @@ x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
 
 The accepted-manuscript source profile is the unique pure equilibrium on and above this boundary; below it there is no pure-strategy equilibrium. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
 
-The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the printed Result 2 sign reversal does not survive. An analogous strong-HBP branch error affects Result 4 outside the uniform pure-equilibrium region. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
+The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the weak consumer-surplus reversal in accepted Result 3 does not survive. Accepted Result 4's high-switching-cost smaller-firm benefit region does not survive as a comparison of two pure equilibria. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
 
 ## Repository policy
 
@@ -70,3 +70,8 @@ The canonical theorem set, accepted-manuscript Results 1–7 impact, mixed-strat
 ## Stage 9 reproducibility
 
 The frozen theory now reproduces from clean CI checkout with Python 3.12/SymPy 1.14.0 exact and symbolic checks, permanent unittests, deterministic CSV/SVG regeneration, source-PDF guard, Lean 4.19.0/mathlib pinned build, and a pdfLaTeX manuscript scaffold. See `results/stage09_reproducibility_report.md` and `docs/REPRODUCIBILITY.md`.
+
+
+## Stage 10 manuscript construction
+
+A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final CI build is 18 pages. Stage-8 theory was not changed.
