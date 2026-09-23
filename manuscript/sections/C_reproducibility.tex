@@ -1,0 +1,19 @@
+\section{Reproducibility and formal scope}
+\label{app:reproducibility}
+
+The replication package is designed so that mathematical checks do not require a local copy of the copyrighted source article.
+
+\paragraph{Exact evaluator.}
+\texttt{code/uniform\_game\_cleanroom.py} constructs consumer shares directly from history-specific thresholds and clipping. It separately enumerates feasible unilateral best-response candidates and retains exact rational regressions for the Eq.~(12) counterexample, the equality boundary, consumer-surplus corrections, welfare identities, and the strong-HBP price-selection family.
+
+\paragraph{Symbolic reconstruction.}
+\texttt{code/symbolic\_reconstruction.py} integrates primitive utility and resource costs in SymPy. \texttt{code/downstream\_impact\_symbolic.py} checks the endpoint and factor identities used in the downstream sign proofs.
+
+\paragraph{Generated data.}
+\texttt{generated/parameter\_domains.csv}, used in Figure~\ref{fig:domains}, is produced deterministically from the frozen formulas and is compared byte-for-byte with a fresh regeneration in continuous integration.
+
+\paragraph{Formal verification.}
+The Lean source in \texttt{formal/Gss2012/Core.lean} checks selected algebraic and inequality statements using Lean 4.19.0 and a pinned mathlib revision. The formal artifact does not encode the complete consumer model or Nash equilibrium definition, so it should be read as an independent certificate for the proof-critical algebra rather than as a machine proof of Proposition~\ref{prop:uniform} from primitive economic definitions.
+
+\paragraph{Source provenance.}
+Equation-level source mappings are based on a lawful post-referee accepted manuscript and recorded separately from the executable package. No source PDF is required for the replication suite, and source-facing claims remain version-qualified pending direct comparison with the exact Springer typeset Version of Record.
