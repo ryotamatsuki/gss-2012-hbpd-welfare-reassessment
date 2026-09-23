@@ -49,14 +49,14 @@ t_B(d)=\frac{d+1-s}{2}.
 \]
 The first threshold determines which \(A\)-history consumers remain with \(A\); the second determines whether any \(B\)-history consumers switch to \(A\). Because each threshold is economically relevant only inside its own inherited segment, the exact share of firm \(A\) is
 \begin{equation}
-q_A(d)
+m_A(d)
 =
 \clip\!\left(t_A(d),0,x_0\right)
 +
 \clip\!\left(t_B(d)-x_0,0,1-x_0\right),
 \label{eq:clipped-demand}
 \end{equation}
-where \(\clip(y,\ell,u)=\min\{\max\{y,\ell\},u\}\). Firm \(B\)'s share is \(q_B(d)=1-q_A(d)\).
+where \(\clip(y,\ell,u)=\min\{\max\{y,\ell\},u\}\). Firm \(B\)'s share is \(m_B(d)=1-m_A(d)\).
 
 For \(0<s<1\), define
 \[
@@ -67,7 +67,7 @@ U=1+s.
 \]
 Equation~\eqref{eq:clipped-demand} is equivalent to the five-piece demand correspondence
 \begin{equation}
-q_A(d)=
+m_A(d)=
 \begin{cases}
 0,&d\le L,\\[0.25em]
 (d+1+s)/2,&L<d<\alpha,\\[0.25em]
@@ -81,8 +81,8 @@ The middle interval is the no-switch plateau. The lower switching branch has onl
 
 Firm profits are
 \[
-\pi_A=\tau a\,q_A(d),\qquad
-\pi_B=\tau b\,[1-q_A(d)].
+\pi_A=\tau a\,m_A(d),\qquad
+\pi_B=\tau b\,m_B(d).
 \]
 The common factor \(\tau\) is irrelevant for best responses.
 
