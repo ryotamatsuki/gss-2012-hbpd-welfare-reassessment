@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 13 — GO / IEP INTEGRATION CLOSED. Next gate: Stage 14 — Submission QA.**
+**Stage 14 — CONDITIONAL PASS / CLOSED. Authenticated IEP portal preflight is the sole remaining pre-submission condition. Stage 15 is not entered.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -32,12 +32,12 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
 | Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
 | Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
-| Stage 10 manuscript construction | GO / CLOSED | Full 18-page manuscript build, 5 propositions/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
+| Stage 10 manuscript construction | GO / CLOSED | Full manuscript, proposition/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
 | Stage 11 referee attack | GO / CLOSED | No certification regression; three close-literature omissions fixed; no theory rollback required. |
 | Stage 12 journal positioning | GO / CLOSED | Primary: Information Economics and Policy; JICT source-journal alternative; full candidate universe audited. |
 | Stage 13 full-paper integration | GO / CLOSED | IEP manuscript, title page, cover letter, highlights, declarations, preflight CI all complete; no theory change. |
-| Stage 14 submission QA | NEXT | Fresh package verification, current-policy check, artwork/source audit, and final PDF page inspection. No portal submission. |
-| Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
+| Stage 14 submission QA | CONDITIONAL PASS / CLOSED | Local/package QA complete. Clean source archive rebuild, 20-page visual QA, artwork/font checks, current-policy ledger, preflight/reproducibility/Lean CI all pass. Authenticated Editorial Manager preflight remains required. |
+| Stage 15 / actual submission | NOT ENTERED / PROHIBITED IN THIS WORKFLOW RUN | No submit action, payment, portal freeze, or final legal attestation performed. |
 
 ## Certified pure-equilibrium theorem
 
@@ -123,3 +123,31 @@ No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change
 * `results/stage10_claim_traceability.md`
 * `code/audit_manuscript_claims.py`
 * `sources/BIBLIOGRAPHY_PROVENANCE.md`
+
+
+## Stage 11–14 evidence
+
+* `results/stage11_referee_attack.md`
+* `results/stage11_closure.md`
+* `results/stage12_journal_positioning.md`
+* `results/stage12_closure.md`
+* `submission/journal_requirements_ledger.md`
+* `results/stage13_integration_report.md`
+* `results/stage13_closure.md`
+
+## Stage 14 submission-QA evidence
+
+* `results/stage14_visual_qa.md`
+* `results/stage14_submission_qa.md`
+* `results/stage14_closure.md`
+* `code/build_submission_source_archive.py`
+* `.github/workflows/stage14-submission-qa.yml`
+* final certified content head: `4d7f316b7f0529f1f3685c38a0acc566b38566ad`
+* final Stage-14 QA run: `35831906641` — SUCCESS
+* final submission preflight: `35831906612` — SUCCESS
+* final reproducibility regression: `35831906606` — SUCCESS
+* final Lean regression: `35831906623` — SUCCESS
+
+### Residual condition before any submission
+
+Open the authenticated Information Economics and Policy Editorial Manager record, reconcile current file designations/anonymity/title-page/reviewer/declaration fields, and inspect the portal-generated review PDF. Until that is complete, the Stage-14 state remains **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**.
