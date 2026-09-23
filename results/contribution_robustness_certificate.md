@@ -47,11 +47,21 @@
 
 ## Weak consumer-surplus correction
 
-**Invariant.** Welfare objects must be integrated over the actually realized clipped allocation; a source branch cannot be extrapolated through an ordering reversal of the cutoff and inherited-history boundary.
+**Invariant.** Consumer surplus must be integrated over the actually realized clipped allocation, and source equations must be transcribed faithfully before diagnosing an error.
 
-**Diagnostics.** Exact branch boundaries, cost/scale normalization, direct primitive integration versus symbolic formula.
+**Diagnostics.** Exact branch boundaries, source-image Eq. (13)–(17) re-transcription, cost/scale normalization, direct primitive integration versus symbolic formula.
 
-**Result.** Corrected weak-HBP CS is positive relative to the source uniform profile throughout the weak source profile domain; equilibrium interpretation is limited to the certified pure overlap.
+**Result.** Accepted Eq. (15) is correct on its switching branch. Printed Eq. (16) reverses the sign of the normalized Eq. (15), while (x_0<x_u) requires a distinct no-switch expression. Corrected weak-HBP CS is positive relative to the source uniform profile throughout the weak source profile domain; equilibrium interpretation is limited to the certified pure overlap.
+
+**Classification.** MODEL-SPECIFIC.
+
+## Weak smaller-firm profit
+
+**Invariant.** Profit at a specified price vector must use the demand branch actually induced by that vector.
+
+**Diagnostics.** Exact switch/no-switch formulas; (s=1/2,x_0=51/100) no-switch regression; (s=9/10,x_0=19/20) strong-domain overclaim guard.
+
+**Result.** Accepted Eq. (22) is a switching-branch expression and cannot be extrapolated to the weak no-switch region. The smaller firm earns less under HBP on the corrected weak pure overlap, but this sign is not generalized to strong dominance.
 
 **Classification.** MODEL-SPECIFIC.
 
@@ -67,7 +77,7 @@
 
 **Invariant.** Consumer surplus depends on the selected strong-HBP equilibrium price vector when below-cost zero-sales poaching prices are allowed.
 
-**Result.** Result 6 survives under the source/nonnegative-margin selection; unrestricted-price CS is selection-dependent.
+**Result.** For nondegenerate (x_0<1), Result 6 survives under the source/nonnegative-margin selection and unrestricted-price CS is selection-dependent. At (x_0=1), unused HBP prices remain indeterminate and the CS gap is zero.
 
 **Classification.** MODEL-SPECIFIC WITH EXPLICIT SELECTION CONDITION.
 
