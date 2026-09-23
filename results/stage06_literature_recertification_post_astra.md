@@ -18,7 +18,7 @@ The Umezawa corrigendum is a genuine close methodological precedent: it corrects
 
 That precedent does not, in the accessible version inspected, state or imply the GSS-specific threshold
 [
-x_H(s)=rac12-rac{s}{3}+rac{sqrt{3s(s+6)}}6.
+x_H(s)=\frac12-\frac{s}{3}+\frac{sqrt{3s(s+6)}}6.
 ]
 
 The later papers differ in timing, information/recognition, vertical differentiation, consumer heterogeneity, or switching-cost incidence. Colombo et al. (2024) is especially close because asymmetric inherited shares and perfect information are within its framework, but the accessible publisher materials inspected do not state the GSS global-best-response threshold.
