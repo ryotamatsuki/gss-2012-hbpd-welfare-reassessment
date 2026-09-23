@@ -1,27 +1,29 @@
 # Stage 14 Closure Manifest
 
 **Canonical status:** CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED  
-**Stage:** CLOSED at local/package QA boundary  
+**Stage:** CLOSED at local/package QA boundary after independent-audit remediation  
 **Target:** Information Economics and Policy  
-**Certified content head:** `4d7f316b7f0529f1f3685c38a0acc566b38566ad`  
+**Certified repaired content head:** `5908ae87ee6f00691ec304ccee134d708afc4a7e`  
 **Main branch:** unchanged  
 **Submission:** not performed  
 **Stage 15:** not entered
 
 ## Passing evidence
 
-- Stage-14 QA run `35831906641` — SUCCESS.
-- Submission-preflight run `35831906612` — SUCCESS.
-- Reproducibility run `35831906606` — SUCCESS.
-- Lean run `35831906623` — SUCCESS.
-- Final artifact `10737916503`.
-- Full 20-page manuscript visual QA — PASS.
+- Stage-14 QA run `35858273318` — SUCCESS.
+- Submission-preflight run `35858273323` — SUCCESS.
+- Reproducibility run `35858273226` — SUCCESS.
+- Lean run `35858273237` — SUCCESS.
+- Final artifact `10748456861`, digest `sha256:136e820ccd8592fcc0884f55432e0e74ccf10c2d4608000ef4f0d80bfdb613c1`.
+- Independent-audit findings B1–B7 — CLOSED.
+- Full 22-page repaired-manuscript visual QA — PASS.
 - Title-page visual QA — PASS.
 - One-page cover-letter visual QA — PASS.
 - Clean extraction/rebuild of minimal upload source archive — PASS.
+- Repaired exact/symbolic/unittest/generated-artifact suite — PASS.
+- Lean statement-fidelity/sentinel guard and build — PASS.
 - All PDF fonts embedded — PASS.
 - Figure/Table architecture and artwork QA — PASS.
-- Current public Elsevier/IEP policy ledger — completed.
 
 ## Sole remaining condition
 
@@ -39,6 +41,6 @@ Only after that preflight may a later explicit instruction authorize Stage 15 su
 
 ## Freeze boundary
 
-No further manuscript or theory modification is authorized merely for convenience. Any substantive mathematical change triggers Stage-8 change control; any target-journal switch reopens Stage 12/13 as required.
+The repaired theory is refrozen. Further substantive mathematical changes invoke Stage-8 change control; a target-journal switch reopens Stage 12/13.
 
 **Stage 14 closed.**

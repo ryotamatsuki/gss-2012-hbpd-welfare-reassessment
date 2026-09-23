@@ -25,7 +25,7 @@ x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
 
 The accepted-manuscript source profile is the unique pure equilibrium on and above this boundary; below it there is no pure-strategy equilibrium. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
 
-The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the weak consumer-surplus reversal in accepted Result 3 does not survive. Accepted Result 4's high-switching-cost smaller-firm benefit region does not survive as a comparison of two pure equilibria. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
+The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Image-level reinspection confirms that accepted Eq. (15) itself is correct on its switching branch; the source sign inconsistency occurs in Eq. (16). Direct integration gives positive CS gaps throughout the weak-HBP profile domain. Result 4 is also branch-specific outside the pure overlap; on the corrected weak pure-equilibrium overlap the smaller firm loses from HBP. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
 
 ## Repository policy
 
@@ -74,14 +74,14 @@ The frozen theory now reproduces from clean CI checkout with Python 3.12/SymPy 1
 
 ## Stage 10 manuscript construction
 
-A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final IEP-integrated CI build is 20 pages. Stage-8 theory was not changed.
+A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final repaired IEP-integrated CI build is 22 pages. The independent audit invoked Stage-8 change control for downstream/source-scope repairs; the central `x_H(s)` theorem was unchanged and the repaired theory is refrozen.
 
 
 ## Stage 11–14 completion
 
-Stage 11 hostile-referee review found no certification regression; close literature was strengthened without changing theory. Stage 12 selected **Information Economics and Policy** as the primary target. Stage 13 produced the IEP-facing manuscript, title page, one-page cover letter, highlights, declarations, and submission preflight.
+A later independent submission audit superseded the initial Stage-11 pass and identified B1–B7, including source-fidelity, profit-branch, endpoint/proof, and formal-CI defects. Change control was invoked, the affected stages were repaired/re-certified, and the Umezawa corrigendum/non-absorption discussion was integrated. Stage 12 continues to select **Information Economics and Policy** as the primary target; Stage 13 is re-certified with synchronized manuscript, title page, one-page cover letter, highlights, and declarations.
 
-Stage 14 passed clean-package extraction/rebuild, full manuscript/title/cover compilation, exact/symbolic/Lean regressions, embedded-font checks, all-page PDF visual inspection, figure/table artwork QA, and final checksum/provenance recording.
+On repaired content head `5908ae87ee6f00691ec304ccee134d708afc4a7e`, Stage 14 passed clean-package extraction/rebuild, full manuscript/title/cover compilation, the repaired exact/symbolic/7-test/generated-artifact suite, Lean regression, embedded-font checks, 22-page visual inspection, figure/table artwork QA, and final checksum/provenance recording.
 
 The canonical Stage-14 state is **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED** because the live IEP Guide body is not retrievable in the automated environment and current portal-only fields/file designations must be checked in the authenticated Editorial Manager record before any submit action.
 

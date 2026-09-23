@@ -1,17 +1,18 @@
 # Stage 13 Closure Manifest
 
-**Canonical verdict:** GO / CLOSED
-**Target journal:** Information Economics and Policy
-**Theory change:** none.
+**Canonical verdict:** RE-CERTIFIED GO / CLOSED after independent-audit reintegration  
+**Target journal:** Information Economics and Policy  
+**Certified repaired content head:** `5908ae87ee6f00691ec304ccee134d708afc4a7e`  
+**Theory change:** source/scope/downstream repairs integrated; central (x_H(s)) theorem unchanged.
 
 ## Final CI evidence
 
-- Submission preflight run 35825889782 — SUCCESS.
-- Reproducibility run 35825889798 — SUCCESS.
-- Lean formal-verification run 35825889840 — SUCCESS.
+- Submission preflight run `35858273323` — SUCCESS.
+- Reproducibility run `35858273226` — SUCCESS.
+- Lean formal-verification run `35858273237` — SUCCESS.
 
-The final Stage-13 head builds the complete manuscript PDF, separate title-page PDF, separate cover-letter PDF, highlights/declarations audit, exact/symbolic/regression suite, deterministic generated artifacts, and Lean proof-critical core.
+The repaired IEP package synchronizes the abstract, cover letter, highlights, Result 4 branch scope, strong-HBP endpoint language, declarations, and formal-verification wording with the re-certified Stage-8 theory state.
 
-No unresolved citations/references remain. The earlier Make target collision was fixed by marking the submission target phony; no research content changed.
+No unresolved citations/references remain. Stage 13 is closed in the repaired state.
 
-**Next:** Stage 14 — Submission QA.
+**Next:** Stage 14 — final submission QA / portal preflight boundary.

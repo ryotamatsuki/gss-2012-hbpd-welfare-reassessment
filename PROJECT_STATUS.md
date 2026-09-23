@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 14 — CONDITIONAL PASS / CLOSED. Authenticated IEP portal preflight is the sole remaining pre-submission condition. Stage 15 is not entered.**
+**Stage 14 — CONDITIONAL PASS / CLOSED after independent-audit remediation. Authenticated IEP portal preflight is the sole remaining pre-submission condition. Stage 15 is not entered.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -19,24 +19,24 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Gate | Status | Notes |
 |---|---|---|
 | Stage 0 evidence/source freeze | GO for accepted-manuscript-qualified research | Lawful post-referee accepted manuscript obtained; exact Springer VOR equation text still unavailable. |
-| Stage 1 source & mathematical audit | GO | Seven accepted-manuscript Results mapped; critical equations independently reconstructed. |
+| Stage 1 source & mathematical audit | RE-CERTIFIED GO | Eqs. (13)–(17) image-rechecked; Eq. (15) restored as source-faithful, Eq. (16) sign inversion separated from branch validity. |
 | Stage 2 literature / novelty kill | GO | No prior correction or theorem absorption found for the source-specific \`x_H\` result. |
 | Stage 3 architecture | GO | Route B: corrected complete pure-equilibrium reassessment. |
 | Stage 4 global uniform-price game | GO / CLOSED | Five-piece clipped demand and complete pure correspondence proved. |
-| Stage 4A independent certification | PASS / CLOSED | Candidate-deviation, alternative-equilibrium, indifference, strategy-domain, and boundary attacks pass. |
+| Stage 4A independent certification | RE-CERTIFIED PASS / CLOSED | Capture/margin logic, `s=0`, `x_0=1`, reverse branch, equality, and all global deviations re-certified. |
 | Mixed-equilibrium scope | FROZEN — Route B | Not solved; no claim of general equilibrium nonexistence and no equilibrium welfare in the no-pure region. |
 | Stage 6 novelty re-kill | GO | Frozen UPE-2012-1 theorem survives source-specific absorption search. |
-| Stage 7 downstream impact | GO | Accepted-manuscript Results 1–7 impact mapped on certified equilibrium domains. |
-| Formal verification | PASS | Lean 4.19.0 / mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`; clean CI build, no project placeholders/axioms. |
+| Stage 7 downstream impact | RE-CERTIFIED GO | Result 4 is branch-correct; weak smaller-firm loss restricted to the pure overlap; strong endpoint/selection distinctions synchronized. |
+| Formal verification | RE-CERTIFIED PASS | Lean 4.19.0 / pinned mathlib; repaired Eq. (15)/(16) targets and sentinel placeholder/axiom guard pass on final repaired head. |
 | Stage 7.5 | GO / CLOSED | Full 15–20 page correction/reassessment architecture frozen; mixed pricing excluded. |
 | Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
 | Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
-| Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
+| Stage 9 reproducibility | RE-CERTIFIED GO / CLOSED | Repaired 7-test suite, exact/symbolic checks, generated artifacts, source guard, Lean, and LaTeX all pass from clean checkout. |
 | Stage 10 manuscript construction | GO / CLOSED | Full manuscript, proposition/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
-| Stage 11 referee attack | GO / CLOSED | No certification regression; three close-literature omissions fixed; no theory rollback required. |
+| Stage 11 referee attack | RE-CERTIFIED GO / CLOSED | Later independent audit found B1–B7; limited rollback/change control completed and all blocking findings closed. |
 | Stage 12 journal positioning | GO / CLOSED | Primary: Information Economics and Policy; JICT source-journal alternative; full candidate universe audited. |
-| Stage 13 full-paper integration | GO / CLOSED | IEP manuscript, title page, cover letter, highlights, declarations, preflight CI all complete; no theory change. |
-| Stage 14 submission QA | CONDITIONAL PASS / CLOSED | Local/package QA complete. Clean source archive rebuild, 20-page visual QA, artwork/font checks, current-policy ledger, preflight/reproducibility/Lean CI all pass. Authenticated Editorial Manager preflight remains required. |
+| Stage 13 full-paper integration | RE-CERTIFIED GO / CLOSED | IEP manuscript, highlights, cover letter and declarations synchronized to repaired source/profit/endpoint/formal scope. |
+| Stage 14 submission QA | CONDITIONAL PASS / CLOSED | Repaired local/package QA complete. Clean source rebuild, 22-page visual QA, artwork/font checks, preflight/reproducibility/Lean CI all pass. Authenticated Editorial Manager preflight remains required. |
 | Stage 15 / actual submission | NOT ENTERED / PROHIBITED IN THIS WORKFLOW RUN | No submit action, payment, portal freeze, or final legal attestation performed. |
 
 ## Certified pure-equilibrium theorem
@@ -75,7 +75,7 @@ At \(x=x_H(s)\), B has a second payoff-equal kink best response, but it does not
 
 ## Post-freeze state
 
-No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change repository/reproducibility infrastructure only; substantive theory changes require rollback under `docs/THEORY_CHANGE_CONTROL.md`.
+No mathematical or scope gate remains open. The independent-audit repair invoked change control, the affected stages were re-certified, and theory is refrozen. Further substantive changes require rollback under `docs/THEORY_CHANGE_CONTROL.md`.
 
 
 ## Stage 7.5A evidence
@@ -142,11 +142,12 @@ No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change
 * `results/stage14_closure.md`
 * `code/build_submission_source_archive.py`
 * `.github/workflows/stage14-submission-qa.yml`
-* final certified content head: `4d7f316b7f0529f1f3685c38a0acc566b38566ad`
-* final Stage-14 QA run: `35831906641` — SUCCESS
-* final submission preflight: `35831906612` — SUCCESS
-* final reproducibility regression: `35831906606` — SUCCESS
-* final Lean regression: `35831906623` — SUCCESS
+* final repaired content head: `5908ae87ee6f00691ec304ccee134d708afc4a7e`
+* final Stage-14 QA run: `35858273318` — SUCCESS
+* final submission preflight: `35858273323` — SUCCESS
+* final reproducibility regression: `35858273226` — SUCCESS
+* final Lean regression: `35858273237` — SUCCESS
+* final package artifact: `10748456861`
 
 ### Residual condition before any submission
 

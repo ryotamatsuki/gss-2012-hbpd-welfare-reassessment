@@ -120,3 +120,14 @@ This certificate becomes stale if any of the following changes materially:
 **FORMAL VERIFICATION PASS — RE-CERTIFIED.**
 
 The selected formal core is again eligible for the Stage-8 theory freeze. The full-model formalization remains intentionally out of scope.
+
+
+## 11. Final repaired-head confirmation
+
+After the remaining stage-state/source-document cleanup, the unchanged repaired Lean sources were rerun on final repaired content head `5908ae87ee6f00691ec304ccee134d708afc4a7e`.
+
+- workflow run: `35858273237`
+- job: `107171923450`
+- result: **SUCCESS**
+
+This final-head regression confirms that no later documentation/reproducibility synchronization invalidated the repaired formal core.

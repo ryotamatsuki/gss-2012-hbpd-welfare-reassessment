@@ -1,16 +1,16 @@
 # Stage 14 — Local Visual and Artwork QA
 
-**Verdict:** PASS  
-**Certified content head:** `4d7f316b7f0529f1f3685c38a0acc566b38566ad`  
-**Final QA artifact:** GitHub Actions artifact `10737916503` from run `35831906641`.
+**Verdict:** PASS — RE-INSPECTED AFTER INDEPENDENT-AUDIT REPAIR  
+**Certified repaired content head:** `5908ae87ee6f00691ec304ccee134d708afc4a7e`  
+**Final QA artifact:** GitHub Actions artifact `10748456861` from run `35858273318`.
 
 ## PDFs inspected
 
-- manuscript: 20 pages;
+- manuscript: **22 pages**;
 - title page: 1 page;
 - cover letter: 1 page.
 
-All 20 manuscript pages were rendered to PNG and visually inspected. The first page, quantitative figure/counterexample page, Result-map table page, declarations/references pages, title page, and cover letter were additionally inspected at higher resolution.
+All 22 manuscript pages were rendered to PNG by the final Stage-14 run. The complete page set was inspected as a contact sheet, with Figure 1/Table 1 (page 7) and Table 2 (page 11) inspected at full size. The title page and one-page cover letter were separately rendered and inspected at full size.
 
 ## Manuscript visual result
 
@@ -19,26 +19,18 @@ PASS.
 Observed:
 
 - no clipped equations;
-- no overlapping prose or mathematical displays;
+- no overlapping prose or displays;
 - no broken glyphs or black squares;
-- page numbering stable;
-- propositions/equation labels readable;
+- no accidental blank pages;
+- page numbering and margins consistent;
 - appendix equations fit the text block;
-- declarations and bibliography render correctly;
-- no blank accidental pages;
-- margins remain consistent.
+- declarations and bibliography render correctly.
 
 ## Figure 1
 
 PASS.
 
-- plots the verified objects (x_H(s)), (ar x(s)), and (x_u(s));
-- axes and mathematical labels readable;
-- solid/dashed/dotted series distinguish the curves without relying on color alone;
-- critical-point marker is visible;
-- legend is readable and does not obscure the plotted result;
-- caption states the certified pure-overlap interpretation;
-- source is `generated/parameter_domains.csv`, regenerated and byte-compared in CI.
+The legend is readable and does not cover the substantive curves; the (s_c) marker/vertical reference and the narrow weak/pure-overlap geometry remain visible. Line styles distinguish the series without relying on color alone, and the caption states the certified overlap interpretation.
 
 ## Tables
 
@@ -46,35 +38,23 @@ PASS.
 
 ### Table 1
 
-The exact counterexample values (5/6), (5/12), (25/72), (28/15), (2/5), (56/75), and gain (719/1800) are readable and consistent with the frozen regression.
+The caption includes the full counterexample parameter tuple ((	au,sigma,x_0,c)=(1,1/2,3/5,0)). The exact candidate/deviation values and (719/1800) gain are legible.
 
 ### Table 2
 
-The accepted-manuscript Results 1–7 impact map fits within the page, remains readable, and preserves the Stage-8 scope qualifications.
+The repaired Results 1–7 classification fits on the page. Result 4 is explicitly branch-specific outside the weak pure overlap; Result 6 separates (x_0<1) from the (x_0=1) empty-market endpoint.
 
 ## Fonts / PDF structure
 
-`pdffonts` reports `emb=yes` for every font used in the manuscript PDF.
-
-Some pdfTeX-generated EC glyph sets appear as embedded Type-3 fonts; they render correctly in the review PDF and no current public Elsevier evidence retrieved at Stage 14 prohibits them for initial review. Editable LaTeX source is included in the source archive.
+The final Stage-14 font audit passed: all manuscript fonts are embedded. PDF structural QA passed.
 
 ## Title page
 
-PASS.
-
-Author name, Independent Researcher affiliation, Matsuyama/Ehime/Japan address, email, ORCID, corresponding-author status, article type, target journal, funding, competing-interest and data/code statements are legible and internally consistent.
+PASS. Author/contact, affiliation, ORCID, corresponding-author status, target journal, article type, funding, competing-interest, and data/code text are legible.
 
 ## Cover letter
 
-The first Stage-14 render placed the signature alone on page 2. This presentation-only defect was corrected by using a 10pt letter with 0.8-inch margins.
-
-Final state:
-
-- one page;
-- no clipping;
-- target journal and title correct;
-- contribution/scope wording consistent with the manuscript;
-- sole-author signature/contact block fully visible.
+PASS. One page, no clipping or overflow, and the source-fidelity/profit-scope wording matches the repaired manuscript.
 
 ## Visual-QA gate
 

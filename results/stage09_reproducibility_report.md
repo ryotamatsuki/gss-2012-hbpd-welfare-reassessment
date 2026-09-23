@@ -1,10 +1,10 @@
 # Stage 9 — Repository / Reproducibility Setup
 
-**Verdict:** ORIGINAL PASS; 2026-09-23 RE-CERTIFICATION IN PROGRESS  
+**Verdict:** RE-CERTIFIED PASS / CLOSED after 2026-09-23 independent-audit repair  
 **Theory input:** Stage-8 freeze commit b5bb95f083d4c855647314f90ba735eabf2476d3  
 **Production branch:** research/stage-09-reproducibility  
-**Reproducibility code head certified by CI:** ff695a6722bc7e17c7b8325db4eb947198a0e5ca  
-**Theory change:** NONE.
+**Repaired content head certified by CI:** `5908ae87ee6f00691ec304ccee134d708afc4a7e`  
+**Theory change:** source-fidelity/profit-branch regression expectations repaired; headline `x_H(s)` theorem unchanged.
 
 ## 1. Objective
 
@@ -74,7 +74,7 @@ Stage 9 exposed a SymPy representation-sensitivity bug in the prior auxiliary sc
 
 tests/test_frozen_regressions.py
 
-Original CI result: 4 tests run; all passed. The repaired suite contains 7 permanent unittests, including Eq. (15) source fidelity, the weak no-switch Result-4 witness, and the strong-profit non-portability witness; fresh CI confirmation is required before re-closing Stage 9.
+The repaired suite contains 7 permanent unittests, including Eq. (15) source fidelity, the weak no-switch Result-4 witness, and the strong-profit non-portability witness. Fresh-checkout run `35858273226` passed the complete repaired suite.
 
 ## 5. Deterministic generated artifacts
 
@@ -113,19 +113,19 @@ No duplicate theorem source of truth was created.
 
 ## 8. Formal verification fresh-clone regression
 
-Existing .github/workflows/lean-formal.yml was rerun on the Stage-9 PR head.
+The repaired formal core was also rerun on the final repaired content head.
 
 GitHub Actions:
 
-- run: 35820175432
-- job: 107050137903
+- run: `35858273237`
+- job: `107171923450`
 - conclusion: SUCCESS
 
 The run confirms:
 
 - exact mathlib revision checkout;
 - placeholder/project-axiom audit PASS;
-- all ten formal targets build;
+- all twelve repaired formal targets build;
 - #print axioms reports only propext, Classical.choice, and Quot.sound;
 - Build completed successfully.
 
@@ -135,8 +135,8 @@ Formal coverage remains **PROOF-CRITICAL CORE**, exactly as frozen at Stage 8.
 
 GitHub Actions Stage-9 reproducibility run:
 
-- run: 35820175443
-- Python job: 107050137762
+- run: `35858273226`
+- Python job: `107171923547`
 - conclusion: SUCCESS
 
 Observed outputs:
@@ -144,7 +144,7 @@ Observed outputs:
 - exact clean-room checks PASS;
 - symbolic primitive welfare identities PASS;
 - Stage-7 symbolic identities PASS;
-- 4 unittests PASS;
+- 7 unittests PASS;
 - generated artifacts reproduce byte-for-byte;
 - source redistribution audit PASS.
 
@@ -159,11 +159,11 @@ This is build infrastructure, not Stage-10 paper drafting.
 
 CI:
 
-- run: 35820175443
-- LaTeX job: 107050138087
+- run: `35858273226`
+- LaTeX job: `107171923351`
 - conclusion: SUCCESS
-- output: build/manuscript/main.pdf
-- observed size: 121253 bytes, one page.
+- output: `build/manuscript/main.pdf`
+- current full manuscript build: PASS.
 
 ## 11. CI failure/recovery ledger
 
@@ -198,7 +198,7 @@ Neither event is a Stage-8 theory regression.
 
 The original Stage-9 gate passed. The independent submission audit changed source-fidelity definitions and permanent regression expectations, so that historical pass cannot certify the repaired head.
 
-**RE-CERTIFICATION IN PROGRESS.** Re-close only after `make python-checks` and `make verify-generated` pass from a fresh checkout with the repaired 7-test suite and regenerated regression ledger.
+**RE-CERTIFIED PASS / CLOSED.** Run `35858273226` executed the repaired branch from a fresh checkout; `make python-checks`, the 7-test regression suite, `make verify-generated`, the source redistribution guard, and the LaTeX build all passed.
 
 ## 14. Next-stage contract
 
