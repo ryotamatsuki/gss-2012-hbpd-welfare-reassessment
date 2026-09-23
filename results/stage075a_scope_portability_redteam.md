@@ -23,11 +23,19 @@ No mixed-strategy quantifier is asserted.
 
 ### CS-2012-W — weak-HBP consumer surplus
 
-The branch-correct primitive profile comparison is defined throughout the accepted weak-HBP profile domain. It is an **equilibrium comparison** only where the uniform pure equilibrium exists.
+The branch-correct primitive profile comparison is defined throughout the accepted weak-HBP profile domain. Accepted Eq. (15) itself matches the primitive switching-branch expression; the accepted Eq. (16) introduces the source sign error, and a separate no-switch expression is required when (x_0<x_u). The comparison is an **equilibrium comparison** only where the uniform pure equilibrium exists.
 
 Maximum defensible statement:
 
-> Under weak HBP, direct primitive integration yields higher consumer surplus than the accepted uniform-price profile throughout the source weak-dominance profile domain; as an equilibrium comparison, this statement is restricted to the corrected pure-overlap domain.
+> Under weak HBP, direct primitive integration yields higher consumer surplus than the accepted uniform-price profile throughout the source weak-dominance profile domain. Accepted Eq. (15) is correct on the switching branch, but Eq. (16) reverses its sign; as an equilibrium comparison, the result is restricted to the corrected pure-overlap domain.
+
+### PROF-2012-W — weak smaller-firm profit
+
+The accepted uniform price vector induces a switching branch only for (x_0ge x_u). Accepted Eq. (22) is therefore not a full-domain profile formula. The actual weak-profile B-profit comparison is piecewise across (x_u).
+
+Maximum defensible statement:
+
+> On the corrected weak pure-equilibrium overlap, the smaller firm earns less under HBP than under uniform pricing. No corresponding sign is asserted for strong dominance, and no-switch weak profile comparisons must use the branch-correct profit formula.
 
 ### W-2012-W — weak social welfare
 
@@ -128,9 +136,10 @@ Therefore the correct classification is not “portable because five normalizati
 | Claim | Mechanism invariant | Tests | Result | Classification | Maximum defensible wording |
 |---|---|---|---|---|---|
 | UPE-2012-1 | global best response must compare the smooth switching optimum with the no-poaching kink | P1–P5 | survives all representation/boundary tests | MODEL-SPECIFIC | complete pure-strategy correspondence in the GSS inherited-history Hotelling benchmark |
-| weak CS correction | primitive utility must be integrated on the actual clipped allocation branch | branch/cutoff audit + P1/P2/P4 | survives | MODEL-SPECIFIC | accepted weak-CS formula/result requires correction in this model |
+| weak CS correction | primitive utility must be integrated on the actual clipped allocation branch and source Eq. (15) must be distinguished from Eq. (16) | branch/cutoff audit + source-fidelity audit + P1/P2/P4 | survives | MODEL-SPECIFIC | accepted Result 3 fails because Eq. (16) reverses the Eq. (15) sign and the no-switch branch requires separate accounting |
+| weak B-profit correction | realized uniform allocation branch must be used in profit accounting | exact switch/no-switch regressions | survives | MODEL-SPECIFIC | smaller firm earns less under HBP on the weak pure overlap only; no strong-domain extension |
 | weak welfare | real transport/switching cost comparison on certified pure overlap | P1/P2/P4 | survives | MODEL-SPECIFIC | uniform pricing yields higher welfare on the corrected weak pure-overlap domain |
-| strong CS | source strong-HBP price selection plus corrected uniform pure domain | strategy-domain selection attack | selection-dependent if below-cost prices allowed | CONDITIONALLY PORTABLE WITHIN MODEL / manuscript label: MODEL-SPECIFIC WITH SELECTION CONDITION | Result 6 survives under source/nonnegative-margin HBP selection |
+| strong CS | nondegenerate source strong-HBP price selection plus corrected uniform pure domain | strategy-domain selection attack + empty-segment endpoint audit | selection-dependent if below-cost prices allowed; full price vector indeterminate at (x_0=1) | CONDITIONALLY PORTABLE WITHIN MODEL / manuscript label: MODEL-SPECIFIC WITH SELECTION CONDITION | Result 6 survives for (x_0<1) under source/nonnegative-margin selection; CS gap is zero at (x_0=1) |
 | strong welfare | allocation/resource-cost comparison | below-cost HBP family attack + P1/P2/P4 | selection-invariant | MODEL-SPECIFIC | Result 7 survives on corrected pure domain; equality only at \(x_0=1\) |
 
 For the workflow's required single classification, the paper's headline contribution is **MODEL-SPECIFIC**.
@@ -148,6 +157,6 @@ Do not write:
 
 ## 7. Formal-verification handoff
 
-The Stage-4A target map has been discharged by `results/stage075a_formal_verification_certificate.md`. Lean 4.19.0 with mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b` builds successfully in GitHub Actions; placeholder/project-axiom and statement-fidelity audits pass.
+The Stage-4A target map is re-opened for the post-Astra formal recertification. The updated formal source removes the false Eq. (15) discrepancy theorem, adds Eq. (15)/(16) source-fidelity theorems and weak/strong profit regressions, and repairs the placeholder/project-axiom guards with sentinel tests.
 
-**Stage 7.5A verdict = GO / CLOSED.** The claim set is scope-certified as MODEL-SPECIFIC and the Formal Verification Gate is closed. Route to Stage 8.
+**Stage 7.5A economic-scope verdict remains GO. Formal-verification closure is pending the fresh post-Astra CI run and will be recorded in the recertified formal certificate.** The claim set is scope-certified as MODEL-SPECIFIC and the Formal Verification Gate is closed. Route to Stage 8.
