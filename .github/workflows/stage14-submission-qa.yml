@@ -1,0 +1,106 @@
+name: Stage 14 submission QA
+
+on:
+  push:
+    branches:
+      - research/stage-14-submission-qa
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  stage14-qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pinned Python dependency
+        run: python -m pip install -r requirements.txt
+
+      - name: Install QA toolchain
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends             texlive-latex-base texlive-latex-recommended texlive-latex-extra             texlive-pictures poppler-utils unzip zip
+
+      - name: Build manuscript and submission files
+        run: |
+          make manuscript
+          make submission
+
+      - name: Build minimal source archive
+        run: python code/build_submission_source_archive.py
+
+      - name: Clean-extraction source build
+        shell: bash
+        run: |
+          rm -rf build/stage14/extracted
+          mkdir -p build/stage14/extracted
+          unzip -q build/stage14/gss2012_iep_submission_source.zip -d build/stage14/extracted
+          cd build/stage14/extracted
+          mkdir -p _build/manuscript _build/submission
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory=_build/manuscript manuscript/main.tex
+          bibtex _build/manuscript/main
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory=_build/manuscript manuscript/main.tex
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory=_build/manuscript manuscript/main.tex
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory=_build/submission submission/title_page.tex
+          pdflatex -interaction=nonstopmode -halt-on-error -output-directory=_build/submission submission/cover_letter.tex
+          test -s _build/manuscript/main.pdf
+          test -s _build/submission/title_page.pdf
+          test -s _build/submission/cover_letter.pdf
+
+      - name: PDF structural QA and font embedding
+        shell: bash
+        run: |
+          mkdir -p build/stage14/rendered
+          pdfinfo build/manuscript/main.pdf > build/stage14/manuscript_pdfinfo.txt
+          pdffonts build/manuscript/main.pdf > build/stage14/manuscript_pdffonts.txt
+          cat build/stage14/manuscript_pdffonts.txt
+          awk 'NR>2 && NF>5 && $(NF-4) != "yes" {print "UNEMBEDDED:", $0; bad=1} END {exit bad}' build/stage14/manuscript_pdffonts.txt
+          pdftoppm -png -r 110 build/manuscript/main.pdf build/stage14/rendered/page >/dev/null 2>&1
+          test "$(find build/stage14/rendered -name 'page-*.png' | wc -l)" -ge 1
+
+      - name: Full automated submission audit
+        run: |
+          python code/audit_submission_package.py
+          python code/audit_manuscript_claims.py
+          python code/uniform_game_cleanroom.py
+          python code/symbolic_reconstruction.py
+          python code/downstream_impact_symbolic.py
+
+      - name: No unresolved refs or placeholders
+        shell: bash
+        run: |
+          if grep -E 'There were undefined (references|citations)|Citation .+ undefined|Reference .+ undefined' build/manuscript/main.log; then
+            exit 1
+          fi
+          if grep -RInE '\b(TBD|TODO|FIXME|PLACEHOLDER)\b' manuscript submission; then
+            exit 1
+          fi
+
+      - name: Checksums
+        shell: bash
+        run: |
+          sha256sum build/manuscript/main.pdf > build/stage14/MANUSCRIPT_SHA256.txt
+          sha256sum build/submission/title_page.pdf > build/stage14/TITLE_PAGE_SHA256.txt
+          sha256sum build/submission/cover_letter.pdf > build/stage14/COVER_LETTER_SHA256.txt
+
+      - name: Upload final QA artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage14-final-package
+          path: |
+            build/manuscript/main.pdf
+            build/submission/title_page.pdf
+            build/submission/cover_letter.pdf
+            build/stage14/gss2012_iep_submission_source.zip
+            build/stage14/*SHA256.txt
+            build/stage14/manuscript_pdfinfo.txt
+            build/stage14/manuscript_pdffonts.txt
+            build/stage14/rendered/*.png
+          if-no-files-found: error

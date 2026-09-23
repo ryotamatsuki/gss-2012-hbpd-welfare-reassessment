@@ -1,0 +1,47 @@
+name: Stage 13-14 submission preflight
+
+on:
+  push:
+    branches:
+      - research/stage-13-iep-integration
+      - research/stage-14-submission-qa
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  submission-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install LaTeX
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends             texlive-latex-base texlive-latex-recommended texlive-latex-extra             texlive-pictures
+
+      - name: Build complete manuscript
+        run: make manuscript
+
+      - name: Build title page and cover letter
+        run: make submission
+
+      - name: Assert submission PDFs
+        shell: bash
+        run: |
+          test -s build/manuscript/main.pdf
+          test -s build/submission/title_page.pdf
+          test -s build/submission/cover_letter.pdf
+
+      - name: Fail on unresolved manuscript references
+        shell: bash
+        run: |
+          if grep -E 'There were undefined (references|citations)|Citation .+ undefined|Reference .+ undefined' build/manuscript/main.log; then
+            echo "Unresolved manuscript citation/reference"
+            exit 1
+          fi

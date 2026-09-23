@@ -1,0 +1,11 @@
+{
+  "files": {
+    "figure_parameter_domains.svg": "9a29444057f8cdc3e566e0740685719332aebd2436bb8df55213b170cfedcdf0",
+    "figure_uniform_demand_regimes.svg": "3f4977bc7b9d08dbf49759a096bce04d4a2d3662101b38ab2d545ec7a8342970",
+    "frozen_regressions.csv": "1a51a37fc8e6ebb29dcc296c706e4c8a8ea3444fc3a73718fec89ccaf51e0857",
+    "parameter_domains.csv": "1858a1337732ec6b6541154c34c5b4f0c5fc1997447a9f9562b8cf425cb6a9cd"
+  },
+  "generator": "code/generate_stage09_artifacts.py",
+  "stage": 9,
+  "theory_freeze": "Stage 8"
+}

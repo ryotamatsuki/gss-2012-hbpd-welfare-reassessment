@@ -1,0 +1,42 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Purchase-history data allow firms to distinguish inherited customers from consumers attached to a rival. When switching is costly, that information changes both the intensity of poaching and the value of an installed customer base. A large literature studies these forces in dynamic switching-cost competition and behavior-based price discrimination; see, among others, \citet{Klemperer1995}, \citet{Chen1997}, \citet{VillasBoas1999}, \citet{FudenbergTirole2000}, and \citet{ShafferZhang2000}.
+
+Because customer-history information is the input that permits firms to distinguish retained customers from poaching targets, the welfare consequences of this form of data-enabled pricing depend on the correctness of the uniform-pricing benchmark. \citet{GehrigShyStenbacka2012} provide a particularly transparent welfare benchmark. Two Hotelling firms inherit asymmetric market shares, consumers pay a cost when changing supplier, and the firms are compared under uniform pricing and history-based price discrimination (HBP). In the post-referee accepted manuscript, the uniform-pricing analysis reports a unique Nash--Bertrand price vector and then uses that vector to compare market shares, profits, consumer surplus, and social welfare across pricing regimes.
+
+This paper revisits that benchmark from the primitive consumer-choice problem. The key observation is that uniform demand is globally piecewise. Besides the smooth branch on which some customers of the inherited dominant firm switch to the smaller firm, there is a no-switch plateau. A local first-order solution on the switching branch is therefore not a Nash equilibrium unless each firm also prefers it to the relevant plateau boundary.
+
+The resulting correction is exact. Let \(x_0>1/2\) be the dominant firm's inherited share, \(\tau\) the Hotelling transport parameter, and \(\sigma\) the switching cost. Writing \(s=\sigma/\tau\), define
+\[
+x_H(s)
+=
+\frac12-\frac{s}{3}
++\frac{\sqrt{3s(s+6)}}6.
+\]
+For \(0<s<1\), the uniform-price vector reported in the accepted manuscript is the unique pure-strategy equilibrium if and only if \(x_0\ge x_H(s)\). For \(1/2<x_0<x_H(s)\), no pure-strategy price equilibrium exists. The proof is global: it reconstructs the complete clipped demand, excludes capture and plateau equilibria, rules out the opposite switching branch, and compares the source candidate with the smaller firm's no-poaching kink. At equality, the smaller firm has two payoff-equal best responses, but the kink action does not form a second Nash profile.
+
+Figure~\ref{fig:domains} visualizes the corrected equilibrium domain, while Table~\ref{tab:result-map} summarizes the downstream status of the accepted manuscript's numbered Results.
+
+The correction has a first-order consequence for the welfare comparison. The accepted weak-HBP region and the pure-uniform equilibrium region overlap only if
+\[
+s<s_c
+=
+-3+\frac{6\sqrt{33}}{11}
+\approx0.1334.
+\]
+Thus a substantial portion of the parameter space used for the source profile comparisons does not support the pure uniform equilibrium being compared.
+
+A second correction is logically independent of equilibrium existence. At the reported uniform price vector, the realized allocation itself changes when the inherited share crosses
+\[
+x_u(s)=\frac12+\frac{s}{6}.
+\]
+Below this cutoff, no consumer switches. The one-way-switch consumer-surplus integral used in the accepted manuscript cannot be extrapolated through that ordering change. On its valid switching branch, accepted Eq.~(15) is algebraically correct and matches primitive integration. The source inconsistency enters in Eq.~(16), which reverses the sign of the correctly normalized Eq.~(15), while the no-switch region requires a different realized-allocation expression. Direct primitive integration shows that throughout the accepted weak-dominance profile domain HBP gives higher consumer surplus than the uniform source profile. Consequently, the weak-dominance consumer-surplus sign reversal in accepted Result~3 is not reproduced.
+
+Combining the equilibrium and accounting corrections produces a compact downstream map. On the corrected weak pure-equilibrium overlap, the smaller firm earns less under HBP than under uniform pricing. Outside that overlap, accepted Eq.~(22) must itself be branch-corrected when the uniform source prices induce no switching, so Result~4 cannot be retained as a full-domain profile theorem either. The qualitative welfare ranking in accepted Result~5 survives: uniform pricing produces higher social welfare on the corrected overlap. Under strong dominance, the consumer-surplus result survives on the corrected pure domain under the source/nonnegative-margin HBP selection. If below-cost poaching prices are admitted, a zero-sales equilibrium price family makes consumer surplus and profit distribution selection-dependent. Social welfare is unchanged across that family, so the strong welfare ranking in accepted Result~7 survives independently of price selection.
+
+The paper's contribution is deliberately model-specific. We do not claim a general nonexistence theorem for switching-cost Bertrand games, and we do not solve the mixed-price equilibrium below \(x_H\). Related dynamic, policy-choice, and imperfect-recognition models have different state variables or information structures \citep{JeongMaruyama2008,FabraGarcia2015,ColomboGrazianoPignataro2024}. The contribution here is to give the complete pure-price correspondence for the GSS uniform benchmark and to propagate that correction through the source welfare results without changing the underlying model.
+
+The analysis is supported by three independent verification layers. Exact rational code evaluates demand directly from primitive clipped thresholds and searches global unilateral deviations; symbolic code reconstructs the surplus and welfare identities; and selected proof-critical algebra is machine-checked in Lean 4/mathlib. The Lean certificate is intentionally narrower than the economic theorem: the continuum demand partition and complete Nash branch enumeration remain analytic objects.
+
+The remainder of the paper is organized as follows. Section~\ref{sec:model} states the source model and reconstructs exact uniform demand. Section~\ref{sec:uniform} derives the complete pure-strategy uniform-price correspondence and the corrected comparison domain. Section~\ref{sec:comparisons} recomputes market shares, consumer surplus, and profits. Section~\ref{sec:welfare} studies welfare and maps the implications to the accepted manuscript's numbered Results. Section~\ref{sec:scope} records strategy-domain, selection, and formal-verification boundaries. Sections~\ref{sec:literature}--\ref{sec:discussion} place the correction in the literature and discuss its interpretation.

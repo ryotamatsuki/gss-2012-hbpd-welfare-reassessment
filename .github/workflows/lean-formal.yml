@@ -1,0 +1,64 @@
+name: Lean formal verification
+
+on:
+  push:
+    branches:
+      - research/stage-075a-freeze-gate
+      - research/astra-postaudit-repair
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: formal
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        shell: bash
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Resolve pinned dependencies
+        shell: bash
+        run: |
+          "$HOME/.elan/bin/lake" update
+
+      - name: Fetch mathlib cache
+        shell: bash
+        run: |
+          "$HOME/.elan/bin/lake" exe cache get
+
+      - name: Placeholder and project-axiom audit
+        shell: bash
+        run: |
+          placeholder_re='(^|[^[:alnum:]_])(sorry|admit)([^[:alnum:]_]|$)'
+          axiom_re='^[[:space:]]*axiom[[:space:]]+'
+
+          # Sentinel tests: the guards themselves must detect known-bad input.
+          printf '%s\n' 'theorem sentinel : True := by sorry' | grep -Eq "$placeholder_re" || {
+            echo "Placeholder guard sentinel failed"
+            exit 1
+          }
+          printf '%s\n' 'axiom bad : False' | grep -Eq "$axiom_re" || {
+            echo "Axiom guard sentinel failed"
+            exit 1
+          }
+
+          if grep -RInE "$placeholder_re" --include='*.lean' .; then
+            echo "Lean placeholder found"
+            exit 1
+          fi
+          if grep -RInE "$axiom_re" --include='*.lean' Gss2012 Gss2012.lean; then
+            echo "Project-specific axiom found"
+            exit 1
+          fi
+
+      - name: Build certified Lean targets
+        shell: bash
+        run: |
+          "$HOME/.elan/bin/lake" build

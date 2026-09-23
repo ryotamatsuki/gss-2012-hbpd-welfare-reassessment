@@ -1,0 +1,55 @@
+name: Stage 9 reproducibility
+
+on:
+  push:
+    branches:
+      - research/stage-09-reproducibility
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python-reproducibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install pinned Python dependency
+        run: python -m pip install -r requirements.txt
+
+      - name: Exact and symbolic verification
+        run: make python-checks
+
+      - name: Reproduce committed generated artifacts
+        run: make verify-generated
+
+      - name: Source redistribution audit
+        shell: bash
+        run: |
+          if find sources -type f -iname '*.pdf' -print -quit | grep -q .; then
+            echo "Copyrighted/source PDF committed under sources/"
+            exit 1
+          fi
+
+  latex-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install minimal LaTeX toolchain
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends             texlive-latex-base texlive-latex-recommended texlive-latex-extra
+
+      - name: Build manuscript scaffold
+        run: make manuscript
+
+      - name: Assert PDF exists
+        shell: bash
+        run: test -s build/manuscript/main.pdf

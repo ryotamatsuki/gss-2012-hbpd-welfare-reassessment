@@ -1,0 +1,113 @@
+\section{Primitive surplus derivations}
+\label{app:surplus}
+
+This appendix records the integration logic behind Proposition~\ref{prop:weak-cs}. Normalize \(\tau=1\) and suppress the common gross-utility term, which cancels from differences.
+
+At the uniform source profile,
+\[
+a_u=1+s/3,
+\qquad
+b_u=1-s/3,
+\qquad
+x_u=1/2+s/6.
+\]
+If \(x_0\ge x_u\), realized uniform consumer surplus is
+\begin{align*}
+CS^u_{\rm sw}
+={}&
+\int_0^{x_u}(-a_u-z)\,dz
++
+\int_{x_u}^{x_0}[-b_u-(1-z)-s]\,dz\\
+&+
+\int_{x_0}^{1}[-b_u-(1-z)]\,dz.
+\end{align*}
+If \(x_0<x_u\), the correct allocation has no switching:
+\[
+CS^u_{\rm ns}
+=
+\int_0^{x_0}(-a_u-z)\,dz
++
+\int_{x_0}^{1}[-b_u-(1-z)]\,dz.
+\]
+
+For weak HBP, substitute the normalized prices in \eqref{eq:weak-hbp-prices}. The within-history cutoffs are
+\[
+x_A^d=\frac{2x_0+1+s}{6},
+\qquad
+x_B^d=\frac{2x_0+3-s}{6}.
+\]
+The primitive integral is
+\begin{align*}
+CS^d
+={}&
+\int_0^{x_A^d}(-p_A^d-z)\,dz
++
+\int_{x_A^d}^{x_0}[-q_B^d-(1-z)-s]\,dz\\
+&+
+\int_{x_0}^{x_B^d}(-q_A^d-z-s)\,dz
++
+\int_{x_B^d}^{1}[-p_B^d-(1-z)]\,dz,
+\end{align*}
+where all prices in this display are normalized net margins.
+
+Subtracting the relevant uniform integral and restoring \(\tau\) gives Proposition~\ref{prop:weak-cs}.
+
+\subsection{Sign on the switching branch}
+
+With \(\tau=1\), the numerator of the switching-branch gap is
+\[
+N_1(x_0,s)
+=
+-52x_0^2+52x_0+1+36sx_0-34s+s^2.
+\]
+This is concave in \(x_0\). A switching subinterval inside weak dominance exists only for \(s\le3/5\). Its endpoint values satisfy
+\[
+N_1(x_u,s)
+=
+\frac{2(25s^2-72s+63)}9>0,
+\]
+and
+\[
+N_1(\bar x,s)
+=
+\frac{(1+s)(43-45s)}4>0.
+\]
+The first quadratic has negative discriminant and positive leading coefficient; the second is positive for \(s\le3/5\). Concavity therefore gives \(N_1>0\) throughout the switching part of the weak domain.
+
+\subsection{Sign on the no-switch branch}
+
+The no-switch numerator is
+\[
+N_0(x_0,s)
+=
+s^2+12sx_0-14s-8x_0^2+8x_0+5,
+\]
+also concave in \(x_0\). At the lower endpoint,
+\[
+N_0(1/2,s)=(1-s)(7-s)>0.
+\]
+If \(s\le3/5\), the relevant upper endpoint is \(x_u\), where
+\[
+N_0(x_u,s)
+=
+\frac{25s^2-72s+63}{9}>0.
+\]
+If \(s>3/5\), the weak upper endpoint is \(\bar x<x_u\), where
+\[
+N_0(\bar x,s)
+=
+\frac{(1-s)(5s+13)}2>0.
+\]
+Hence the weak profile consumer-surplus gap is positive throughout the source weak-dominance domain.
+
+\subsection{Exact regression points}
+
+Two exact rational checks are retained. At \((s,x_0)=(99/100,501/1000)\), the actual uniform allocation is no-switch and
+\[
+CS^d-CS^u=\frac{17993}{4500000}>0.
+\]
+At \((s,x_0)=(1/10,7/10)\), which lies on the one-way-switch branch and inside the corrected pure-overlap domain,
+\[
+CS^d-CS^u=\frac{221}{720},
+\]
+while the accepted Eq.~(15) expression evaluates to \(1279/3600\). These checks distinguish the branch-ordering problem from the independent algebraic discrepancy in the accepted display.

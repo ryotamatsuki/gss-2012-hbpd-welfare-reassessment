@@ -1,0 +1,148 @@
+\section{Global proof of Proposition~\ref{prop:uniform}}
+\label{app:uniform-proof}
+
+This appendix records the complete pure-strategy branch argument. Normalize \(\tau=1\) and work with net margins \(a=(p_A-c)/\tau\) and \(b=(p_B-c)/\tau\). The unrestricted-real strategy-space proof and the nonnegative-margin proof are handled together.
+
+\subsection*{Preliminary margin--demand elimination}
+
+At any pure Nash equilibrium, each firm must have strictly positive demand and a strictly positive margin.
+
+First, if a firm serves positive demand at a negative margin, choosing the zero margin yields payoff zero and strictly improves on its negative profit. If a firm serves positive demand at zero margin, continuity of the clipped demand implies that a sufficiently small positive increase in its margin preserves positive demand and yields strictly positive profit.
+
+Second, suppose firm \(A\) has zero demand, so firm \(B\) serves the whole market. If \(B\)'s margin is negative, \(B\) can move to zero margin and improve to zero profit. If its margin is zero, a sufficiently small price increase preserves positive demand and yields positive profit. If its margin is strictly positive, \(A\) can choose the same positive margin as \(B\), which sets \(d=b-a=0\) and gives \(A\) strictly positive demand and profit. Hence no zero-demand profile can be Nash. The argument is symmetric for \(B\).
+
+This joint margin--demand argument excludes the capture tails without assuming that a zero-demand firm can always enter at a positive margin against an arbitrary rival price.
+
+\subsection*{The case \(s=0\)}
+
+When \(s=0\), inherited histories do not affect demand:
+\[
+m_A(d)=\clip\left(\frac{d+1}{2},0,1\right).
+\]
+After the capture tails are excluded by the preliminary argument, each firm's payoff is a concave quadratic on the interior demand region. The two first-order conditions intersect uniquely at
+\[
+a=b=1.
+\]
+Thus the unique pure equilibrium for \(s=0\) is \((1,1)\). The remainder of the proof assumes \(0<s<1\).
+
+\subsection*{The five pieces for \(0<s<1\)}
+
+For fixed rival price, unilateral payoffs as functions of \(d=b-a\) are
+\[
+\begin{array}{c|c|c}
+\text{region} & \pi_A(d;b) & \pi_B(d;a)\\
+\hline
+d\le L & 0 & a+d\\
+L<d<\alpha &
+(b-d)(d-L)/2 &
+(a+d)(1-s-d)/2\\
+\alpha\le d\le\gamma &
+x_0(b-d) &
+(1-x_0)(a+d)\\
+\gamma<d<U &
+(b-d)(d+1-s)/2 &
+(a+d)(1+s-d)/2\\
+d\ge U &
+b-d & 0
+\end{array}
+\]
+where \(L=-1-s\), \(\alpha=2x_0-1-s\), \(\gamma=2x_0-1+s\), and \(U=1+s\). Each switching-branch payoff is a concave quadratic and each plateau payoff is affine. A global best response therefore lies at a feasible quadratic vertex or a regime endpoint.
+
+\paragraph{No-switch plateau and kinks.}
+For \(x_0<1\), both firms have positive inherited shares on the plateau. Firm \(A\)'s plateau payoff \(x_0(b-d)\) strictly decreases in \(d\), while firm \(B\)'s payoff \((1-x_0)(a+d)\) strictly increases in \(d\). Hence no plateau interior can be Nash.
+
+At \(d=\alpha\) with \(x_0<1\), firm \(B\) can move to \(d=\gamma\), retain share \(1-x_0\), and increase its margin by \(2s\), gaining \(2s(1-x_0)>0\). If \(x_0=1\), firm \(B\) has zero demand at \(d=\alpha\), so the preliminary zero-demand argument excludes the profile instead.
+
+At \(d=\gamma\), firm \(A\) can move to \(d=\alpha\), retain share \(x_0\), and increase its margin by \(2s\), gaining \(2sx_0>0\). Thus neither kink is a Nash profile, including the endpoint \(x_0=1\).
+
+\paragraph{Lower switching branch.}
+For \(L<d<\alpha\), first-order conditions are
+\[
+a=d+1+s,
+\qquad
+b=1-s-d.
+\]
+Together with \(d=b-a\), these yield the unique smooth candidate
+\[
+d^*=-\frac{2s}{3},
+\qquad
+a^*=1+\frac{s}{3},
+\qquad
+b^*=1-\frac{s}{3}.
+\]
+The candidate lies strictly inside the lower switching branch exactly when
+\[
+x_0>x_u(s)=\frac12+\frac{s}{6}.
+\]
+At \(x_0=x_u\) it lies at the lower kink \(d=\alpha\), already excluded.
+
+Against \(b^*\), firm \(A\)'s lower-switching payoff has its unique vertex at \(d^*\). Its best plateau payoff is at \(d=\alpha\), and the exact gap is
+\[
+\frac{\pi_A(a^*,b^*)-\pi_A(\alpha;b^*)}{\tau}
+=
+2(x_0-x_u)^2>0
+\]
+for \(x_0>x_u\). On the upper switching branch,
+\[
+\frac{\partial \pi_A}{\partial d}
+=
+\frac{b^*-2d-1+s}{2}.
+\]
+At its left endpoint \(d=\gamma\), this derivative equals
+\[
+1-2x_0-\frac{2s}{3}<0,
+\]
+and concavity makes it still smaller for larger \(d\). Hence the upper switching branch is maximized at \(\gamma\), whose plateau payoff is below the payoff at \(\alpha\). The capture tail gives zero. Thus \(a^*\) is firm \(A\)'s unique global best response to \(b^*\) whenever \(x_0>x_u\).
+
+Against \(a^*\), firm \(B\)'s best plateau action is the no-poaching kink \(d=\gamma\), with
+\[
+b_k=a^*+\gamma
+=
+2x_0+\frac{4s}{3}.
+\]
+On the upper switching branch,
+\[
+\frac{\partial \pi_B}{\partial d}
+=
+\frac{1+s-a^*-2d}{2},
+\]
+which at \(d=\gamma\) again equals
+\[
+1-2x_0-\frac{2s}{3}<0.
+\]
+Thus the upper branch decreases from the kink and the right capture tail gives zero. On the left capture tail, \(B\)'s margin satisfies
+\[
+b=a^*+d\le a^*+L=-\frac{2s}{3}<0,
+\]
+so it cannot dominate the positive-profit source action. The relevant global comparison is therefore exactly
+\[
+\frac{\pi_B(a^*,b^*)-\pi_B(a^*,b_k)}{\tau}
+=
+2\bigl(x_0-x_L(s)\bigr)\bigl(x_0-x_H(s)\bigr).
+\]
+Since \(x_L(s)<1/2<x_0\), firm \(B\)'s source action is globally optimal if and only if \(x_0\ge x_H(s)\).
+
+At equality \(x_0=x_H(s)\), \(B\) is indifferent between \(b^*\) and \(b_k\). But the kink profile \((a^*,b_k)\) is not Nash: firm \(A\) can move the price difference from \(\gamma\) to \(\alpha\), keep share \(x_0\), raise its margin by \(2s\), and gain \(2sx_0>0\). Thus best-response multiplicity for \(B\) does not generate a second Nash profile.
+
+\paragraph{Upper switching branch.}
+If both firms' first-order conditions were satisfied on \(\gamma<d<U\), they would imply
+\[
+d=\frac{2s}{3},
+\qquad
+a=1-\frac{s}{3},
+\qquad
+b=1+\frac{s}{3}.
+\]
+Feasibility would require
+\[
+\frac{2s}{3}>\gamma=2x_0-1+s
+\quad\Longleftrightarrow\quad
+x_0<\frac12-\frac{s}{6},
+\]
+which is impossible because \(x_0>1/2\). Hence no upper-switching interior equilibrium exists.
+
+\subsection*{Conclusion}
+
+For \(0<s<1\), the plateau, both kinks, both capture tails, and the upper-switching interior have been excluded. The lower-switching smooth candidate is globally Nash if and only if \(x_0\ge x_H(s)\). Below \(x_H\), either the candidate is not branch-feasible or firm \(B\) strictly prefers the no-poaching kink. At equality the candidate remains the unique Nash profile.
+
+The preliminary argument used no nonnegative-price restriction. Therefore the same pure-equilibrium correspondence holds whether uniform net margins range over all real numbers or are restricted to be nonnegative.

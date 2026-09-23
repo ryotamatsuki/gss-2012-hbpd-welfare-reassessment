@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage[expansion=false]{microtype}
+
+\geometry{margin=1in}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{fillbetween}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\clip}{\operatorname{clip}}
+\newcommand{\E}{\mathcal E}
+\newcommand{\xh}{x_H}
+\newcommand{\xu}{x_u}
+\newcommand{\xb}{\bar x}
+
+\title{Uniform-Price Equilibria and Welfare with Switching Costs:\\
+A Reassessment of Gehrig, Shy, and Stenbacka (2012)}
+\author{Ryota Matsuki\\
+\small Independent Researcher, 790-0853 Matsuyama, Ehime, Japan\\
+\small \texttt{ryota.matsuki@gmail.com}\\
+\small ORCID: 0009-0005-2329-531X}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We reassess the uniform-pricing benchmark in the post-referee accepted manuscript of \citet{GehrigShyStenbacka2012}. Retaining the complete clipped Hotelling demand reveals that the price vector reported in its Eq.~(12) is a pure-strategy Nash equilibrium only when inherited market dominance is sufficiently large. Writing \(s=\sigma/\tau\), the exact condition is
+\[
+x_0\ge \xh(s)
+=\frac12-\frac{s}{3}
++\frac{\sqrt{3s(s+6)}}6.
+\]
+For \(0<s<1\), the reported price vector is the unique pure equilibrium on and above this boundary, while no pure-strategy price equilibrium exists below it. Mixed pricing is not characterized. The correction materially narrows the parameter set on which history-based and uniform pricing can be compared as pure equilibria. Reintegrating consumer utility over the actual allocation also corrects the weak-dominance consumer-surplus analysis: accepted Eq.~(15) matches the switching branch, but Eq.~(16) reverses its sign and a separate no-switch expression is required. The reported sign reversal is therefore not reproduced. On the corrected weak-dominance pure-equilibrium overlap, the smaller firm's profit is lower under history-based pricing, while the qualitative social-welfare ranking in favor of uniform pricing survives. Under strong dominance, the consumer-surplus comparison requires an explicit price-selection convention if below-cost poaching prices are admitted, whereas the welfare ranking is selection-invariant. Selected proof-critical algebraic and inequality statements are independently machine-checked in Lean 4/mathlib.
+\end{abstract}
+
+\begingroup\small
+\noindent\textbf{Keywords:} history-based price discrimination; switching costs; Hotelling competition; pure-strategy equilibrium; consumer surplus; welfare.\\
+\textbf{JEL:} D43, L13, L15.
+\endgroup
+
+\input{manuscript/sections/01_introduction}
+\input{manuscript/sections/02_model}
+\input{manuscript/sections/03_uniform_equilibrium}
+\input{manuscript/sections/04_hbp_comparisons}
+\input{manuscript/sections/05_welfare}
+\input{manuscript/sections/06_scope_robustness}
+\input{manuscript/sections/07_related_literature}
+\input{manuscript/sections/08_discussion}
+\input{manuscript/sections/09_conclusion}
+
+\appendix
+\input{manuscript/sections/A_uniform_proof}
+\input{manuscript/sections/B_surplus_derivations}
+\input{manuscript/sections/C_reproducibility}
+\input{manuscript/sections/D_declarations}
+
+\bibliographystyle{apalike}
+\bibliography{manuscript/references}
+
+\end{document}

@@ -1,0 +1,136 @@
+\section{Consumer surplus and profit comparisons}
+\label{sec:comparisons}
+
+The equilibrium correction changes the domain on which the two pricing regimes can be compared, but it does not by itself determine consumer surplus or profits. Those objects must be recomputed from the realized allocation at the prices being compared.
+
+\subsection{Market shares}
+
+At the accepted uniform-price candidate, the relevant \(A\)-history cutoff is
+\[
+x_u=\frac12+\frac{s}{6}.
+\]
+Whenever that profile is a pure equilibrium and \(s>0\), Proposition~\ref{prop:uniform} implies \(x_0\ge x_H(s)>x_u(s)\). Thus only \(A\)-history consumers in \((x_u,x_0]\) switch to \(B\), and firm \(A\)'s equilibrium share is \(x_u\).
+
+On the accepted weak-HBP branch, firm \(A\)'s share is \((2-x_0)/3\). Hence, whenever the two weak-dominance pure equilibria coexist,
+\begin{equation}
+x_u-\frac{2-x_0}{3}
+=
+\frac{2x_0+s-1}{6}>0.
+\label{eq:share-gap}
+\end{equation}
+The qualitative weak-dominance market-share ranking in accepted Result~2 therefore survives on the corrected pure-equilibrium domain, although the displayed weak-branch difference in the accepted manuscript does not equal the difference implied by its own equilibrium shares. Strong dominance and the degenerate endpoint \(x_0=1\) are treated separately in Sections~\ref{sec:welfare} and~\ref{sec:scope}.
+
+\subsection{Weak-dominance consumer surplus}
+
+The accepted uniform price vector has two possible allocation branches even before one asks whether it is an equilibrium. If \(x_0\ge x_u\), some \(A\)-history consumers switch to \(B\). If \(x_0<x_u\), no consumer switches and the inherited allocation remains unchanged. Integrating realized utility over the clipped allocation gives the following profile comparison.
+
+\begin{proposition}[Branch-correct weak-HBP consumer surplus]
+\label{prop:weak-cs}
+For the accepted weak-HBP price profile and the accepted uniform-price vector,
+\[
+CS^d-CS^u=
+\begin{cases}
+\displaystyle
+\frac{-\tau^2(52x_0^2-52x_0-1)
++2\sigma\tau(18x_0-17)+\sigma^2}{36\tau},
+&x_0\ge x_u,\\[1.2em]
+\displaystyle
+\frac{\sigma^2+12\sigma\tau x_0-14\sigma\tau
+-8\tau^2x_0^2+8\tau^2x_0+5\tau^2}{18\tau},
+&x_0<x_u.
+\end{cases}
+\]
+The two expressions agree at \(x_0=x_u\), and \(CS^d-CS^u>0\) throughout the accepted weak-dominance profile domain \(1/2<x_0<\bar x(s)\).
+\end{proposition}
+
+The switching-branch expression in Proposition~\ref{prop:weak-cs} is exactly accepted-manuscript Eq.~(15), after distributing its outer minus sign. Thus Eq.~(15) itself is not the algebraic error. The source inconsistency occurs in the next step: after substituting \(\sigma=s\tau\), printed Eq.~(16) adds a global minus sign in front of the correctly normalized Eq.~(15) bracket. In addition, Eq.~(13)'s one-way-switch integral is not the realized allocation when \(x_0<x_u\).
+
+These two issues can be separated with exact checks. At a valid switching-branch point,
+\[
+(s,x_0)=\left(\frac1{10},\frac7{10}\right),
+\]
+primitive integration and accepted Eq.~(15) both give
+\[
+CS^d-CS^u=\frac{221}{720},
+\]
+whereas the expression printed in Eq.~(16) equals \(-221/720\). By contrast,
+\[
+(s,x_0)=\left(\frac{99}{100},\frac{501}{1000}\right)
+\]
+lies on the no-switch branch; direct primitive integration gives
+\[
+CS^d-CS^u=\frac{17993}{4500000}>0.
+\]
+
+\begin{corollary}[Weak-HBP equilibrium consumer surplus]
+\label{cor:weak-cs}
+Whenever weak HBP and uniform pricing both admit the pure equilibria being compared,
+\[
+CS^d>CS^u.
+\]
+Thus the consumer-surplus sign reversal stated in accepted Result~3 is not reproduced on the corrected pure-equilibrium domain.
+\end{corollary}
+
+\subsection{The smaller firm's profit under weak dominance}
+
+The accepted weak-HBP profile has
+\[
+\frac{\pi_B^d}{\tau}
+=
+\frac{s^2-6sx_0+4s+10x_0^2-10x_0+5}{9}.
+\]
+At the accepted uniform price vector, however, realized firm-(B) profit is branch dependent. Hence
+\begin{equation}
+\frac{\pi_B^d-\pi_B^u}{\tau}
+=
+\begin{cases}
+\displaystyle
+\frac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18},
+&x_0\ge x_u,\\[1.1em]
+\displaystyle
+\frac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9},
+&x_0<x_u.
+\end{cases}
+\label{eq:B-profit-gap}
+\end{equation}
+The two branches agree at \(x_0=x_u\). Accepted Eq.~(22) is the first branch of \eqref{eq:B-profit-gap}; it cannot be extrapolated into the no-switch region.
+
+For example,
+\[
+s=\frac12,\qquad x_0=\frac{51}{100}
+\]
+lies in the weak domain and on the no-switch branch. Primitive demand gives
+\[
+\pi_B^d=\frac{3221}{9000},
+\qquad
+\pi_B^u=\frac{49}{120},
+\qquad
+\pi_B^d-\pi_B^u=-\frac{227}{4500}<0.
+\]
+Extending accepted Eq.~(22)'s switching expression to the same point instead gives \(4/375>0\), demonstrating that Result~4 cannot be retained as a profile theorem over the entire weak-dominance domain.
+
+\begin{proposition}[Smaller-firm profit on the weak pure overlap]
+\label{prop:B-profit}
+For every \(0\le s<s_c\) and every \(x_H(s)\le x_0<\bar x(s)\),
+\[
+\pi_B^d<\pi_B^u.
+\]
+\end{proposition}
+
+On this certified overlap, \(x_0\ge x_H>x_u\) for \(s>0\), so the realized branch is the first branch of \eqref{eq:B-profit-gap}. Its numerator is convex in \(x_0\). On the larger interval \([1/2,\bar x]\), its endpoint values are
+\[
+s^2+8s-4<0
+\quad\text{and}\quad
+\frac{(1+s)(21s-11)}4<0
+\]
+for \(0\le s<s_c\). Convexity therefore implies negativity throughout the weak pure-overlap interval.
+
+\subsection{Profile comparisons versus equilibrium comparisons}
+
+Proposition~\ref{prop:weak-cs} and the piecewise profit identity \eqref{eq:B-profit-gap} are statements about specified source price profiles on the accepted weak-dominance domain. Corollary~\ref{cor:weak-cs} and Proposition~\ref{prop:B-profit} become equilibrium statements only on
+\[
+0\le s<s_c,
+\qquad
+x_H(s)\le x_0<\bar x(s).
+\]
+No consumer-surplus or profit value is attributed to an uncharacterized mixed uniform-pricing equilibrium below \(x_H\). In particular, the weak-overlap profit result must not be generalized to strong dominance.

@@ -2,53 +2,87 @@
 
 ## Target paper
 
-Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination.”
+Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination,” *Journal of Industry, Competition and Trade* 12(4), 373–393, DOI `10.1007/s10842-011-0111-8`.
 
 ## Project purpose
 
-Reconstruct the full piecewise uniform-price game, characterize the global pure-strategy equilibrium correspondence, and recompute consumer-surplus and welfare comparisons under corrected equilibria.
+Reconstruct the global uniform-price game, characterize its pure-strategy equilibrium correspondence, and recompute consumer-surplus and welfare comparisons only on certified equilibrium domains.
 
 ## Current status
 
-**Stage 0 — Evidence Freeze / independent re-verification.**
+**Stage 14 is CLOSED with CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED.** Stages 1–14 of the research/manuscript pipeline have been completed through local submission QA. The sole remaining pre-submission dependency is reconciliation against the authenticated Information Economics and Policy Editorial Manager record and its generated review PDF. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
-No publication-facing correction theorem is frozen yet. The master audit findings are transferred only as hypotheses/evidence to be independently reconstructed in this repository.
+No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
-## Starting evidence
+## Certified pure-strategy equilibrium result
 
-- Master audit provenance: `ryotamatsuki/ozshypapers — audits/welfare_history_based_price_discrimination_2012_final.md`
-- Source status: Complete author-working-paper lineage inspected; VOR body still requires direct equation-level verification.
-- Initial signal: The transferred audit found a profitable regime-crossing deviation from the published uniform-price profile and a separate sign/formula error in the consumer-surplus comparison.
+The clean-room derivation and independent Stage-4A audit certify the pure-equilibrium boundary
+
+\[
+x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
+\qquad s=\sigma/\tau\in(0,1).
+\]
+
+The accepted-manuscript source profile is the unique pure equilibrium on and above this boundary; below it there is no pure-strategy equilibrium. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
+
+The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the weak consumer-surplus reversal in accepted Result 3 does not survive. Accepted Result 4's high-switching-cost smaller-firm benefit region does not survive as a comparison of two pure equilibria. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
 
 ## Repository policy
 
-1. Re-derive all publication-facing claims from the original model rather than copying the master-audit conclusion.
-2. Separate source transcription, derivation, counterexample, corrected theorem, and downstream implications.
-3. Treat local FOCs as insufficient when regime changes, clipping, entry/exit, or boundary actions are feasible.
-4. Preserve exact equality and boundary cases in the equilibrium correspondence.
-5. Numerical and symbolic checks support but do not replace analytical proof.
-6. Do not draft a submission claim until the Version-of-Record lineage and prior-disclosure search are frozen.
-7. Keep the master audit repository as provenance; this repository becomes canonical only for publication-facing development after Stage 0 passes.
+1. Re-derive publication-facing claims from primitive utilities and source text.
+2. Separate source transcription, derivation, counterexample, theorem, and downstream implications.
+3. Treat local FOCs as insufficient when clipping, regime changes, or boundary actions are feasible.
+4. Preserve exact equality and boundary cases.
+5. Treat symbolic and numerical checks as supporting evidence, not as global proofs.
+6. Keep the VOR and prepublication source claims version-qualified until compared.
+7. Do not extrapolate pure-equilibrium welfare into a pure-nonexistence region.
+8. Do not submit, perform Stage 15, merge into `main`, or alter the separate 2011 project.
 
-## Planned structure
+## Current artifacts
 
-```text
-README.md
-PROJECT_STATUS.md
-PROVENANCE.md
-CLAIM_BOUNDARY.md
-EVIDENCE_MAP.md
-docs/
-  STAGE_00_EVIDENCE_FREEZE.md
-derivations/
-code/
-results/
-sources/
-manuscript/
-submission/
-```
+* `docs/WORKFLOW.md` — canonical v2.4 workflow mapping.
+* `docs/STAGE_00_EVIDENCE_FREEZE.md` — current Stage 0 gate and source boundary.
+* `sources/gss_2012_version_boundary.md` — source lineage and version limitations.
+* `derivations/uniform_price_game_full_demand.md` — full clipped demand and certified pure-theorem derivation.
+* `derivations/uniform_price_global_best_responses.md` — global piecewise best-response proof.
+* `derivations/consumer_surplus_primitive_reconstruction.md` — direct CS integrals and branch formulas.
+* `derivations/welfare_and_result_impact.md` — primitive welfare branches; accepted-manuscript Results 1–7 are canonically mapped in `results/stage07_downstream_impact.md`.
+* `code/uniform_game_cleanroom.py` — exact-rational clean-room regressions and primitive evaluators.
+* `code/symbolic_reconstruction.py` — SymPy integration and welfare identity checks.
+* `results/stage04_global_uniform_game_progress.md` — Stage 4 GO/CLOSED record.
+* `results/stage04a_independent_certificate.md` — closed independent adversarial certificate.
+* `results/stage04a_formal_verification_target_map.md` — mandatory Stage-7.5A Lean handoff map.
+* `results/mixed_equilibrium_scope_decision.md` — frozen Route-B scope decision.
 
-## Immediate next step
+The canonical stage route and completion status are tracked in `PROJECT_STATUS.md`.
 
-Complete `docs/STAGE_00_EVIDENCE_FREEZE.md`: freeze the exact source/version, independently reproduce the transferred discrepancy, run a fresh prior-disclosure search, and decide whether the project passes into theorem/proposition development.
 
+## Stage 7.5A closure
+
+The final contribution is certified as **MODEL-SPECIFIC** rather than generic. Lean 4.19.0 with mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b` formally verifies the selected proof-critical algebraic/inequality core. The full continuum demand/Nash model remains analytically certified rather than fully encoded in Lean.
+
+
+## Stage 8 freeze
+
+The canonical theorem set, accepted-manuscript Results 1–7 impact, mixed-strategy exclusion, strong-HBP selection condition, MODEL-SPECIFIC contribution classification, formal-verification scope, benchmark definitions, and permanent counterexample regressions are frozen in `results/stage08_canonical_theory_freeze.md`. Post-freeze substantive changes are governed by `docs/THEORY_CHANGE_CONTROL.md`.
+
+
+## Stage 9 reproducibility
+
+The frozen theory now reproduces from clean CI checkout with Python 3.12/SymPy 1.14.0 exact and symbolic checks, permanent unittests, deterministic CSV/SVG regeneration, source-PDF guard, Lean 4.19.0/mathlib pinned build, and a pdfLaTeX manuscript scaffold. See `results/stage09_reproducibility_report.md` and `docs/REPRODUCIBILITY.md`.
+
+
+## Stage 10 manuscript construction
+
+A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final IEP-integrated CI build is 20 pages. Stage-8 theory was not changed.
+
+
+## Stage 11–14 completion
+
+Stage 11 hostile-referee review found no certification regression; close literature was strengthened without changing theory. Stage 12 selected **Information Economics and Policy** as the primary target. Stage 13 produced the IEP-facing manuscript, title page, one-page cover letter, highlights, declarations, and submission preflight.
+
+Stage 14 passed clean-package extraction/rebuild, full manuscript/title/cover compilation, exact/symbolic/Lean regressions, embedded-font checks, all-page PDF visual inspection, figure/table artwork QA, and final checksum/provenance recording.
+
+The canonical Stage-14 state is **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED** because the live IEP Guide body is not retrievable in the automated environment and current portal-only fields/file designations must be checked in the authenticated Editorial Manager record before any submit action.
+
+No Stage 15 freeze or actual submission has occurred. See `results/stage14_submission_qa.md`, `results/stage14_visual_qa.md`, `results/stage14_closure.md`, and `submission/journal_requirements_ledger.md`.
