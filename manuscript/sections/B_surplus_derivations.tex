@@ -52,6 +52,28 @@ where all prices in this display are normalized net margins.
 
 Subtracting the relevant uniform integral and restoring \(\tau\) gives Proposition~\ref{prop:weak-cs}.
 
+\subsection{Source fidelity of Eqs.~(13)--(17)}
+
+The accepted-manuscript Eq.~(15) is
+\[
+CS^d-CS^u
+=
+-\frac{\tau^2(52x_0^2-52x_0-1)
++2\sigma\tau(17-18x_0)-\sigma^2}{36\tau}.
+\]
+Distributing the outer minus sign gives exactly the switching branch in Proposition~\ref{prop:weak-cs}. Thus accepted Eq.~(15) is algebraically correct when the Eq.~(13) one-way-switch allocation is realized.
+
+Setting \(s=\sigma/\tau\) in Eq.~(15) instead gives
+\[
+CS^d-CS^u
+=
+\frac{\tau}{36}
+\left[
+s^2+2s(18x_0-17)-52x_0^2+52x_0+1
+\right].
+\]
+The accepted Eq.~(16) display places an additional leading minus sign in front of this normalized expression. This sign inconsistency is a source transcription/algebra issue distinct from the allocation-domain issue. More importantly for Result~3, Eq.~(13) ceases to describe realized demand when \(x_0<x_u\); the low-\(x_0\), high-\(s\) reversal region must therefore be recomputed from the no-switch allocation.
+
 \subsection{Sign on the switching branch}
 
 With \(\tau=1\), the numerator of the switching-branch gap is
@@ -102,12 +124,18 @@ Hence the weak profile consumer-surplus gap is positive throughout the source we
 
 \subsection{Exact regression points}
 
-Two exact rational checks are retained. At \((s,x_0)=(99/100,501/1000)\), the actual uniform allocation is no-switch and
-\[
-CS^d-CS^u=\frac{17993}{4500000}>0.
-\]
 At \((s,x_0)=(1/10,7/10)\), which lies on the one-way-switch branch and inside the corrected pure-overlap domain,
 \[
 CS^d-CS^u=\frac{221}{720},
 \]
-while the accepted Eq.~(15) expression evaluates to \(1279/3600\). These checks distinguish the branch-ordering problem from the independent algebraic discrepancy in the accepted display.
+and accepted Eq.~(15) gives the same value. The accepted Eq.~(16) display has the opposite sign after normalization.
+
+At \((s,x_0)=(99/100,501/1000)\), the actual uniform allocation is no-switch and
+\[
+CS^d-CS^u=\frac{17993}{4500000}>0.
+\]
+The one-way-switch Eq.~(15) expression, if extended outside its allocation branch, instead gives
+\[
+-\frac{103039}{4500000}<0.
+\]
+The first point is a source-fidelity check; the second is a branch-validity check. Neither should be used for the other purpose.
