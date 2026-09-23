@@ -25,8 +25,17 @@ def piBKink (s x : ℝ) : ℝ :=
 def correctedWeakSwitchCS (s x : ℝ) : ℝ :=
   (-52 * x^2 + 52 * x + 1 + 36 * s * x - 34 * s + s^2) / 36
 
-def printedEq15 (s x : ℝ) : ℝ :=
-  (-52 * x^2 + 52 * x + 1 + 34 * s - 36 * s * x - s^2) / 36
+def sourceEq15SwitchCS (s x : ℝ) : ℝ :=
+  (-52 * x^2 + 52 * x + 1 + 36 * s * x - 34 * s + s^2) / 36
+
+def sourceEq16PrintedCS (s x : ℝ) : ℝ :=
+  -(s^2 + 2 * s * (18 * x - 17) - 52 * x^2 + 52 * x + 1) / 36
+
+def weakBProfitGapNoSwitch (s x : ℝ) : ℝ :=
+  (s^2 - 9 * s * x + 7 * s + 10 * x^2 - x - 4) / 9
+
+def strongBProfitGapSwitch (s x : ℝ) : ℝ :=
+  -((x - 1) * (13 * s + 10 * x - 13)) / 9
 
 def correctedWeakNoSwitchCS (s x : ℝ) : ℝ :=
   (s^2 + 12 * s * x - 14 * s - 8 * x^2 + 8 * x + 5) / 18
@@ -103,12 +112,37 @@ theorem equality_kink_A_gain {s x : ℝ} (hs : 0 < s) (hx : 0 < x) :
     0 < 2 * s * x := by
   positivity
 
-/-- CS-2012-1: corrected and printed Eq. (15) differ at a valid
-one-way-switch exact point. -/
-theorem eq15_valid_branch_exact :
-    correctedWeakSwitchCS (1 / 10) (7 / 10) = (221 / 720 : ℝ) ∧
-    printedEq15 (1 / 10) (7 / 10) = (1279 / 3600 : ℝ) := by
-  constructor <;> norm_num [correctedWeakSwitchCS, printedEq15]
+/-- CS-2012-1A: accepted-manuscript Eq. (15) matches the
+primitive switching-branch CS expression. -/
+theorem source_eq15_matches_switch_branch (s x : ℝ) :
+    sourceEq15SwitchCS s x = correctedWeakSwitchCS s x := by
+  unfold sourceEq15SwitchCS correctedWeakSwitchCS
+  ring
+
+/-- CS-2012-1B: accepted-manuscript Eq. (16) is the negative of the
+correctly normalized Eq. (15). -/
+theorem source_eq16_negates_eq15 (s x : ℝ) :
+    sourceEq16PrintedCS s x = - sourceEq15SwitchCS s x := by
+  unfold sourceEq16PrintedCS sourceEq15SwitchCS
+  ring
+
+/-- CS-2012-1C: exact source-fidelity regression at a valid switching point. -/
+theorem source_eq15_exact_point :
+    sourceEq15SwitchCS (1 / 10) (7 / 10) = (221 / 720 : ℝ) ∧
+    sourceEq16PrintedCS (1 / 10) (7 / 10) = (-221 / 720 : ℝ) := by
+  constructor <;> norm_num [sourceEq15SwitchCS, sourceEq16PrintedCS]
+
+/-- PROF-2012-1: branch-correct no-switch weak-profile regression. -/
+theorem weak_B_profit_no_switch_regression :
+    weakBProfitGapNoSwitch (1 / 2) (51 / 100) = (-227 / 4500 : ℝ) := by
+  norm_num [weakBProfitGapNoSwitch]
+
+/-- PROF-2012-2: the small-firm profit ranking can reverse under the
+source-selected strong-HBP profile. -/
+theorem strong_B_profit_counterexample :
+    strongBProfitGapSwitch (9 / 10) (19 / 20) = (41 / 900 : ℝ) ∧
+    (0 : ℝ) < 41 / 900 := by
+  constructor <;> norm_num [strongBProfitGapSwitch]
 
 /-- CS-2012-2: the upstream negative regression is false on its actual
 no-switch branch; the branch-correct gap is positive. -/
@@ -152,7 +186,11 @@ end
 #print axioms GSS2012.xH_lt_one
 #print axioms GSS2012.exact_counterexample_gain
 #print axioms GSS2012.equality_kink_A_gain
-#print axioms GSS2012.eq15_valid_branch_exact
+#print axioms GSS2012.source_eq15_matches_switch_branch
+#print axioms GSS2012.source_eq16_negates_eq15
+#print axioms GSS2012.source_eq15_exact_point
+#print axioms GSS2012.weak_B_profit_no_switch_regression
+#print axioms GSS2012.strong_B_profit_counterexample
 #print axioms GSS2012.rejected_upstream_cs_regression
 #print axioms GSS2012.weak_welfare_endpoint_identity
 #print axioms GSS2012.overlap_equality_implies_polynomial
