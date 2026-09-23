@@ -50,9 +50,10 @@ Accordingly, no planner benchmark is part of the frozen theory.
 - uniform pure equilibrium: singleton where it exists;
 - uniform pure equilibrium below \(x_H\): empty;
 - uniform mixed equilibrium below \(x_H\): unresolved/out of scope;
-- strong-HBP unrestricted-price equilibrium price vector: potentially multiple through the zero-sales family;
-- strong-HBP allocation/social welfare across that family: invariant;
-- strong-HBP CS/profits across that family: selection-dependent.
+- strong-HBP unrestricted-price vector for (x_0<1): potentially multiple through the zero-sales family;
+- strong-HBP full price vector at (x_0=1): nonunique because one history segment is empty;
+- strong-HBP allocation/social welfare across the nondegenerate family and endpoint unused-price multiplicity: invariant;
+- strong-HBP CS/profits for (x_0<1): selection-dependent; endpoint CS gap is zero under the empty-segment limit.
 
 ## 6. Terminology rule
 
