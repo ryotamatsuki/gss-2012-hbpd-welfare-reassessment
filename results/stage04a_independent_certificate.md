@@ -79,7 +79,7 @@ the independent primitive evaluator reproduces the source profit \(25/72\), the 
 
 Every pure profile must fall into one of the five primitive demand pieces or their four boundaries.
 
-* full B capture: excluded by profitable entry or by the capturing firm's escape from a negative margin;
+* full B capture: excluded by the joint margin--demand argument: if B's full-demand margin is nonpositive B can improve, while if it is positive A can match that positive margin, obtain positive demand at (d=0), and earn positive profit;
 * lower switching interior: local optimality uniquely gives the source profile;
 * lower plateau kink \(d=\alpha\): B has a strict same-share price increase;
 * plateau interior: a firm has a strict same-share price increase;
@@ -101,7 +101,7 @@ B is indifferent between its source action and the no-poaching kink. The audit c
 
 ### Capture / zero demand
 
-Zero-demand actions were varied rather than dismissed. They either admit positive-margin entry by the excluded firm or force the capturing firm to improve away from a negative margin.
+Zero-demand actions were varied rather than dismissed. The certificate does not assume that the excluded firm can always enter at a positive margin against an arbitrary rival price. Instead: a negative-margin or zero-margin full-demand firm can improve its own price; if the full-demand firm has a positive margin, the excluded firm can match that margin, move to (d=0), obtain positive demand, and earn positive profit.
 
 ### Strong-HBP zero-sale family
 
@@ -160,10 +160,13 @@ Permanent regressions in \`code/uniform_game_cleanroom.py\` include:
 4. exact equality witness \(s=6/47,\ x=67/94=x_H(s)\);
 5. B's two best responses at equality and A's strict deviation from the kink profile;
 6. rejected upstream CS-sign regression at \(s=99/100,x=501/1000\);
-7. a valid one-way-switch Eq. (15) discrepancy point;
+7. accepted Eq. (15) source-fidelity and Eq. (16) sign-inversion regressions;
 8. weak-welfare endpoint identities;
 9. strong-HBP below-cost selection family;
-10. strong-branch CS/welfare profile regressions.
+10. strong-branch CS/welfare profile regressions;
+11. weak no-switch B-profit regression (-227/4500);
+12. strong-domain B-profit counterexample (41/900);
+13. (x=1) empty-segment price-indeterminacy regression.
 
 ## 9. Formal-verification applicability
 
@@ -177,7 +180,7 @@ Formal verification is deliberately not counted as the independent Stage-4A path
 
 1. The theorem is pure-strategy only; mixed pricing below \(x_H\) is unresolved and outside the selected paper architecture.
 2. Exact typeset VOR mathematics is not directly inspected; source-facing language remains accepted-manuscript-qualified.
-3. Strong-HBP CS/profit comparisons depend on the price-domain/selection convention if below-cost poaching prices are allowed.
+3. Strong-HBP CS/profit comparisons depend on the price-domain/selection convention if below-cost poaching prices are allowed, and the full strong-HBP price vector is not unique at (x=1) because one history segment is empty.
 4. Formal proof-assistant certification remains a mandatory downstream gate.
 
 None of these limitations invalidates the certified pure correspondence.
