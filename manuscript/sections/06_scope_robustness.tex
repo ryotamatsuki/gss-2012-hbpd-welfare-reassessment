@@ -1,0 +1,47 @@
+\section{Strategy domains, robustness, and formal verification}
+\label{sec:scope}
+
+\subsection{Uniform-price strategy domain}
+
+Proposition~\ref{prop:uniform} is unchanged whether uniform prices are allowed on all of \(\mathbb R\) or restricted to \(p_i\ge c\). A negative-margin price with positive demand yields negative profit and can be replaced by \(c\), while a zero-margin price with positive demand can be raised slightly without losing all demand. Zero-demand capture profiles are excluded by profitable entry deviations. This reduction is specific to the uniform-price game and should not be silently transferred to the history-based game.
+
+\subsection{Strong-HBP price selection}
+
+Under strong dominance, the accepted source member has \(q_A^d=c\). If below-cost poaching prices are admissible, however, there is a bounded family of payoff-equivalent zero-sales actions. Let
+\[
+u=\frac{q_A^d-c}{\tau}.
+\]
+Then
+\begin{equation}
+3-s-4x_0\le u\le0,
+\qquad
+\frac{p_B^d-c}{\tau}=u+2x_0-1+s.
+\label{eq:strong-family}
+\end{equation}
+Across this family, firm \(A\)'s poaching price still attracts no \(B\)-history consumers. The allocation and real resource costs are unchanged, but the price paid by retained \(B\)-history consumers changes. Consumer surplus and the distribution of firm profits therefore depend on \(u\), while total welfare does not.
+
+Under the nonnegative-margin restriction \(q_A^d\ge c\), the interval in \eqref{eq:strong-family} collapses to the source member \(u=0\). Equation~\eqref{eq:strong-cs} and the consumer-surplus interpretation of accepted Result~6 use that selection. Proposition~\ref{prop:strong-welfare} does not require it.
+
+\subsection{Normalization and portability}
+
+The exact threshold \(x_H\) is invariant to a common translation in marginal cost \(c\) and to the transport-scale normalization. In dimensional prices, the equilibrium vector is always
+\[
+p_A^u=c+\tau+\sigma/3,
+\qquad
+p_B^u=c+\tau-\sigma/3.
+\]
+The direct clipped-demand representation and the price-difference representation also yield the same correspondence, and the allocation convention for a measure-zero set of indifferent consumers is immaterial.
+
+These invariances do not turn Proposition~\ref{prop:uniform} into a theorem about arbitrary switching-cost Bertrand games. The proof uses the endpoint Hotelling geometry, the inherited split at \(x_0\), linear transport costs, full coverage, and the resulting five-piece demand. The contribution is deliberately model-specific.
+
+\subsection{Formal verification boundary}
+
+Selected proof-critical algebra has been independently checked in Lean 4.19.0 with mathlib pinned to commit
+\texttt{c44e0c8ee63ca166450922a373c7409c5d26b00b}.
+The machine-checked targets include the payoff factorization in \eqref{eq:kink-factor}, \(x_u<x_H<1\), the exact \(719/1800\) counterexample gain, the equality-kink deviation gain, representative consumer-surplus identities, the weak-welfare endpoint identity, and the polynomial characterization of \(s_c\).
+
+The Lean development does not encode the continuum consumer model, the complete clipped demand correspondence, the Nash definition, or the global enumeration of equilibrium branches. Those objects are established analytically and by an independent direct evaluator. Formal verification therefore covers the proof-critical algebraic core, not the complete economic model.
+
+\subsection{Interpretation}
+
+The model isolates how inherited customer histories and switching costs create a discrete global pricing option: a firm can stop poaching and move to a plateau boundary while retaining its inherited consumers. The analysis is theoretical. We make no empirical causal claim, calibration claim, or policy claim beyond the comparative welfare statements inside the maintained source model.
