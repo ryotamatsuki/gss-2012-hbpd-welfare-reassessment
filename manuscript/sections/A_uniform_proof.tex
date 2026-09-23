@@ -1,61 +1,101 @@
 \section{Global proof of Proposition~\ref{prop:uniform}}
 \label{app:uniform-proof}
 
-This appendix records the complete pure-strategy branch argument. Normalize \(\tau=1\). For fixed rival price, write unilateral payoffs as functions of \(d=b-a\). On the five demand pieces in \eqref{eq:five-piece-demand},
+This appendix closes the pure-strategy proof by treating the degenerate cases first and then exhausting every branch for \(0<s<1\) and \(1/2<x_0<1\). Normalize \(\tau=1\).
+
+\paragraph{The case \(s=0\).}
+When switching is costless, inherited histories do not affect choice and
 \[
-\begin{array}{c|c|c}
-\text{region} & \pi_A(d;b) & \pi_B(d;a)\\
-\hline
-d\le L & 0 & a+d\\
-L<d<\alpha &
-(b-d)(d-L)/2 &
-(a+d)(1-s-d)/2\\
-\alpha\le d\le\gamma &
-x_0(b-d) &
-(1-x_0)(a+d)\\
-\gamma<d<U &
-(b-d)(d+1-s)/2 &
-(a+d)(1+s-d)/2\\
-d\ge U &
-b-d & 0
-\end{array}
+m_A(d)=\clip\!\left(\frac{d+1}{2},0,1\right).
 \]
-Every switching-branch payoff is a concave quadratic and the plateau payoff is affine. A global best response therefore occurs at a feasible quadratic vertex or at a regime endpoint.
+Full capture cannot be Nash by the margin--demand argument below. On the interior branch, the two strictly concave unilateral profit problems have first-order conditions \(a=d+1\) and \(b=1-d\). Together with \(d=b-a\), these give the unique profile \(d=0\), \(a=b=1\).
 
-\paragraph{Capture and zero margins.}
-If \(d\le L\), firm \(A\) has zero demand and can choose a positive-margin price that enters the lower switching branch and yields positive profit. The case \(d\ge U\) is symmetric for \(B\). If a firm serves positive demand at a negative margin, charging \(c\) weakly raises profit to zero. If its margin is exactly zero and demand is positive, a sufficiently small price increase preserves positive demand and yields strictly positive profit. Hence every pure equilibrium candidate has positive margins and lies outside the full-capture tails.
-
-\paragraph{No-switch plateau.}
-On \(\alpha\le d\le\gamma\), firm \(A\)'s payoff \(x_0(b-d)\) decreases in \(d\), so any interior point is improved by moving toward \(\alpha\). Firm \(B\)'s payoff \((1-x_0)(a+d)\) increases in \(d\), so any interior point is improved by moving toward \(\gamma\). At \(d=\alpha\), \(B\) can move to \(\gamma\), keep share \(1-x_0\), and gain \(2s(1-x_0)>0\). At \(d=\gamma\), \(A\) can move to \(\alpha\), keep share \(x_0\), and gain \(2sx_0>0\). Thus neither the plateau nor either kink is a Nash profile.
-
-\paragraph{Lower switching branch.}
-For \(L<d<\alpha\), first-order conditions yield
+\paragraph{The endpoint \(x_0=1\).}
+When the inherited \(B\)-history segment has zero measure,
 \[
-a=d+1+s,\qquad b=1-s-d.
+m_A(d)=\clip\!\left(\frac{d+1+s}{2},0,1\right).
 \]
-Combining them with \(d=b-a\) gives
+The smooth interior first-order conditions yield
 \[
 d^*=-\frac{2s}{3},\qquad
 a^*=1+\frac{s}{3},\qquad
 b^*=1-\frac{s}{3}.
 \]
+Against \(b^*\), the best full-\(A\)-capture boundary is \(d=1-s\), where \(A\)'s payoff is \(2s/3\); the source payoff exceeds it by \((3-s)^2/18>0\). Against \(a^*\), every no-demand action of \(B\) yields zero, whereas the source action yields \((3-s)^2/18>0\). The switching pieces are strictly concave and have the displayed interior vertices. Hence the source profile is the unique pure equilibrium at \(x_0=1\). This separate argument is needed because the usual plateau gain \(2s(1-x_0)\) vanishes at this endpoint.
+
+For the remainder assume
+\[
+0<s<1,\qquad \frac12<x_0<1.
+\]
+Write
+\[
+L=-1-s,\qquad
+\alpha=2x_0-1-s,\qquad
+\gamma=2x_0-1+s,\qquad
+U=1+s.
+\]
+On the five demand pieces in \eqref{eq:five-piece-demand},
+\[
+\begin{array}{c|c|c}
+\text{region} & \pi_A(d;b) & \pi_B(d;a)\\
+\hline
+d\le L & 0 & a+d\\
+L<d<\alpha & (b-d)(d-L)/2 & (a+d)(1-s-d)/2\\
+\alpha\le d\le\gamma & x_0(b-d) & (1-x_0)(a+d)\\
+\gamma<d<U & (b-d)(d+1-s)/2 & (a+d)(1+s-d)/2\\
+d\ge U & b-d & 0
+\end{array}
+\]
+Every switching-branch payoff is a concave quadratic and every plateau payoff is affine. A global best response must therefore occur at a feasible quadratic vertex or at a regime endpoint.
+
+\paragraph{Margins, demand, and capture tails.}
+The unrestricted real-price strategy space is handled jointly with demand rather than by assuming that an excluded firm can always enter at a positive margin.
+
+If \(d\le L\), \(A\) has zero demand and \(B\) serves the whole market. If \(b<0\), \(B\) strictly improves by choosing margin zero and obtaining nonnegative profit. If \(b=0\), a sufficiently small increase in \(b\) preserves positive demand and yields strictly positive profit. If \(b>0\), \(A\) can choose
+\[
+a'=\frac{b+1+s}{2}>0,
+\]
+which moves \(d\) strictly above \(L\) and gives \(A\) positive demand and positive profit. Thus full capture by \(B\) is never Nash. The case \(d\ge U\) is symmetric: if \(a<0\) or \(a=0\), the capturing firm itself improves; if \(a>0\), \(B\) can enter with \(b'=(a+1+s)/2>0\).
+
+More generally, a firm serving positive demand at a negative margin strictly improves by charging \(c\), and a zero margin with positive demand is strictly improved by a sufficiently small positive price increase. Hence every remaining pure-equilibrium candidate has positive margins and positive demand for both firms.
+
+\paragraph{No-switch plateau and both kinks.}
+On \(\alpha\le d\le\gamma\), \(A\)'s payoff \(x_0(b-d)\) decreases in \(d\), whereas \(B\)'s payoff \((1-x_0)(a+d)\) increases in \(d\). Therefore no plateau interior can be Nash. At \(d=\alpha\), \(B\) can move to \(d=\gamma\), keep share \(1-x_0\), and gain \(2s(1-x_0)>0\), which is strict because \(x_0<1\). At \(d=\gamma\), \(A\) can move to \(d=\alpha\), keep share \(x_0\), and gain \(2sx_0>0\). Thus neither kink is Nash.
+
+\paragraph{Lower switching branch.}
+For \(L<d<\alpha\), the two first-order conditions are
+\[
+a=d+1+s,\qquad b=1-s-d.
+\]
+Together with \(d=b-a\), they yield
+\[
+d^*=-\frac{2s}{3},\qquad a^*=1+\frac{s}{3},\qquad b^*=1-\frac{s}{3}.
+\]
 The branch condition is \(x_0>x_u(s)=1/2+s/6\).
 
-Against \(b^*\), firm \(A\)'s lower-branch quadratic has its unique maximum at \(d^*\). Its best plateau payoff occurs at \(d=\alpha\), and
+Against \(b^*\), \(A\)'s lower-branch quadratic has its unique maximum at \(d^*\). Its best plateau payoff occurs at \(d=\alpha\), and
 \[
-\frac{\pi_A(a^*,b^*)-\pi_A(\alpha;b^*)}{\tau}
-=
-2(x_0-x_u)^2>0.
+\frac{\pi_A(a^*,b^*)-\pi_A(\alpha;b^*)}{\tau}=2(x_0-x_u)^2>0.
 \]
-The upper switching branch is decreasing from its left endpoint against \(b^*\), so its best value is bounded by the plateau endpoint. Therefore \(a^*\) is \(A\)'s unique global best response whenever \(x_0>x_u\).
+On the reverse-switch branch, \(A\)'s quadratic vertex is \(d=s/3\). Since
+\[
+\gamma=2x_0-1+s>s>\frac{s}{3},
+\]
+the derivative is strictly negative throughout \(d\ge\gamma\); its best value is therefore the left endpoint and is bounded by the plateau comparison.
 
-Against \(a^*\), firm \(B\)'s best plateau action is the no-poaching kink \(d=\gamma\), with
+Against \(a^*\), \(B\)'s best plateau action is the no-poaching kink \(d=\gamma\), with
 \[
 b_k=a^*+\gamma=2x_0+\frac{4s}{3}.
 \]
-The upper switching branch is decreasing from \(\gamma\), and full capture yields zero. The relevant global comparison is therefore exactly \eqref{eq:kink-factor}. Since \(x_L<1/2<x_0\), \(b^*\) is a global best response if and only if \(x_0\ge x_H\).
+The reverse-switch quadratic for \(B\) also has vertex \(d=s/3<\gamma\), so it is strictly decreasing throughout its feasible interval. The only remaining global comparison is
+\[
+\frac{\pi_B(a^*,b^*)-\pi_B(a^*,b_k)}{\tau}
+=
+2\bigl(x_0-x_L(s)\bigr)\bigl(x_0-x_H(s)\bigr).
+\]
+Because \(x_L<1/2<x_0\), \(b^*\) is a global best response if and only if \(x_0\ge x_H(s)\).
 
-At equality \(x_0=x_H\), \(B\) is indifferent between \(b^*\) and \(b_k\). But \((a^*,b_k)\) is not Nash: firm \(A\) can move the price difference from \(\gamma\) to \(\alpha\), raise its own margin by \(2s\), keep share \(x_0\), and gain \(2sx_0>0\).
+At equality \(x_0=x_H(s)\), \(B\) is indifferent between \(b^*\) and \(b_k\). The kink profile \((a^*,b_k)\) is not Nash: \(A\) can move the price difference from \(\gamma\) to \(\alpha\), raise its margin by \(2s\), keep share \(x_0\), and gain \(2sx_0>0\).
 
 \paragraph{Upper switching branch.}
 For \(\gamma<d<U\), the two first-order conditions imply
@@ -64,15 +104,9 @@ d=\frac{2s}{3},\qquad
 a=1-\frac{s}{3},\qquad
 b=1+\frac{s}{3}.
 \]
-The branch condition would require
-\[
-\frac{2s}{3}>\gamma=2x_0-1+s
-\quad\Longleftrightarrow\quad
-x_0<\frac12-\frac{s}{6},
-\]
-which is impossible for \(x_0>1/2\).
+Feasibility would require \(x_0<1/2-s/6\), contradicting \(x_0>1/2\). Hence no pure equilibrium arises on the reverse-switch interior.
 
 \paragraph{Conclusion.}
-If \(x_0\le x_u\), the source candidate lies on or at the no-switch plateau and is not Nash. If \(x_u<x_0<x_H\), the source candidate is the only possible smooth-branch intersection but \(B\) strictly prefers the no-poaching kink. If \(x_0\ge x_H\), both source actions are global best responses and all other branches have been excluded. This proves Proposition~\ref{prop:uniform}.
+For \(0<s<1\) and \(1/2<x_0<1\), capture tails, nonpositive-margin candidates, the plateau, both kinks, and the reverse-switch interior have been excluded. If \(x_0\le x_u\), the source candidate lies on or inside the no-switch plateau and is not Nash. If \(x_u<x_0<x_H\), \(B\) strictly prefers the no-poaching kink. If \(x_0\ge x_H\), both source actions are global best responses. Together with the separately treated cases \(s=0\) and \(x_0=1\), this proves Proposition~\ref{prop:uniform} on the full maintained domain.
 
-The proof remains valid if the uniform-price strategy space is all of \(\mathbb R\): any negative-margin action with positive demand is dominated by charging \(c\), while zero-demand capture profiles have already been excluded. Hence restricting uniform prices to \(p_i\ge c\) does not change the pure equilibrium set.
+The same margin--demand argument proves that allowing all real uniform prices does not create an additional pure equilibrium. Thus the pure-equilibrium set is identical under unrestricted prices and under \(p_i\ge c\).

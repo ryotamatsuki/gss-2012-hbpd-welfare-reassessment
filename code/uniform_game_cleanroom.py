@@ -431,6 +431,25 @@ def self_check() -> None:
     welfare_gap = cs_d + pi_a_d + pi_b_d - cs_u - pi_a_u - pi_b_u
     assert welfare_gap == -(1 - x) * ((1 - x) + 2 * s) / 9
 
+    # Degenerate strong-HBP endpoint x=1: q_A and p_B quote an empty history
+    # market and are not uniquely pinned even under nonnegative margins.
+    x, s = F(1), F(1, 2)
+    p_a_d, q_a_d, p_b_d, q_b_d = hbp_strong_profile_unrestricted(x, s, F(0))
+    p_a_u, p_b_u = source_uniform_prices(s)
+    cs_source = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s)
+    pi_a_source, pi_b_source = hbp_profits_direct(
+        p_a_d, q_a_d, p_b_d, q_b_d, x, s
+    )
+    cs_alt = hbp_cs_direct(p_a_d, F(7), F(13), q_b_d, x, s)
+    pi_a_alt, pi_b_alt = hbp_profits_direct(
+        p_a_d, F(7), F(13), q_b_d, x, s
+    )
+    assert cs_alt == cs_source
+    assert (pi_a_alt, pi_b_alt) == (pi_a_source, pi_b_source)
+    assert cs_source == uniform_cs_direct(p_a_u, p_b_u, x, s)
+    assert pi_a_source == profit_a(p_a_u, p_b_u, x, s)
+    assert pi_b_source == profit_b(p_a_u, p_b_u, x, s)
+
     # Strong-dominance CS/Welfare branch regression: the uniform candidate has
     # no switching when x < x_u. Eq. (25)/(28) are not the actual profile
     # formulas there, although the welfare sign survives.
