@@ -25,8 +25,8 @@ The accepted manuscript contains seven numbered Results:
 |---|---|---|
 | Result 1 | `σ>τ` and profitable history-based poaching | outside maintained Assumption 1 after it is imposed; no correction claim |
 | Result 2 | dominant firm's share larger under uniform pricing | qualitative sign survives; displayed weak-branch share difference is algebraically wrong |
-| Result 3 | weak-dominance consumer-surplus iff condition (17) | formula/branch error; the stated reversal is not reproduced by primitive integration |
-| Result 4 | weak-dominance small-firm profit comparison | downstream equilibrium interpretation restricted by corrected uniform pure-equilibrium domain |
+| Result 3 | weak-dominance consumer-surplus iff condition (17) | Eq. (15) itself matches primitive integration on the switching branch; Eq. (16) reverses its sign, and the source switching integral is not the realized allocation when `x_0<x_u`; the stated reversal is not reproduced |
+| Result 4 | weak-dominance small-firm profit comparison | Eq. (18)/(22) use the uniform switching branch; profile comparison must be recomputed on the no-switch branch, and equilibrium interpretation is restricted to the corrected pure-overlap domain |
 | Result 5 | weak-dominance social welfare higher under uniform pricing | sign survives on branch-correct accounting; accepted-manuscript endpoint substitution is algebraically wrong |
 | Result 6 | strong-dominance consumer-surplus threshold | source formula is branch-sensitive; outside uniform pure-existence region it is only a profile comparison |
 | Result 7 | strong-dominance social welfare higher under uniform pricing | sign survives branch-correct accounting; equilibrium interpretation restricted to corrected uniform pure-existence region |
@@ -53,8 +53,8 @@ The complete mathematical inventory was reconstructed by section and purpose. Cr
 | (12) | uniform-price candidate and share | local FOC solution reproduced; global Nash claim fails outside the exact domain characterized at Stage 4/4A |
 | (13) | uniform CS integral | valid only when its stated switching interval is correctly ordered; invalid as an actual-allocation integral when `x_0<x_u` |
 | (14) | weak-HBP CS integral | reconstructed directly from primitive utilities |
-| (15) | weak CS difference | accepted-manuscript display has incorrect σ-dependent signs on the one-way-switch branch |
-| (16)–(17) | normalized weak-CS sign condition | source Result-3 reversal does not survive branch-correct primitive integration |
+| (15) | weak CS difference | source display is algebraically correct on the one-way-switch branch and matches primitive integration |
+| (16)–(17) | normalized weak-CS sign condition | Eq. (16) introduces an additional global minus sign relative to Eq. (15); Result-3 reversal also relies on extending the switching allocation into the no-switch region |
 | (18) | uniform firm profits | valid only as equilibrium profits on the corrected pure-equilibrium domain |
 | (19) | weak-HBP firm profits | reproduced on its source branch |
 | (20)–(22) | weak aggregate / firm-specific profit comparisons | algebra may be evaluated as profile comparisons, but equilibrium wording inherits the corrected uniform pure-equilibrium domain |
@@ -103,7 +103,7 @@ Firm B earns `25/72`. The positive-price deviation `p'_B=28/15` moves to the no-
 ]
 This clean-room exact arithmetic regression survives.
 
-## 6. Eq. (15) regression correction
+## 6. Eq. (15)–(17) source-fidelity correction
 
 The earlier upstream audit's proposed negative CS point
 [
@@ -115,13 +115,18 @@ x_u=1/2+s/6,
 ]
 where the actual uniform allocation has no switching. Direct primitive integration gives a positive gap, not the previously claimed negative value.
 
-A valid one-way-switch point such as `s=1/10,x_0=7/10` confirms that the accepted-manuscript Eq. (15) is nevertheless algebraically wrong: the primitive integral and printed formula differ exactly, but both have the same positive sign there.
+A valid one-way-switch point such as `s=1/10,x_0=7/10` gives exactly `221/720` both from primitive integration and from accepted-manuscript Eq. (15). The earlier project transcription that produced `1279/3600` was wrong and is retired.
 
-Thus the Stage-1 correction is:
+After substituting `σ=sτ`, accepted-manuscript Eq. (16) places an additional minus sign in front of the same normalized bracket. Thus Eq. (16) is the negative of Eq. (15), not a valid algebraic restatement. Separately, when `x_0<x_u`, Eq. (13)'s one-way-switch integral is not the realized allocation.
 
-* **formula error:** survives;
-* **upstream claimed exact sign-reversal regression:** rejected;
-* **accepted-manuscript Result-3 reversal region:** not supported by branch-correct primitive integration.
+Thus the corrected Stage-1 diagnosis is:
+
+* **Eq. (15) formula error:** rejected;
+* **Eq. (16) sign-transformation error:** certified from the accepted-manuscript image;
+* **no-switch branch extrapolation:** certified;
+* **accepted-manuscript Result-3 reversal:** still not supported by branch-correct primitive integration.
+
+See `results/stage01_source_recertification_post_astra.md`.
 
 This negative finding is permanent project evidence.
 
@@ -157,6 +162,6 @@ Full theorem-absorption/novelty certification is Stage 2/6, not asserted here.
 
 ## 10. Stage-1 gate
 
-**GO.** The project now has an authoritative post-referee mathematical source, a source-faithful result ledger, independent primitive reconstruction, exact counterexample regressions, and an explicit VOR wording boundary.
+**GO / RECERTIFIED after post-Stage-14 rollback.** The project now has an authoritative post-referee mathematical source, corrected Eq. (13)–(17) transcription, independent primitive reconstruction, exact counterexample regressions, and an explicit VOR wording boundary.
 
 The residual lack of direct VOR equation access does not block research under the user-specified fallback rule because the accepted manuscript is available and all discrepancy language remains version-qualified. It does block upgrading any statement to an unqualified claim about the exact Springer typeset VOR.
