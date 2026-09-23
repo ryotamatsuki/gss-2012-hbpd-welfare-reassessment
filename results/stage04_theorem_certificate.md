@@ -86,32 +86,47 @@ All equality points are retained.
 
 ## 2. Strategy-domain reduction
 
-The accepted manuscript does not state a formal lower price bound in the inspected model passage. The pure-equilibrium set is nevertheless identical on unrestricted real prices and on \(p_i\ge c\).
+The accepted manuscript does not state a formal lower price bound in the inspected model passage. The pure-equilibrium set is nevertheless identical on unrestricted real prices and on (p_ige c).
 
-* A negative-margin action with positive demand gives negative profit and is strictly improved by charging \(c\).
-* If a negative-margin action has zero demand, the profile is a full-capture profile. If the capturing rival has a negative margin, it strictly improves by charging \(c\). Otherwise, whenever the excluded firm can cross the capture boundary at a positive margin, it obtains strictly positive profit. Hence no full-capture profile is Nash.
-* At zero margin with positive demand, continuity of clipped demand makes a sufficiently small price increase profitable. Zero margin with zero demand is again a full-capture case.
+A joint margin--demand elimination is required.
 
-Thus every pure equilibrium has strictly positive margins and strictly positive demand for both firms.
+* If a firm has positive demand at a negative margin, moving to zero margin strictly improves its payoff to zero.
+* If a firm has positive demand at zero margin, a sufficiently small positive price increase preserves positive demand and yields strictly positive profit.
+* If a firm has zero demand and its full-demand rival has a negative margin, the rival strictly improves by moving to zero margin.
+* If a firm has zero demand and its full-demand rival has zero margin, the rival has a sufficiently small profitable positive price increase.
+* If a firm has zero demand and its full-demand rival has a strictly positive margin, the excluded firm can choose the same positive normalized margin as the rival. This sets (d=0), gives the excluded firm strictly positive demand, and yields strictly positive profit.
+
+Hence no pure equilibrium can contain a zero-demand firm, a nonpositive margin with positive demand, or a full-capture tail. Every pure equilibrium has strictly positive margins and strictly positive demand for both firms.
+
+This argument does not assume that an excluded firm can always enter at a positive margin against an arbitrary rival price; instead it first uses the capturing firm's own margin when necessary.
 
 ## 3. Exclude capture, plateau, and kink profiles
 
-Full capture is excluded above.
+For (0<s<1), on the no-switch plateau (alphale dleeta),
+[
+Pi_A=x(b-d),qquad
+Pi_B=(1-x)(a+d).
+]
 
-On the no-switch plateau \(\alpha\le d\le\beta\),
-\[
-\Pi_A=x(b-d),\qquad
-\Pi_B=(1-x)(a+d).
-\]
-At an interior plateau point, each firm can raise its own price while remaining on the plateau. At \(d=\alpha\), B can raise its price to \(d=\beta\), keep share \(1-x\), and gain
-\[
+At any plateau interior with (x<1), A strictly prefers a lower (d) and B strictly prefers a higher (d), so the profile cannot be Nash.
+
+At (d=alpha) with (x<1), B can move to (d=eta), keep share (1-x), raise its margin by (2s), and gain
+[
 2s(1-x)>0.
-\]
-At \(d=\beta\), A can raise its own price so that \(d=\alpha\), keep share \(x\), and gain
-\[
+]
+At the endpoint (x=1), B has zero demand at (d=alpha), so the Stage-4 margin--demand elimination excludes the profile instead; the strict-gain formula is not used there.
+
+At (d=eta), A can move to (d=alpha), keep share (x), raise its margin by (2s), and gain
+[
 2sx>0.
-\]
+]
 Hence neither plateau interiors nor either plateau kink can be Nash.
+
+The case (s=0) is handled separately rather than by these kink arguments because (alpha=eta) and the plateau collapses. Then inherited history has no effect on demand,
+[
+q_A(d)=operatorname{clip}!left(rac{d+1}{2},0,1ight),
+]
+and after capture/nonpositive-margin profiles are excluded, the two interior Hotelling first-order conditions intersect uniquely at ((a,b)=(1,1)).
 
 ## 4. Smooth switching-branch intersections
 
@@ -257,8 +272,8 @@ Formal verification is **APPLICABLE**. Stage 7.5A must include at least:
 1. the \(x_L/x_H\) payoff factorization and threshold orderings;
 2. the exact rational counterexample;
 3. equality-boundary best-response algebra;
-4. corrected Eq. (15) branch identities;
-5. the rejected upstream CS regression's positive direct value;
+4. accepted Eq. (15) source-fidelity identity and the Eq. (16) sign inversion;
+5. branch-correct weak/no-switch and strong-profit exact regressions;
 6. the weak-welfare endpoint identity;
 7. the pure-overlap boundary \(x_H\le\bar x\) iff \(s\le -3+6\sqrt{33}/11\).
 
