@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 7 — GO completed. Next gate: Stage 7.5 / 7.5A.**
+**Stage 7.5A — GO / CLOSED. Next gate: Stage 8 — Canonical Theory Freeze.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -27,9 +27,10 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Mixed-equilibrium scope | FROZEN — Route B | Not solved; no claim of general equilibrium nonexistence and no equilibrium welfare in the no-pure region. |
 | Stage 6 novelty re-kill | GO | Frozen UPE-2012-1 theorem survives source-specific absorption search. |
 | Stage 7 downstream impact | GO | Accepted-manuscript Results 1–7 impact mapped on certified equilibrium domains. |
-| Formal verification | APPLICABLE / OPEN FOR STAGE 7.5A | Target map committed; compiled Lean 4/mathlib certificate is mandatory before Stage 8. |
-| Stage 7.5 / 7.5A | NEXT | Freeze manuscript scale/scope, portability/quantifiers, and complete formal-verification gate. |
-| Stage 8 theory freeze | BLOCKED UNTIL 7.5A | No theory freeze yet. |
+| Formal verification | PASS | Lean 4.19.0 / mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`; clean CI build, no project placeholders/axioms. |
+| Stage 7.5 | GO / CLOSED | Full 15–20 page correction/reassessment architecture frozen; mixed pricing excluded. |
+| Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
+| Stage 8 theory freeze | NEXT | All pre-freeze mathematical/scope/formal gates are now closed. |
 | Stage 14 / submission | NOT REACHED | No submission package or portal action. |
 | Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
@@ -67,9 +68,17 @@ At \(x=x_H(s)\), B has a second payoff-equal kink best response, but it does not
 * \`code/symbolic_reconstruction.py\`
 * \`results/mixed_equilibrium_scope_decision.md\`
 
-## Remaining blockers before Stage 8
+## Remaining qualification before Stage 8
 
-1. Stage 7.5 final theory/paper-scope decision.
-2. Stage 7.5A portability/quantifier red-team.
-3. Lean 4/mathlib formal-verification PASS with statement-fidelity and no-placeholder audit.
-4. Preserve accepted-manuscript/VOR wording qualification unless exact VOR text becomes lawfully available.
+No mathematical gate remains open. Stage 8 must freeze the certified theorem set, the MODEL-SPECIFIC contribution scope, mixed-strategy exclusion, strong-HBP selection qualification, and accepted-manuscript/VOR wording boundary without changing theory.
+
+
+## Stage 7.5A evidence
+
+* `results/stage075_full_theory_freeze_decision.md`
+* `results/stage075a_scope_portability_redteam.md`
+* `results/contribution_robustness_certificate.md`
+* `results/claim_scope_ledger.md`
+* `results/stage075a_formal_verification_certificate.md`
+* `formal/Gss2012/Core.lean`
+* `.github/workflows/lean-formal.yml`
