@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 14 — CONDITIONAL PASS / CLOSED. Authenticated IEP portal preflight is the sole remaining pre-submission condition. Stage 15 is not entered.**
+**POST-ASTRA RECERTIFICATION IN PROGRESS. Previous Stage-14 closure is STALE. Stage 1, Stage 4/4A proof completeness, Stage 6 literature positioning, Stage 7 downstream impact, Stage 7.5A formal verification, Stage 8 freeze, and Stages 10–14 are being re-certified. Stage 15 is not entered.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -19,24 +19,24 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Gate | Status | Notes |
 |---|---|---|
 | Stage 0 evidence/source freeze | GO for accepted-manuscript-qualified research | Lawful post-referee accepted manuscript obtained; exact Springer VOR equation text still unavailable. |
-| Stage 1 source & mathematical audit | GO | Seven accepted-manuscript Results mapped; critical equations independently reconstructed. |
+| Stage 1 source & mathematical audit | REOPENED → RECERTIFIED | Eq. (13)–(17) re-transcribed from accepted-manuscript PDF: Eq. (15) is correct on switching branch; Eq. (16) reverses its sign. Result-4 profit source mapping also branch-recertified. |
 | Stage 2 literature / novelty kill | GO | No prior correction or theorem absorption found for the source-specific \`x_H\` result. |
 | Stage 3 architecture | GO | Route B: corrected complete pure-equilibrium reassessment. |
-| Stage 4 global uniform-price game | GO / CLOSED | Five-piece clipped demand and complete pure correspondence proved. |
-| Stage 4A independent certification | PASS / CLOSED | Candidate-deviation, alternative-equilibrium, indifference, strategy-domain, and boundary attacks pass. |
+| Stage 4 global uniform-price game | REOPENED FOR PROOF COMPLETENESS | Headline pure theorem unchanged; capture/margin logic, s=0 and x0=1 endpoint proof repaired; re-certification pending CI/audit. |
+| Stage 4A independent certification | REOPENED | Core theorem survives; old certificate contains stale capture/endpoint/Eq15-regression wording and is being replaced. |
 | Mixed-equilibrium scope | FROZEN — Route B | Not solved; no claim of general equilibrium nonexistence and no equilibrium welfare in the no-pure region. |
-| Stage 6 novelty re-kill | GO | Frozen UPE-2012-1 theorem survives source-specific absorption search. |
-| Stage 7 downstream impact | GO | Accepted-manuscript Results 1–7 impact mapped on certified equilibrium domains. |
-| Formal verification | PASS | Lean 4.19.0 / mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`; clean CI build, no project placeholders/axioms. |
+| Stage 6 novelty re-kill | REOPENED FOR LITERATURE RECERTIFICATION | Umezawa corrigendum added; accessible-version non-absorption wording being narrowed and re-certified. |
+| Stage 7 downstream impact | REOPENED | Weak profit profile formulas are branch-dependent; Results 2/4/6 endpoint/scope classification being re-certified. |
+| Formal verification | STALE / REOPENED | False Eq. (15) source-transcription theorem removed; Eq. (15)/(16) fidelity and profit regressions added; placeholder/axiom guards repaired with sentinels; fresh CI required. |
 | Stage 7.5 | GO / CLOSED | Full 15–20 page correction/reassessment architecture frozen; mixed pricing excluded. |
-| Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
-| Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
+| Stage 7.5A | REOPENED | MODEL-SPECIFIC classification expected to survive; formal statement-fidelity gate must be reclosed. |
+| Stage 8 theory freeze | STALE / REOPENED | Headline UPE theorem retained; CS source diagnosis, profit branches, strong endpoint, regressions, and formal map require refreeze. |
 | Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
-| Stage 10 manuscript construction | GO / CLOSED | Full manuscript, proposition/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
-| Stage 11 referee attack | GO / CLOSED | No certification regression; three close-literature omissions fixed; no theory rollback required. |
+| Stage 10 manuscript construction | REOPENED FOR RECONCILIATION | Manuscript repaired for Eq. (15)/(16), weak-profit branches, proof endpoints, strong endpoint and literature; full build/review pending. |
+| Stage 11 referee attack | SUPERSEDED BY ASTRA AUDIT | Independent Astra audit found material certification regressions; Stage 11 must be reclosed after repairs. |
 | Stage 12 journal positioning | GO / CLOSED | Primary: Information Economics and Policy; JICT source-journal alternative; full candidate universe audited. |
-| Stage 13 full-paper integration | GO / CLOSED | IEP manuscript, title page, cover letter, highlights, declarations, preflight CI all complete; no theory change. |
-| Stage 14 submission QA | CONDITIONAL PASS / CLOSED | Local/package QA complete. Clean source archive rebuild, 20-page visual QA, artwork/font checks, current-policy ledger, preflight/reproducibility/Lean CI all pass. Authenticated Editorial Manager preflight remains required. |
+| Stage 13 full-paper integration | STALE | Abstract/highlights/cover claims are being synchronized with repaired weak/strong scope. |
+| Stage 14 submission QA | STALE / REOPENED | Previous final package is invalidated by post-audit repairs. A new clean package, CI, formal build and visual QA are required before reclosure. |
 | Stage 15 / actual submission | NOT ENTERED / PROHIBITED IN THIS WORKFLOW RUN | No submit action, payment, portal freeze, or final legal attestation performed. |
 
 ## Certified pure-equilibrium theorem
