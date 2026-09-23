@@ -1,9 +1,9 @@
 # Stage 7.5A — Quantifier, Portability, and Scope Red-Team
 
-**Status:** IN PROGRESS pending Formal Verification Gate.  
+**Verdict:** GO / CLOSED.  
 **Economic scope verdict:** PASS.  
 **Portability classification:** MODEL-SPECIFIC.  
-**Formal-verification state:** APPLICABLE; build certificate required before this Stage can close.
+**Formal-verification state:** FORMAL VERIFICATION PASS.
 
 ## 1. Headline quantifier ledger
 
@@ -148,8 +148,6 @@ Do not write:
 
 ## 7. Formal-verification handoff
 
-The Stage-4A target map remains current. Stage 7.5A can close only after a reproducible Lean 4/mathlib build certifies the selected algebraic/inequality core, with statement-fidelity and placeholder/axiom audits.
+The Stage-4A target map has been discharged by `results/stage075a_formal_verification_certificate.md`. Lean 4.19.0 with mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b` builds successfully in GitHub Actions; placeholder/project-axiom and statement-fidelity audits pass.
 
-Until then:
-
-**Stage 7.5A verdict = CONDITIONAL / FORMAL VERIFICATION BLOCKER ONLY.**
+**Stage 7.5A verdict = GO / CLOSED.** The claim set is scope-certified as MODEL-SPECIFIC and the Formal Verification Gate is closed. Route to Stage 8.
