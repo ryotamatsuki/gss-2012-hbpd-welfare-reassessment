@@ -1,7 +1,7 @@
 """Build a clean, minimal submission-source archive for Stage 14."""
 
 from __future__ import annotations
-import hashlib, json, shutil, zipfile
+import hashlib, json, os, shutil, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,6 +54,8 @@ for p in sorted(x for x in PKG.rglob("*") if x.is_file()):
         {
             "stage": 14,
             "target_journal": "Information Economics and Policy",
+            "certified_repository_commit": os.environ.get("GITHUB_SHA", "LOCAL_BUILD"),
+            "repository": "https://github.com/ryotamatsuki/gss-2012-hbpd-welfare-reassessment",
             "files": manifest,
         },
         indent=2,
