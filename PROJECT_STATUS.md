@@ -4,46 +4,69 @@
 
 Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination,” *Journal of Industry, Competition and Trade* 12(4), 373–393, DOI `10.1007/s10842-011-0111-8`.
 
-## Current canonical stage
+## Current canonical position
 
-**Stage 0 — Evidence Freeze: HOLD.** Provisional Stage 4 derivations are exploratory work only; they do not bypass the source and novelty gates.
+**Stage 7 — GO completed. Next gate: Stage 7.5 / 7.5A.**
+
+Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
 ## Current research branch
 
-`research/stage-04-uniform-price-game`, branched from `research/stage-00-evidence-freeze` at input commit `7c10043ad91f67505c68bf0f99f3b51263a041fb`. Main and the Stage 0 source branch are unchanged.
+`research/stage-04a-certification`, created from `research/stage-04-uniform-price-game`. `main`, `research/stage-00-evidence-freeze`, and the separate 2011 correction repository remain unchanged.
 
 ## Gate state
 
 | Gate | Status | Notes |
 |---|---|---|
-| Stage 0 evidence freeze | HOLD | HECER 2010 full text inspected; VOR body unresolved; prior-disclosure search preliminary. |
-| Stage 1 source audit | IN PROGRESS | Bibliographic identity and HECER source version mapped; complete VOR comparison and full claim ledger remain. |
-| Stage 2 literature / novelty kill | IN PROGRESS | No correction surfaced in preliminary exact-title searches; no clearance claim. |
-| Stage 4 global uniform-price game | EXPLORATORY | Full clipped demand and candidate pure correspondence derived; not yet closed. |
-| Stage 4A independent certification | IN PROGRESS / OPEN | A separate d-coordinate proof and direct-clipping exact maximizer are recorded; boundary-by-boundary hostile review and Lean certificate remain. |
-| Eq. (15) primitive CS audit | PROVISIONAL PASS | Direct formulas and exact regressions pass; branch extension in upstream audit rejected. VOR not compared. |
-| Results 1–5 impact | IN PROGRESS | Result 1's weak-branch share difference and Results 2/4 branch formulas have additional source-version-qualified corrections; Results 3/5 signs survive on their properly clipped branches. See the impact ledger. |
-| Formal verification | OPEN | Applicable; no Lean/Lake executable available in current environment. |
-| Mixed equilibrium | OUT OF SCOPE (PROVISIONAL) | No claim of general equilibrium nonexistence; no welfare extrapolation into pure-nonexistence domain. |
-| Manuscript / journal / Stage 14 | NOT STARTED | No submission package or submission actions. |
-| Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or perform legal finalization. |
+| Stage 0 evidence/source freeze | GO for accepted-manuscript-qualified research | Lawful post-referee accepted manuscript obtained; exact Springer VOR equation text still unavailable. |
+| Stage 1 source & mathematical audit | GO | Seven accepted-manuscript Results mapped; critical equations independently reconstructed. |
+| Stage 2 literature / novelty kill | GO | No prior correction or theorem absorption found for the source-specific `x_H` result. |
+| Stage 3 architecture | GO | Route B: corrected complete pure-equilibrium reassessment. |
+| Stage 4 global uniform-price game | GO / CLOSED | Five-piece clipped demand and complete pure correspondence proved. |
+| Stage 4A independent certification | PASS / CLOSED | Candidate-deviation, alternative-equilibrium, indifference, strategy-domain, and boundary attacks pass. |
+| Mixed-equilibrium scope | FROZEN — Route B | Not solved; no claim of general equilibrium nonexistence and no equilibrium welfare in the no-pure region. |
+| Stage 6 novelty re-kill | GO | Frozen UPE-2012-1 theorem survives source-specific absorption search. |
+| Stage 7 downstream impact | GO | Accepted-manuscript Results 1–7 impact mapped on certified equilibrium domains. |
+| Formal verification | APPLICABLE / OPEN FOR STAGE 7.5A | Target map committed; compiled Lean 4/mathlib certificate is mandatory before Stage 8. |
+| Stage 7.5 / 7.5A | NEXT | Freeze manuscript scale/scope, portability/quantifiers, and complete formal-verification gate. |
+| Stage 8 theory freeze | BLOCKED UNTIL 7.5A | No theory freeze yet. |
+| Stage 14 / submission | NOT REACHED | No submission package or portal action. |
+| Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
-## Current mathematical candidate
+## Certified pure-equilibrium theorem
 
-For (s=\sigma/\tau\in(0,1)), the provisional nonnegative-margin pure equilibrium is the source profile ((a^*,b^*)=(1+s/3,1-s/3)) iff
+Let (s=\sigma/\tau\in[0,1)), (x=x_0\in(1/2,1]), (	au>0), and define
 
-\[
-x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6.
-\]
+[
+x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6.
+]
 
-Below that boundary, the provisional result is no pure-strategy price equilibrium. The equilibrium set is a singleton at the equality boundary even though B has a second best response there. This has not passed Stage 4A and must not be described as certified or as general Nash nonexistence.
+For (s=0), the unique pure uniform-price equilibrium has normalized margins ((1,1)). For (0<s<1),
 
-## Immediate blockers
+[
+\mathcal E^u(x,s)=
+\begin{cases}
+\{(1+s/3,1-s/3)\},&x\ge x_H(s),\\
+\varnothing,&1/2<x<x_H(s).
+\end{cases}
+]
 
-1. VOR/accepted-manuscript equation-level comparison.
-2. Prior correction and theorem-absorption search closure.
-3. Independent proof of complete pure correspondence and strategy-domain reduction.
-4. Formal verification core and environment/toolchain certificate.
-5. Stage 7 Results 1–5 welfare audit and later canonical gates.
+At (x=x_H(s)), B has a second payoff-equal kink best response, but it does not form another Nash profile. Hence the pure equilibrium remains unique where it exists.
 
-See `docs/STAGE_00_EVIDENCE_FREEZE.md`, `docs/WORKFLOW.md`, `results/stage04_global_uniform_game_progress.md`, and `results/stage04a_independent_certificate.md` for current evidence and boundaries.
+## Stage-4A evidence
+
+* `results/stage04_theorem_certificate.md`
+* `results/stage04a_independent_certificate.md`
+* `results/stage04a_formal_verification_target_map.md`
+* `derivations/uniform_price_game_full_demand.md`
+* `derivations/uniform_price_global_best_responses.md`
+* `code/uniform_game_cleanroom.py`
+* `code/symbolic_reconstruction.py`
+* `results/mixed_equilibrium_scope_decision.md`
+
+## Remaining blockers before Stage 8
+
+1. Stage 7.5 final theory/paper-scope decision.
+2. Stage 7.5A portability/quantifier red-team.
+3. Lean 4/mathlib formal-verification PASS with statement-fidelity and no-placeholder audit.
+4. Preserve accepted-manuscript/VOR wording qualification unless exact VOR text becomes lawfully available.
