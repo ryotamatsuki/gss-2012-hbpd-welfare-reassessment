@@ -35,6 +35,11 @@ def fmt(v: float) -> str:
     return f"{v:.12f}"
 
 
+def fmt2(v: float) -> str:
+    """Platform-stable two-decimal rounding for positive SVG coordinates."""
+    return f"{math.floor(v * 100 + 0.5) / 100:.2f}"
+
+
 def write_parameter_csv(out: Path) -> None:
     path = out / "parameter_domains.csv"
     with path.open("w", newline="", encoding="utf-8") as fh:
@@ -142,7 +147,9 @@ def write_demand_svg(out: Path) -> None:
         return bottom - (bottom - top) * q
 
     ds = [dmin + (dmax - dmin) * i / 600.0 for i in range(601)]
-    pts = " ".join(f"{X(d):.2f},{Y(share_a_piecewise(d,x,s)):.2f}" for d in ds)
+    pts = " ".join(
+        f"{fmt2(X(d))},{fmt2(Y(share_a_piecewise(d, x, s)))}" for d in ds
+    )
 
     lines = svg_header(width, height, "Uniform-price demand regimes")
     lines += [
@@ -154,11 +161,11 @@ def write_demand_svg(out: Path) -> None:
         f'<text x="{right-10}" y="{top+20}" text-anchor="end">diagnostic x_0=0.70, s=0.10</text>',
     ]
     for value, label in [(L,"L"),(alpha,"alpha"),(beta,"beta"),(U,"U")]:
-        lines.append(f'<line x1="{X(value):.2f}" y1="{bottom}" x2="{X(value):.2f}" y2="{top}" stroke-width="1" stroke-dasharray="4 5"/>')
-        lines.append(f'<text x="{X(value):.2f}" y="{bottom+24}" text-anchor="middle">{label}</text>')
+        lines.append(f'<line x1="{fmt2(X(value))}" y1="{bottom}" x2="{fmt2(X(value))}" y2="{top}" stroke-width="1" stroke-dasharray="4 5"/>')
+        lines.append(f'<text x="{fmt2(X(value))}" y="{bottom+24}" text-anchor="middle">{label}</text>')
     for q in [0,.25,.5,.75,1.0]:
-        lines.append(f'<line x1="{left-6}" y1="{Y(q):.2f}" x2="{left}" y2="{Y(q):.2f}" stroke-width="1"/>')
-        lines.append(f'<text x="{left-12}" y="{Y(q)+5:.2f}" text-anchor="end">{q:.2f}</text>')
+        lines.append(f'<line x1="{left-6}" y1="{fmt2(Y(q))}" x2="{left}" y2="{fmt2(Y(q))}" stroke-width="1"/>')
+        lines.append(f'<text x="{left-12}" y="{fmt2(Y(q)+5)}" text-anchor="end">{q:.2f}</text>')
     lines += ["</g>", "</svg>"]
     (out / "figure_uniform_demand_regimes.svg").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
