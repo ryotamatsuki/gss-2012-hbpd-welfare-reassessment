@@ -27,7 +27,7 @@ The Lean core checks selected proof-critical algebra and inequalities:
 - \(x_u<x_H<1\) on the maintained \(0<s<1\) domain;
 - exact \(719/1800\) counterexample gain;
 - positive A gain at the equality kink;
-- exact Eq. (15) discrepancy on a valid branch;
+- accepted Eq. (15) source-fidelity identity on a valid branch and the Eq. (16) normalized sign flip;
 - positive branch-correct value at the rejected upstream CS regression point;
 - weak-welfare endpoint identity;
 - polynomial characterization of the weak-HBP / pure-uniform overlap boundary and its closed-form root.
