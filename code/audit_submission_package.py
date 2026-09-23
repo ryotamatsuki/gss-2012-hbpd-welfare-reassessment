@@ -7,6 +7,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MAIN = (ROOT / "manuscript/main.tex").read_text(encoding="utf-8")
+MANUSCRIPT_TEXT = "\n".join(
+    p.read_text(encoding="utf-8")
+    for p in sorted((ROOT / "manuscript").glob("**/*.tex"))
+)
 DECL = (ROOT / "manuscript/sections/D_declarations.tex").read_text(encoding="utf-8")
 HIGHLIGHTS = [
     line.strip()
@@ -46,11 +50,10 @@ required_main = [
     "PROOF-CRITICAL CORE",
     "accepted manuscript",
     "pure-strategy",
-    "Eq.~(15) is correct",
     "Eq.~(16)",
     "corrected weak-dominance pure-equilibrium overlap",
 ]
-combined = MAIN + "\n" + DECL + "\n" + (ROOT / "manuscript/sections/06_scope_robustness.tex").read_text(encoding="utf-8")
+combined = MANUSCRIPT_TEXT + "\n" + DECL
 for phrase in required_main:
     assert phrase in combined, phrase
 
@@ -63,7 +66,9 @@ for phrase in [
     assert phrase in COVER + "\n" + TITLE, phrase
 
 assert "weak-dominance pure-equilibrium overlap" in COVER
-assert "1279/3600" not in MAIN + "\n" + COVER
+assert "accepted Eq.~(15) matches the switching branch" in MAIN
+assert "Eq.~(16) reverses its sign" in MAIN
+assert "1279/3600" not in MANUSCRIPT_TEXT + "\n" + COVER
 assert "source member is unique under the nonnegative-margin" not in combined
 assert "family collapses to the source member" not in combined
 
