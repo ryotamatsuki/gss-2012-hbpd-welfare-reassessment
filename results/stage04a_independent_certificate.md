@@ -1,9 +1,11 @@
 # Stage 4A — Independent mathematical adversarial certificate
 
-**Verdict:** PASS  
+**Verdict:** PASS — CLOSED  
 **Certified claim:** complete **pure-strategy** uniform-price Nash correspondence UPE-2012-1  
 **Not certified here:** mixed-strategy equilibrium; full proof-assistant core (mandatory at Stage 7.5A); exact Springer VOR equation text.  
-**Source scope:** accepted manuscript / post-referee version.
+**Source scope:** accepted manuscript / post-referee version.  
+**Closure branch:** `research/stage-04a-certification`  
+**Closure input:** `c0a3419895bf0a4d0d4e2ad87feb03ed8b75eed0` (formal-verification target-map handoff committed; theorem unchanged).
 
 ## 1. Independence architecture
 
@@ -182,7 +184,7 @@ None of these limitations invalidates the certified pure correspondence.
 
 ## Stage-4A gate
 
-**PASS / GO to Stage 6 after the mixed-scope decision is frozen.**
+**PASS — CLOSED.** The mixed-scope decision is already frozen as Route B in `results/mixed_equilibrium_scope_decision.md`. The mathematical routing condition for Stage 6 is therefore satisfied. Formal verification remains a mandatory Stage-7.5A pre-freeze gate and is not a Stage-4A blocker.
 
 Evidence chain:
 
