@@ -59,8 +59,10 @@ def write_regression_csv(out: Path) -> None:
     rows = [
         ["REG-UPE-01", "25/72", "56/75", "719/1800", "positive"],
         ["REG-UPE-02", "6/47", "67/94", "x_H equality", "singleton Nash"],
-        ["REG-CS-01", "99/100", "501/1000", "17993/4500000", "positive"],
-        ["REG-CS-02", "1/10", "7/10", "221/720 vs 1279/3600", "formula discrepancy"],
+        ["REG-CS-01", "99/100", "501/1000", "17993/4500000", "positive realized no-switch gap"],
+        ["REG-CS-02", "1/10", "7/10", "Eq15=221/720; Eq16=-221/720", "source fidelity; Eq16 sign inconsistency"],
+        ["REG-PROFIT-01", "1/2", "51/100", "-227/4500 vs 4/375", "realized no-switch gap vs switching extension"],
+        ["REG-PROFIT-02", "9/10", "19/20", "41/900", "strong B profit gain; weak claim not portable"],
         ["REG-W-01", "x_bar=(3-s)/4", "", "-(1+s)(1+9s)/144", "negative"],
         ["REG-OVERLAP-01", "", "", "11s^2+66s-9=0", "s_c=-3+6sqrt(33)/11"],
     ]
