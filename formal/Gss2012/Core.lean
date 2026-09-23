@@ -22,11 +22,16 @@ def piBSource (s : ℝ) : ℝ :=
 def piBKink (s x : ℝ) : ℝ :=
   (2 * x + 4 * s / 3) * (1 - x)
 
-def correctedWeakSwitchCS (s x : ℝ) : ℝ :=
+def weakSwitchCS (s x : ℝ) : ℝ :=
   (-52 * x^2 + 52 * x + 1 + 36 * s * x - 34 * s + s^2) / 36
 
-def printedEq15 (s x : ℝ) : ℝ :=
-  (-52 * x^2 + 52 * x + 1 + 34 * s - 36 * s * x - s^2) / 36
+/-- Image-rechecked accepted Eq. (15), normalized by tau. -/
+def sourceEq15 (s x : ℝ) : ℝ :=
+  (-52 * x^2 + 52 * x + 1 + 36 * s * x - 34 * s + s^2) / 36
+
+/-- Accepted Eq. (16) uses the negative of Eq. (15)'s normalized lhs. -/
+def sourceEq16Lhs (s x : ℝ) : ℝ :=
+  -sourceEq15 s x
 
 def correctedWeakNoSwitchCS (s x : ℝ) : ℝ :=
   (s^2 + 12 * s * x - 14 * s - 8 * x^2 + 8 * x + 5) / 18
@@ -103,12 +108,22 @@ theorem equality_kink_A_gain {s x : ℝ} (hs : 0 < s) (hx : 0 < x) :
     0 < 2 * s * x := by
   positivity
 
-/-- CS-2012-1: corrected and printed Eq. (15) differ at a valid
-one-way-switch exact point. -/
-theorem eq15_valid_branch_exact :
-    correctedWeakSwitchCS (1 / 10) (7 / 10) = (221 / 720 : ℝ) ∧
-    printedEq15 (1 / 10) (7 / 10) = (1279 / 3600 : ℝ) := by
-  constructor <;> norm_num [correctedWeakSwitchCS, printedEq15]
+/-- CS-2012-1A: image-rechecked Eq. (15) equals the primitive
+one-way-switch expression at a valid exact point. -/
+theorem eq15_source_fidelity_exact :
+    weakSwitchCS (1 / 10) (7 / 10) = (221 / 720 : ℝ) ∧
+    sourceEq15 (1 / 10) (7 / 10) = (221 / 720 : ℝ) := by
+  constructor <;> norm_num [weakSwitchCS, sourceEq15]
+
+/-- CS-2012-1B: the accepted Eq. (16) lhs is the negative of Eq. (15)
+after normalization. -/
+theorem eq16_is_negative_eq15 (s x : ℝ) :
+    sourceEq16Lhs s x = -sourceEq15 s x := by
+  rfl
+
+theorem eq16_sign_flip_exact :
+    sourceEq16Lhs (1 / 10) (7 / 10) = (-221 / 720 : ℝ) := by
+  norm_num [sourceEq16Lhs, sourceEq15]
 
 /-- CS-2012-2: the upstream negative regression is false on its actual
 no-switch branch; the branch-correct gap is positive. -/
@@ -152,7 +167,9 @@ end
 #print axioms GSS2012.xH_lt_one
 #print axioms GSS2012.exact_counterexample_gain
 #print axioms GSS2012.equality_kink_A_gain
-#print axioms GSS2012.eq15_valid_branch_exact
+#print axioms GSS2012.eq15_source_fidelity_exact
+#print axioms GSS2012.eq16_is_negative_eq15
+#print axioms GSS2012.eq16_sign_flip_exact
 #print axioms GSS2012.rejected_upstream_cs_regression
 #print axioms GSS2012.weak_welfare_endpoint_identity
 #print axioms GSS2012.overlap_equality_implies_polynomial

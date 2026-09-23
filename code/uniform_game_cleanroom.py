@@ -314,27 +314,30 @@ def self_check() -> None:
     kink_below = a + 2 * x_below - 1 + s
     assert br_b_m == (kink_below,)
 
-    # Eq. (15): invalid regression point is no-switch, with direct sign positive.
+    # Source fidelity for accepted Eqs. (13)-(17).
+    # At the no-switch regression point, realized CS must be computed from
+    # clipped primitives; Eq. (15) is a one-way-switch formula and is not
+    # interpreted as realized surplus there.
     tau, s, x = F(1), F(99, 100), F(501, 1000)
-    p_a, p_b = (1 + s / 3), (1 - s / 3)
+    p_a, p_b = source_uniform_prices(s)
     p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
     direct_gap = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s, tau) - \
         uniform_cs_direct(p_a, p_b, x, s, tau)
-    printed_eq15 = (-52 * x * x + 52 * x + 1 + 34 * s - 36 * s * x - s * s) / 36
-    assert direct_gap == F(17993, 4500000)
-    assert printed_eq15 == F(1801513, 2250000)
+    assert direct_gap == F(17993, 4500000) > 0
 
-    # Eq. (15) is also wrong on a valid weak-HBP / pure-uniform-NE point.
+    # On a valid one-way-switch / pure-overlap point, accepted Eq. (15)
+    # exactly matches primitive integration. The source error occurs when the
+    # manuscript passes to Eq. (16), which reverses the normalized sign.
     tau, s, x = F(1), F(1, 10), F(7, 10)
     assert x < (3 - s) / 4 and x_h_condition(x, s)
     p_a, p_b = source_uniform_prices(s)
     p_a_d, q_a_d, p_b_d, q_b_d = hbp_weak_prices(x, s)
     direct_gap = hbp_cs_direct(p_a_d, q_a_d, p_b_d, q_b_d, x, s, tau) - \
         uniform_cs_direct(p_a, p_b, x, s, tau)
-    printed_eq15 = (-52 * x * x + 52 * x + 1 + 34 * s - 36 * s * x - s * s) / 36
-    assert direct_gap == F(221, 720)
-    assert printed_eq15 == F(1279, 3600)
-    assert direct_gap > 0 and printed_eq15 > 0
+    source_eq15 = (-52 * x * x + 52 * x + 1 + 36 * s * x - 34 * s + s * s) / 36
+    source_eq16_lhs = -source_eq15
+    assert direct_gap == source_eq15 == F(221, 720)
+    assert source_eq16_lhs == -F(221, 720)
 
     # Algebraic endpoint substitution into Eq. (23)'s switching-branch formula.
     # For s > 3/5, xbar lies below x_u, so this is not the actual no-switch

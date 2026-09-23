@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - research/stage-075a-freeze-gate
+      - research/stage-14-submission-qa
   pull_request:
   workflow_dispatch:
 
@@ -35,11 +36,26 @@ jobs:
       - name: Placeholder and project-axiom audit
         shell: bash
         run: |
-          if grep -RInE '\\b(sorry|admit)\\b' --include='*.lean' .; then
+          placeholder_re='(^|[^[:alnum:]_])(sorry|admit)($|[^[:alnum:]_])'
+          axiom_re='^[[:space:]]*axiom[[:space:]]+'
+
+          printf 'theorem guardSentinel : True := by sorry\n' > /tmp/lean-placeholder-sentinel.lean
+          printf 'axiom bad : False\n' > /tmp/lean-axiom-sentinel.lean
+
+          grep -nE "$placeholder_re" /tmp/lean-placeholder-sentinel.lean >/dev/null || {
+            echo "Placeholder guard sentinel was not detected"
+            exit 1
+          }
+          grep -nE "$axiom_re" /tmp/lean-axiom-sentinel.lean >/dev/null || {
+            echo "Axiom guard sentinel was not detected"
+            exit 1
+          }
+
+          if grep -RInE "$placeholder_re" --include='*.lean' .; then
             echo "Lean placeholder found"
             exit 1
           fi
-          if grep -RInE '^\\s*axiom\\s+' --include='*.lean' Gss2012 Gss2012.lean; then
+          if grep -RInE "$axiom_re" --include='*.lean' Gss2012 Gss2012.lean; then
             echo "Project-specific axiom found"
             exit 1
           fi

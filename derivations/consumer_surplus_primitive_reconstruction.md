@@ -1,6 +1,6 @@
 # Consumer surplus: direct integration and branch qualifications
 
-**Status:** Exact symbolic identities and rational regressions reproduce locally; publication-level certification and VOR comparison remain open.
+**Status:** Re-certified after 2026-09-23 image-level source-fidelity audit. Exact symbolic identities and rational regressions reproduce; VOR comparison remains open.
 
 ## 1. Primitive utility integration
 
@@ -58,7 +58,7 @@ CS^d-CS^u=
 \end{cases}
 \]
 
-The two expressions agree at (x_0=x_u). The first expression applies on the actual one-way-switch branch. Its σ-dependent terms differ in sign from those displayed in HECER Eq. (15). The second expression is required on the no-switch branch.
+The two expressions agree at (x_0=x_u). The first expression applies on the actual one-way-switch branch and is algebraically identical to accepted Eq. (15) after the outer minus sign in that equation is distributed. The second expression is required on the no-switch branch.
 
 In dimensionless units τ=1, the direct regression point ((s,x_0)=(99/100,501/1000)) satisfies (x_0<x_u). Exact direct integration yields
 
@@ -66,10 +66,30 @@ In dimensionless units τ=1, the direct regression point ((s,x_0)=(99/100,501/10
 CS^d-CS^u=\frac{17993}{4500000}>0.
 \]
 
-The printed HECER Eq. (15), evaluated algebraically at the same values, is (1801513/2250000>0). The upstream negative value (-103039/4500000) equals neither actual direct integration nor the printed expression; it results from extending the one-way-switch correction outside its branch. This point also lies below the provisional pure-uniform-equilibrium threshold (x_H(s)), so it is not an equilibrium welfare comparison.
+At this point Eq. (15) is simply outside its allocation branch; it is not used as realized consumer surplus. This point also lies below the pure-uniform-equilibrium threshold (x_H(s)), so it is not an equilibrium welfare comparison.
 
-An exact point inside both the weak-HBP branch and the provisional pure-uniform-equilibrium domain is ((s,x_0)=(1/10,7/10)), where (x_u=31/60<x_0<29/40=\bar x_0) and (x_0>x_H(1/10)). Direct integration yields (221/720>0), while printed Eq. (15) yields (1279/3600>0). Thus the formula is numerically false even on a valid one-way-switch branch, but this certified point does not reverse the consumer-surplus ranking.
+An exact point inside both the weak-HBP branch and the pure-uniform-equilibrium domain is ((s,x_0)=(1/10,7/10)), where (x_u=31/60<x_0<29/40=\bar x) and (x_0>x_H(1/10)). Direct integration and accepted Eq. (15) both yield
+\[
+CS^d-CS^u=\frac{221}{720}>0.
+\]
+The former repository value `1279/3600` came from a mis-transcription of Eq. (15) and is retired.
 
-## 4. Scope
+## 4. Accepted Eq. (15) to Eq. (16)
+
+Set (s=\sigma/\tau) and define
+\[
+N_1(x_0,s)=-52x_0^2+52x_0+1+36sx_0-34s+s^2.
+\]
+On the one-way-switch branch, accepted Eq. (15) is exactly
+\[
+CS^d-CS^u=\frac{\tau N_1(x_0,s)}{36}.
+\]
+The accepted manuscript's Eq. (16), however, displays the sign condition using
+\[
+-\frac{\tau N_1(x_0,s)}{36}>0.
+\]
+Thus Eq. (16) is the negative of Eq. (15) after normalization. Eq. (17) and the stated Result-3 reversal inherit this sign inversion. This source-algebra issue is logically separate from the branch-ordering problem in Eq. (13): even a perfectly transcribed Eq. (15) cannot represent realized surplus when (x_0<x_u).
+
+## 5. Scope
 
 These calculations concern the two source price profiles as primitives. They are equilibrium welfare comparisons only where both profiles are equilibria. Where uniform pure equilibrium fails to exist, the uniform-profile surplus is a profile comparison, not equilibrium welfare. No mixed-equilibrium welfare claim is made.

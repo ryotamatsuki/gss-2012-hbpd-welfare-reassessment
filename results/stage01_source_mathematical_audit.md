@@ -1,6 +1,6 @@
 # Stage 1 — Source & mathematical audit
 
-**Canonical verdict:** GO, with an explicit accepted-manuscript/VOR wording boundary.  
+**Canonical verdict:** RE-CERTIFIED GO after 2026-09-23 source-fidelity re-audit, with an explicit accepted-manuscript/VOR wording boundary.  
 **Input project SHA:** `7c10043ad91f67505c68bf0f99f3b51263a041fb`  
 **Evidence snapshot before this report:** `118c5eba7c566d617d7edec185b0352e507d1d5e`  
 **Workflow:** `research-paper-workflow` main `63f11a50a13d9328213498a5a6576d00b9bceef7` (pipeline v2.4; `GOVERNANCE.md` still displays v2.3, preserved as a workflow-repository inconsistency).  
@@ -51,10 +51,11 @@ The complete mathematical inventory was reconstructed by section and purpose. Cr
 | (10) | strong-HBP allocation / shares | reproduced |
 | (11) | uniform-price primitive utility | reconstructed with both history states, including the B→A option omitted from the source's preferred allocation picture |
 | (12) | uniform-price candidate and share | local FOC solution reproduced; global Nash claim fails outside the exact domain characterized at Stage 4/4A |
-| (13) | uniform CS integral | valid only when its stated switching interval is correctly ordered; invalid as an actual-allocation integral when `x_0<x_u` |
+| (13) | uniform CS integral | one-way-switch allocation integral; valid only when its stated switching interval is correctly ordered, and not an actual-allocation integral when `x_0<x_u` |
 | (14) | weak-HBP CS integral | reconstructed directly from primitive utilities |
-| (15) | weak CS difference | accepted-manuscript display has incorrect σ-dependent signs on the one-way-switch branch |
-| (16)–(17) | normalized weak-CS sign condition | source Result-3 reversal does not survive branch-correct primitive integration |
+| (15) | weak CS difference | image-level re-transcription confirms the accepted display equals the primitive one-way-switch CS difference on `x_0≥x_u` |
+| (16) | normalized sign display | after `σ=sτ`, the accepted display is the negative of Eq. (15)'s normalized left-hand side; this is the source algebraic sign error |
+| (17) | weak-CS sign condition | inherits the Eq. (16) sign inversion and does not survive branch-correct primitive integration |
 | (18) | uniform firm profits | valid only as equilibrium profits on the corrected pure-equilibrium domain |
 | (19) | weak-HBP firm profits | reproduced on its source branch |
 | (20)–(22) | weak aggregate / firm-specific profit comparisons | algebra may be evaluated as profile comparisons, but equilibrium wording inherits the corrected uniform pure-equilibrium domain |
@@ -157,6 +158,6 @@ Full theorem-absorption/novelty certification is Stage 2/6, not asserted here.
 
 ## 10. Stage-1 gate
 
-**GO.** The project now has an authoritative post-referee mathematical source, a source-faithful result ledger, independent primitive reconstruction, exact counterexample regressions, and an explicit VOR wording boundary.
+**RE-CERTIFIED GO.** The project has an authoritative post-referee mathematical source, an image-rechecked Eqs. (13)–(17) transcription, a source-faithful result ledger, independent primitive reconstruction, exact counterexample regressions, and an explicit VOR wording boundary.
 
 The residual lack of direct VOR equation access does not block research under the user-specified fallback rule because the accepted manuscript is available and all discrepancy language remains version-qualified. It does block upgrading any statement to an unqualified claim about the exact Springer typeset VOR.
