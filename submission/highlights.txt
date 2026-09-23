@@ -1,5 +1,5 @@
 Complete pure-price equilibrium requires an inherited-share threshold.
 Below the threshold, the uniform-pricing game has no pure equilibrium.
 Branch-correct consumer surplus removes the reported weak-HBP reversal.
-The smaller firm loses from HBP wherever both pure equilibria coexist.
+The smaller firm loses from HBP on the weak-domain pure overlap.
 Uniform pricing retains its welfare advantage on the corrected domains.
