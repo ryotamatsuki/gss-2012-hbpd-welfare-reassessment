@@ -99,7 +99,7 @@ This point lies inside the accepted weak-dominance domain, so the issue is a glo
 
 \begin{table}[t]
 \centering
-\caption{Exact global-deviation counterexample to the unrestricted uniform-price claim}
+\caption{Exact global-deviation counterexample at \(\tau=1\), \(\sigma=1/2\), \(x_0=3/5\), and \(c=0\).}
 \label{tab:counterexample}
 \begin{tabular}{lccc}
 \toprule
@@ -143,18 +143,22 @@ Figure~\ref{fig:domains} plots the three relevant boundaries. The figure is gene
   ylabel={inherited share \(x_0\)},
   xmin=0,xmax=1,
   ymin=0.5,ymax=1,
-  legend style={draw=none,at={(0.98,0.98)},anchor=north east},
+  legend style={draw=none,at={(0.5,-0.20)},anchor=north,legend columns=1},
   grid=major
 ]
-\addplot+[thick,mark=none] table[x=s,y=x_H,col sep=comma]{generated/parameter_domains.csv};
+\addplot+[name path=xH,thick,mark=none] table[x=s,y=x_H,col sep=comma]{generated/parameter_domains.csv};
 \addlegendentry{\(x_H(s)\): pure-uniform threshold}
-\addplot+[dashed,thick,mark=none] table[x=s,y=x_bar,col sep=comma]{generated/parameter_domains.csv};
+\addplot+[name path=xbar,dashed,thick,mark=none] table[x=s,y=x_bar,col sep=comma]{generated/parameter_domains.csv};
 \addlegendentry{\(\bar x(s)\): weak/strong HBP boundary}
 \addplot+[dotted,thick,mark=none] table[x=s,y=x_u,col sep=comma]{generated/parameter_domains.csv};
 \addlegendentry{\(x_u(s)\): uniform switching cutoff}
-\addplot+[only marks,mark=*,mark size=1.8pt] coordinates {(0.1333978072,0.7166505482)};
+\addplot[fill opacity=0.12,draw=none,forget plot]
+  fill between[of=xbar and xH,soft clip={domain=0:0.1333978072}];
+\addplot+[dashed,mark=none,forget plot] coordinates {(0.1333978072,0.5) (0.1333978072,1.0)};
+\addplot+[only marks,mark=*,mark size=1.8pt,forget plot] coordinates {(0.1333978072,0.7166505482)};
+\node[anchor=west] at (axis cs:0.145,0.94) {\(s_c\)};
 \end{axis}
 \end{tikzpicture}
-\caption{Corrected equilibrium and source-branch boundaries. The weak-HBP/pure-uniform equilibrium overlap lies between \(x_H(s)\) and \(\bar x(s)\) and exists only for \(s<s_c\).}
+\caption{Corrected equilibrium and source-branch boundaries. The shaded region is the weak-HBP/pure-uniform equilibrium overlap \(x_H(s)\le x_0<\bar x(s)\), which exists only for \(s<s_c\); the vertical dashed line marks \(s_c\).}
 \label{fig:domains}
 \end{figure}
