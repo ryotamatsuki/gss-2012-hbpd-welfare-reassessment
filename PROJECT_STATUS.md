@@ -6,7 +6,7 @@ Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of His
 
 ## Current canonical position
 
-**Stage 9 — GO / REPRODUCIBILITY CLOSED. Next gate: Stage 10 — Section-by-Section Paper Construction.**
+**Stage 10 — GO / MANUSCRIPT CONSTRUCTION CLOSED. Next gate: Stage 11 — Robustness / Referee Attack Gate.**
 
 Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-price correspondence has passed independent adversarial certification. This does not authorize any claim about mixed-strategy nonexistence.
 
@@ -32,7 +32,8 @@ Stage 4 and Stage 4A are now closed. The complete **pure-strategy** uniform-pric
 | Stage 7.5A | GO / CLOSED | MODEL-SPECIFIC scope certified; Contribution Robustness Certificate and Formal Verification PASS completed. |
 | Stage 8 theory freeze | GO / FROZEN | Canonical theory, claim scope, benchmarks, regressions, formal coverage, and change-control rules frozen. |
 | Stage 9 reproducibility | GO / CLOSED | Python exact/symbolic tests, generated artifacts, source audit, Lean build, and LaTeX scaffold all pass from clean CI checkout. |
-| Stage 10 manuscript construction | NEXT | Build sections in dependency order against the frozen theorem registry and figure/table architecture gate. |
+| Stage 10 manuscript construction | GO / CLOSED | Full 18-page manuscript build, 5 propositions/corollary structure, 1 quantitative figure, 2 tables, appendices, bibliography, and claim-scope audit completed. |
+| Stage 11 referee attack | NEXT | Independently attack the full manuscript for theorem absorption, scope inflation, boundary errors, exposition drift, welfare mechanicality, and journal-fit vulnerabilities. |
 | Stage 14 / submission | NOT REACHED | No submission package or portal action. |
 | Stage 15 / actual submission | PROHIBITED | Do not submit, freeze, pay, or finalize legal declarations. |
 
@@ -106,3 +107,17 @@ No mathematical or scope gate remains open. Theory is frozen. Stage 9 may change
 * `generated/manifest.json`
 * `sources/SOURCE_MANIFEST.md`
 * `theorem_certificates/INDEX.md`
+
+
+## Stage 10 manuscript evidence
+
+* `manuscript/main.tex`
+* `manuscript/sections/01_introduction.tex` through `09_conclusion.tex`
+* `manuscript/sections/A_uniform_proof.tex`
+* `manuscript/sections/B_surplus_derivations.tex`
+* `manuscript/sections/C_reproducibility.tex`
+* `manuscript/references.bib`
+* `results/stage10_figure_table_architecture.md`
+* `results/stage10_claim_traceability.md`
+* `code/audit_manuscript_claims.py`
+* `sources/BIBLIOGRAPHY_PROVENANCE.md`
