@@ -1,13 +1,26 @@
 # Manuscript
 
-Stage 8 theory is frozen and Stage 9 reproducibility is operational.
+Stage 10 manuscript construction is complete against the Stage-8 frozen theory.
 
-main.tex is currently a **build scaffold only**.
+The production source is `main.tex`. It includes:
 
-sections/00_reproducibility_scaffold.tex exists solely to exercise the LaTeX toolchain.
+- Introduction
+- Model and source benchmark
+- Uniform-price equilibrium characterization
+- Consumer-surplus and profit corrections
+- Welfare and accepted Results 1–7 impact
+- Strategy-domain, selection, portability, and formal-verification scope
+- Related literature
+- Discussion
+- Conclusion
+- three appendices covering the complete uniform proof, primitive surplus derivations, and reproducibility
 
-Substantive publication-facing authoring begins at Stage 10. Every Stage-10 mathematical claim must trace to theorem_certificates/INDEX.md and the Stage-8 freeze. A substantive change to frozen theory requires docs/THEORY_CHANGE_CONTROL.md.
+The Figure/Table Architecture uses one quantitative parameter-domain figure and two tables. Figure 1 reads the verified Stage-9 `generated/parameter_domains.csv` data.
 
 Build from repository root with:
 
-make manuscript
+`make manuscript`
+
+The build runs the manuscript claim-scope audit, pdfLaTeX, BibTeX, settled cross-reference passes, and a final unresolved-reference check.
+
+Substantive changes to the frozen theorem set remain governed by `docs/THEORY_CHANGE_CONTROL.md`. Stage 11 is the next gate.
