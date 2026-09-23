@@ -115,3 +115,44 @@ Accordingly the current package has:
 - separate cover letter and title page.
 
 Stage 14 must record the residual live-Guide access limitation explicitly; it must not invent any portal field not supported by evidence.
+
+
+## H. Stage-14 current-evidence re-verification
+
+Access date: 2026-09-23.
+
+Evidence hierarchy follows research-paper-workflow/JOURNAL_REQUIREMENTS_CHECKLIST.md.
+
+| Topic | Evidence level | Current source | Operative conclusion | Status |
+|---|---:|---|---|---|
+| journal identity / scope / article types | 3 | Elsevier official IEP shop page: https://shop.elsevier.com/journals/information-economics-and-policy/0167-6245 | IEP publishes peer-reviewed theoretical and empirical research; research papers, short contributions and surveys are article types | PASS |
+| actual submission system | 2-equivalent public portal landing | Editorial Manager landing for Information Economics and Policy | Editorial Manager is the active submission system; authenticated record must still be inspected before submit | PASS / PORTAL PREFLIGHT REMAINS |
+| live journal-specific Guide | 3 endpoint identified, body inaccessible | ScienceDirect Guide link from Elsevier IEP page | Guide exists but automated retrieval returns HTTP 403 | PORTAL/GUIDE PREFLIGHT REQUIRED |
+| review model | 5 current secondary corroboration + historical journal pack | current 2026 IEP template corroborates single-anonymized; 2017 indexed IEP pack recorded single-blind | Package is identified and is compatible with single-anonymized review; authenticated portal must confirm operative current setting | CONDITIONAL |
+| initial PDF / source behavior | 4 current Elsevier-wide | Elsevier Your Paper Your Way; Elsevier LaTeX instructions | Most Elsevier journals accept initial PDF; editable source may be requested/accepted; source archive is prepared and clean-build certified | PASS publisher-wide; journal-specific portal designation to confirm |
+| LaTeX | 4 current Elsevier-wide | https://www.elsevier.com/researcher/author/policies-and-guidelines/latex-instructions | PDF + zipped LaTeX sources supported when requested | PASS |
+| reference style at initial submission | 4 current Elsevier-wide | Elsevier Your Paper Your Way | consistent reference style acceptable at initial submission under YPYW | PASS publisher-wide |
+| highlights | 5 current secondary + historical journal pack | current 2026 IEP template; indexed 2017 IEP pack | package conservatively supplies 5 bullets, all <=85 characters | PASS PACKAGE / LIVE JOURNAL RULE TO CONFIRM IN PORTAL |
+| keyword count | 5 historical journal pack | indexed 2017 IEP pack | package supplies 6 keywords, meeting historical max 6 | PASS PACKAGE / LIVE JOURNAL RULE TO CONFIRM IN PORTAL |
+| GenAI declaration | 4 current official | Elsevier Generative AI policy, updated June 2026 | substantive ChatGPT use must be disclosed immediately before references; research-process use described in methods/reproducibility | PASS |
+| AI authorship | 4 current official | same Elsevier AI policy | AI cannot be author; human remains accountable | PASS |
+| artwork accepted formats | 4 current official | Elsevier Artwork Overview / Formats Checklist | EPS/PDF recommended for vector; TIFF/JPEG for raster; embedded figures acceptable for review under YPYW | PASS |
+| artwork accessibility | 4 current official | Elsevier artwork guidance | line styles/labels must remain readable; meaning should not rely on color | PASS package design |
+| figure resolution | 4 current official | Elsevier YPYW/artwork guidance | vector figure avoids raster DPI limitation; raster rules N/A to final quantitative figure | PASS |
+| funding / competing interests / CRediT / data-code | 4 current publisher-wide + package | Elsevier author policies | declarations supplied in manuscript and submission file | PASS |
+| submission fee | no current IEP-specific public evidence retrieved | public official pages checked | no fee claim is made; authenticated portal must be checked before submit | PORTAL PREFLIGHT REQUIRED |
+| APC / open access | portal/official journal page to confirm if selected | not required for standard initial submission decision | no OA option is selected at Stage 14 | NOT APPLICABLE TO PREFLIGHT |
+| suggested reviewers | 4 current Elsevier-wide | Elsevier Your Paper Your Way | publisher may request reviewer suggestions and conflict avoidance | PORTAL FIELD TO COMPLETE IF REQUIRED |
+| author/title metadata | package + portal | title page/manuscript/declarations | exact metadata synchronized; portal values must be matched before submit | PASS PACKAGE / PORTAL RECONCILIATION REQUIRED |
+
+### Stage-14 journal-evidence conclusion
+
+All package-level and publisher-wide material requirements that can be verified without authentication are satisfied.
+
+The only remaining uncertainties concern the **authenticated current IEP submission record / inaccessible live Guide**, especially operative file designations, anonymity/title-page handling, reviewer fields, submission-fee status, and any journal-specific override of the conservative highlights/keyword package.
+
+Accordingly, Stage 14 can close only as:
+
+**CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED**
+
+and may not be upgraded to full PASS or SUBMITTED until the actual Editorial Manager record is opened, current required fields/file designations are reconciled, its generated review PDF is inspected, and any conflict with lower-level evidence is resolved.
