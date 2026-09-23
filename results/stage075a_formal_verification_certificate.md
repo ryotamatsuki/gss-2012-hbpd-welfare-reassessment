@@ -1,6 +1,6 @@
 # Stage 7.5A — Formal Verification Certificate
 
-**Final state:** FORMAL VERIFICATION PASS  
+**Final state:** RE-CERTIFICATION IN PROGRESS — prior certificate superseded by source-fidelity repair  
 **Project:** GSS (2012) HBP Welfare Reassessment  
 **Formal source commit:** \`7c48c20b8b15a6198cbdf0e780ec3e7dcb221401\`  
 **CI run:** GitHub Actions run \`35817736362\`  
@@ -38,7 +38,8 @@ The exact mathlib commit is pinned in \`formal/lakefile.lean\`.
 | UPE-2012-1A | \`GSS2012.xH_lt_one\` | \(x_H<1\) for \(0\le s<1\) |
 | UPE-2012-1C | \`GSS2012.exact_counterexample_gain\` | exact \(719/1800>0\) counterexample gain |
 | UPE-2012-1D | \`GSS2012.equality_kink_A_gain\` | strict positive A gain \(2sx>0\) at the equality-kink deviation calculation |
-| CS-2012-1 | \`GSS2012.eq15_valid_branch_exact\` | exact corrected-vs-printed Eq. (15) discrepancy on a valid one-way-switch point |
+| CS-2012-1A | \`GSS2012.eq15_source_fidelity_exact\` | accepted Eq. (15) equals the primitive one-way-switch expression at the exact valid point |
+| CS-2012-1B | \`GSS2012.eq16_is_negative_eq15\`, \`GSS2012.eq16_sign_flip_exact\` | accepted Eq. (16) display carries the opposite normalized sign relative to Eq. (15) |
 | CS-2012-2 | \`GSS2012.rejected_upstream_cs_regression\` | branch-correct positive exact value \(17993/4500000\) at the rejected upstream regression point |
 | W-2012-1 | \`GSS2012.weak_welfare_endpoint_identity\` | exact weak-welfare endpoint identity |
 | UPE-2012-OVERLAP | \`GSS2012.overlap_equality_implies_polynomial\` | \(x_H=\bar x\) implies \(11s^2+66s-9=0\) |
@@ -129,7 +130,7 @@ The two layers answer different questions:
 The formal certificate becomes stale if any of the following changes materially:
 
 - definition of \(x_H\), source/kink payoff, or equilibrium-domain threshold;
-- accepted Eq. (15) correction formula;
+- accepted Eq. (15)/(16) source-fidelity definitions or the branch-correct no-switch CS formula;
 - weak-welfare endpoint formula;
 - weak/pure overlap boundary;
 - theorem quantifiers that change the algebraic domain.
@@ -138,6 +139,4 @@ A stale certificate blocks Stage 8 until rebuilt and re-audited.
 
 ## 10. Gate result
 
-**FORMAL VERIFICATION PASS.**
-
-The Stage-7.5A Formal Verification Gate is closed.
+**RE-CERTIFICATION IN PROGRESS.** The previous PASS predates the corrected source definition and is not valid for the repaired head. A fresh pinned Lean build, working sentinel guard, and refreshed axiom report are required before this gate is closed again.
