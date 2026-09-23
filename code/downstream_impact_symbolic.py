@@ -41,7 +41,7 @@ assert sp.diff(18*pi_b_weak_gap, x, 2) == 40
 # Exact pure-overlap boundary: x_H(s)=xbar.
 scrit = -3 + 6*sp.sqrt(33)/11
 # Squared-equation polynomial after isolating the positive radical.
-overlap_poly = sp.factor(11*s**2 + 66*s - 27)
+overlap_poly = sp.factor(11*s**2 + 66*s - 9)
 assert sp.factor(overlap_poly.subs(s, scrit)) == 0
 
 # Weak social-welfare gap (HBP minus uniform) on the only branch relevant
