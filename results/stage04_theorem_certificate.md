@@ -102,7 +102,7 @@ This argument does not assume that an excluded firm can always enter at a positi
 
 ## 3. Exclude capture, plateau, and kink profiles
 
-For (0<s<1), on the no-switch plateau (alphale dleeta),
+For (0<s<1), on the no-switch plateau (alphale dle\beta),
 [
 Pi_A=x(b-d),qquad
 Pi_B=(1-x)(a+d).
@@ -110,21 +110,21 @@ Pi_B=(1-x)(a+d).
 
 At any plateau interior with (x<1), A strictly prefers a lower (d) and B strictly prefers a higher (d), so the profile cannot be Nash.
 
-At (d=alpha) with (x<1), B can move to (d=eta), keep share (1-x), raise its margin by (2s), and gain
+At (d=alpha) with (x<1), B can move to (d=\beta), keep share (1-x), raise its margin by (2s), and gain
 [
 2s(1-x)>0.
 ]
 At the endpoint (x=1), B has zero demand at (d=alpha), so the Stage-4 margin--demand elimination excludes the profile instead; the strict-gain formula is not used there.
 
-At (d=eta), A can move to (d=alpha), keep share (x), raise its margin by (2s), and gain
+At (d=\beta), A can move to (d=alpha), keep share (x), raise its margin by (2s), and gain
 [
 2sx>0.
 ]
 Hence neither plateau interiors nor either plateau kink can be Nash.
 
-The case (s=0) is handled separately rather than by these kink arguments because (alpha=eta) and the plateau collapses. Then inherited history has no effect on demand,
+The case (s=0) is handled separately rather than by these kink arguments because (alpha=\beta) and the plateau collapses. Then inherited history has no effect on demand,
 [
-q_A(d)=operatorname{clip}!left(rac{d+1}{2},0,1ight),
+q_A(d)=operatorname{clip}!left(\frac{d+1}{2},0,1\right),
 ]
 and after capture/nonpositive-margin profiles are excluded, the two interior Hotelling first-order conditions intersect uniquely at ((a,b)=(1,1)).
 
