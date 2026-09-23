@@ -1,6 +1,6 @@
 # Stage 4 — Global uniform-price game (progress report)
 
-**Canonical status:** IN PROGRESS — provisional result; no Stage 4 GO and no Stage 4A PASS claimed.
+**Canonical status:** GO — Stage 4 closed. Stage 4A independent certification is PASS/CLOSED.
 
 ## Input and scope
 
@@ -9,7 +9,7 @@
 * Work branch: `research/stage-04-uniform-price-game`, branched from the source branch above.
 * Initial input commit: `7c10043ad91f67505c68bf0f99f3b51263a041fb`.
 * Workflow repository: `ryotamatsuki/research-paper-workflow`, `main` at `63f11a50a13d9328213498a5a6576d00b9bceef7` (pipeline v2.4). `GOVERNANCE.md` still labels v2.3; follow the v2.4 pipeline and preserve this inconsistency in the workflow record.
-* Mathematical source for this pass: HECER Discussion Paper No. 299 (July 2010), not yet the VOR body. See `sources/gss_2012_version_boundary.md`.
+* Mathematical source lineage: HECER Discussion Paper No. 299 (July 2010) plus the lawful post-referee accepted manuscript documented in `sources/gss_2012_accepted_manuscript_comparison.md`. Exact Springer VOR equation text remains unverified, so source-facing claims stay accepted-manuscript-qualified.
 
 ## Work completed in this block
 
@@ -22,9 +22,9 @@
 7. Reproduced exact rational boundary, kink, welfare-endpoint, and HBP selection regressions in `code/uniform_game_cleanroom.py`.
 8. Added a SymPy primitive-integration script that verifies weak/strong CS and welfare formulas on both sides of the uniform allocation cutoff.
 
-## Provisional headline result
+## Certified Stage-4 headline result
 
-For (0<s=\sigma/\tau<1) and (x=x_0\in(1/2,1)), the candidate complete pure correspondence is
+For (0<s=\sigma/\tau<1) and (x=x_0\in(1/2,1)), the certified complete pure-strategy correspondence is
 
 \[
 \mathcal E^u(x,s)=
@@ -38,7 +38,7 @@ x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6.
 
 At equality B has a second best-response price at the no-poaching kink, but that price is not an equilibrium intersection. The Nash set remains a singleton. No mixed-strategy characterization or general-equilibrium nonexistence claim is made.
 
-The primitive-threshold proof map is in `derivations/uniform_price_game_full_demand.md`; a second price-difference proof is in `derivations/uniform_price_global_best_responses.md`. The independent adversarial review and its exact-rational evaluator are documented in `results/stage04a_independent_certificate.md`. The key remaining gate is a line-by-line hostile check of all boundary and feasible-set endpoints.
+The primitive-threshold proof map is in `derivations/uniform_price_game_full_demand.md`; a second price-difference proof is in `derivations/uniform_price_global_best_responses.md`. The independent adversarial review and its exact-rational evaluator are documented in `results/stage04a_independent_certificate.md`. The boundary-by-boundary hostile check is complete; see `results/stage04a_independent_certificate.md`.
 
 ## Consumer-surplus correction and regression audit
 
@@ -59,15 +59,13 @@ The weak-HBP interior prices and strong-HBP (q_A=c) candidate have been reconstr
 * Arithmetic uses Python 3.12.14 standard-library `fractions.Fraction`; exact regression assertions avoid floating-point equality.
 * The current environment has no `lean` or `lake` executable. Formal verification is applicable and remains open; these Python identities are not Lean certification.
 
-## Not completed / blockers
+## Remaining downstream limitations
 
-* Stage 4A independent certification and hostile branch-enumeration proof remain open; a separate direct-clipping evaluator and d-coordinate proof are now in the branch.
-* Direct VOR full-text comparison; all publication-facing discrepancy language remains version-qualified to HECER 2010.
-* Full Eq. (1)–(28), Results 1–5, figures, assumptions, and version-difference ledgers as finalized Stage 1 artifacts; a provisional impact ledger is in `derivations/welfare_and_result_impact.md`.
-* Literature correction/absorption search closure; the search to date is preliminary only.
-* Mixed equilibrium; excluded from the current pure-strategy scope. No welfare result is extrapolated into the no-pure region.
-* Lean formal verification and toolchain/audit certificate.
+* Exact Springer VOR equation text is still not directly inspected; source-facing discrepancy language remains accepted-manuscript-qualified.
+* Mixed equilibrium is outside the frozen Route-B scope. No equilibrium welfare is extrapolated into the no-pure region.
+* Lean formal verification is applicable and must be closed at Stage 7.5A before Stage 8 theory freeze.
+* Strong-HBP CS/profit statements retain the documented below-cost price-selection qualification.
 
 ## Verdict and next-stage contract
 
-Stage 4 remains **OPEN / CONDITIONAL**. Do not call the result a certified complete equilibrium correspondence yet. Next: complete the global branch proof independently, compare all price domains, formalize the algebraic core, then rerun the Stage 4A hostile audit. Only after these gates can the source-specific welfare-impact map be finalized.
+Stage 4 is **GO/CLOSED** and Stage 4A is **PASS/CLOSED**. The certified object is the complete **pure-strategy** uniform-price correspondence. No general Nash-nonexistence claim is authorized below `x_H`. The next pre-freeze obligation is Stage 7.5/7.5A scope and formal-verification closure.
