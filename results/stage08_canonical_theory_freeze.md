@@ -1,6 +1,6 @@
 # Stage 8 — Canonical Theory Freeze
 
-**Verdict:** GO / THEORY FROZEN  
+**Verdict:** REOPENED / POST-ASTRA REFREEZE IN PROGRESS  
 **Freeze branch:** \`research/stage-08-theory-freeze\`  
 **Stage-8 input branch:** \`research/stage-075a-freeze-gate\`  
 **Stage-7.5A input head:** \`d159a6d286d5547873decceb4cc26e6d3e0871ef\`  
@@ -20,8 +20,8 @@ Its contribution is:
 1. reconstruct the complete uniform-price demand correspondence from primitive consumer choice;
 2. show that accepted-manuscript Eq. (12) is a smooth one-way-switch branch solution whose global pure-Nash validity requires an additional exact parameter restriction;
 3. characterize the complete pure-strategy price correspondence;
-4. correct the accepted-manuscript consumer-surplus branch/algebra;
-5. propagate the corrected equilibrium domain through accepted-manuscript Results 1–7;
+4. correct the accepted-manuscript consumer-surplus diagnosis source-faithfully: Eq. (15) is correct on its switching branch, Eq. (16) reverses its sign, and the no-switch branch requires separate accounting;
+5. correct weak-profit profile accounting across the uniform switching/no-switch branches and propagate the corrected equilibrium domain through accepted-manuscript Results 1–7;
 6. identify which qualitative welfare conclusions survive and which equilibrium comparisons do not.
 
 No generic theorem about all switching-cost Bertrand games is claimed.
@@ -160,17 +160,20 @@ At \(x_0=x_H(s)\), firm B has a second payoff-equal no-poaching kink best respon
 
 This is a **complete pure-strategy correspondence**, not a statement about mixed equilibrium.
 
-## 7. Frozen strategy-domain result
+## 7. Refrozen strategy-domain result
 
-For the **uniform-price game**, the pure-equilibrium set is unchanged whether prices are allowed over all real numbers or restricted to \(p_i\ge c\):
+For the **uniform-price game**, the pure-equilibrium set is unchanged whether prices are allowed over all real numbers or restricted to (p_ige c).
 
-- negative-margin actions with positive demand are dominated by charging \(c\);
-- zero-margin actions with positive demand admit profitable small positive price increases;
-- zero-demand and full-capture profiles fail Nash conditions under the certified branch analysis.
+The proof uses a joint margin--demand elimination:
 
-This invariance is frozen for the uniform theorem.
+- negative margin with positive demand is strictly improved by moving to zero margin;
+- zero margin with positive demand admits a small profitable increase;
+- if one firm has zero demand and the full-demand rival has nonpositive margin, that rival can improve;
+- if one firm has zero demand and the full-demand rival has positive margin, the excluded firm can match that positive margin, set (d=0), obtain positive demand, and earn positive profit.
 
-It does **not** automatically extend to the strong-HBP price vector.
+Hence every uniform pure equilibrium has strictly positive margins and strictly positive demand.
+
+This invariance does **not** automatically extend to the strong-HBP price vector.
 
 ## 8. Frozen exact counterexample
 
@@ -246,67 +249,79 @@ x_H(s)\le x_0<\bar x(s).
 
 At \(s=s_c\), \(x_H=\bar x\) and the weak-domain inequality is strict, so the overlap is empty.
 
-## 11. Frozen weak consumer-surplus correction
+## 11. Refrozen weak consumer-surplus correction
 
 Let
-\[
-x_u=\frac12+\frac{s}{6}.
-\]
+[
+x_u=rac12+rac{s}{6}.
+]
 
-The accepted uniform-price profile has:
+The accepted uniform-price vector induces:
 
-- one-way A-to-B switching when \(x_0\ge x_u\);
-- no switching when \(x_0<x_u\).
-
-Hence accepted Eq. (13) cannot be extrapolated through \(x_0=x_u\).
+- one-way A-to-B switching when (x_0ge x_u);
+- no switching when (x_0<x_u).
 
 On the switching branch,
-\[
+[
 CS^d-CS^u
 =
-\frac{
--\tau^2(52x_0^2-52x_0-1)
-+2\sigma\tau(18x_0-17)
-+\sigma^2
+rac{
+-	au^2(52x_0^2-52x_0-1)
++2sigma	au(18x_0-17)
++sigma^2
 }{
-36\tau
+36	au
 }.
-\]
+]
+
+This expression is exactly accepted-manuscript Eq. (15) after distributing its outer minus sign. The previous project claim that Eq. (15) itself was algebraically wrong is withdrawn.
+
+After substituting (sigma=s	au), accepted printed Eq. (16) adds a further global minus sign to the same bracket. At (s=1/10,x_0=7/10), primitive integration and Eq. (15) both equal (221/720), whereas printed Eq. (16) equals (-221/720).
 
 On the no-switch branch,
-\[
+[
 CS^d-CS^u
 =
-\frac{
-\sigma^2+12\sigma\tau x_0-14\sigma\tau
--8\tau^2x_0^2+8\tau^2x_0+5\tau^2
+rac{
+sigma^2+12sigma	au x_0-14sigma	au
+-8	au^2x_0^2+8	au^2x_0+5	au^2
 }{
-18\tau
+18	au
 }.
-\]
+]
 
-Direct primitive integration gives
-\[
-CS^d>CS^u
-\]
-throughout the accepted weak-HBP profile domain.
+Direct primitive integration gives (CS^d>CS^u) throughout the accepted weak-HBP profile domain. As an **equilibrium** comparison, this statement is restricted to the certified pure overlap.
 
-As an **equilibrium** comparison, this statement is restricted to the certified pure overlap.
+The exact no-switch regression (s=99/100,x_0=501/1000) remains (17993/4500000>0).
 
-The upstream negative regression at
-\[
-s=99/100,\qquad x_0=501/1000
-\]
-is rejected permanently as a branch-extension error.
+## 12. Refrozen weak profit result
 
-## 12. Frozen weak profit result
+At the accepted uniform price vector, realized profit is branch dependent.
+
+For (x_0ge x_u),
+[
+rac{pi_B^d-pi_B^u}{	au}
+=
+rac{s^2-12sx_0+14s+20x_0^2-20x_0+1}{18}.
+]
+
+For (x_0<x_u),
+[
+rac{pi_B^d-pi_B^u}{	au}
+=
+rac{s^2-9sx_0+7s+10x_0^2-x_0-4}{9}.
+]
+
+The formulas agree at (x_0=x_u). Accepted Eq. (22) is the switching-branch expression and cannot be extrapolated into the no-switch region.
+
+At (s=1/2,x_0=51/100), the actual gap is (-227/4500), while the invalid switching-branch extension gives (4/375>0).
 
 On every weak-HBP / pure-uniform equilibrium comparison,
-\[
-\pi_B^d<\pi_B^u.
-\]
+[
+pi_B^d<pi_B^u.
+]
 
-Thus the accepted high-switching-cost region in which the smaller firm allegedly benefits from HBP does not survive as a comparison of two pure equilibria.
+This sign is not generalized to strong dominance. At (s=9/10,x_0=19/20), the source-selected strong-HBP gap is (41/900>0).
 
 ## 13. Frozen weak welfare result
 
@@ -328,43 +343,47 @@ W^d<W^u.
 
 The accepted endpoint-substitution expression is algebraically incorrect, but the qualitative welfare ranking survives on the corrected pure domain.
 
-## 14. Frozen strong-HBP selection qualification
+## 14. Refrozen strong-HBP selection qualification
 
-Under unrestricted real prices, the strong-HBP branch contains a payoff-equivalent zero-sales poaching-price family.
+For nondegenerate strong dominance (ar x(s)le x_0<1), unrestricted real prices generate a zero-sales poaching-price family.
 
 In normalized notation
-\[
-u=\frac{q_A-c}{\tau},
-\]
+[
+u=rac{q_A-c}{	au},
+]
 the family satisfies
-\[
-3-s-4x_0\le u\le0,
-\]
+[
+3-s-4x_0le ule0,
+]
 with corresponding B loyalty price
-\[
-\frac{p_B-c}{\tau}=u+2x_0-1+s.
-\]
+[
+rac{p_B-c}{	au}=u+2x_0-1+s.
+]
 
-Across this family:
+Across this nondegenerate family:
 
 - allocation is unchanged;
 - social welfare is unchanged;
 - consumer surplus and firm-profit distribution can change.
 
-Under the source/nonnegative-margin convention \(q_A\ge c\), the family collapses to the source member \(u=0\), i.e. \(q_A=c\).
+Under the source/nonnegative-margin convention (q_Age c), the nondegenerate family selects the source member (u=0), i.e. (q_A=c).
 
-Therefore strong-HBP CS/profit statements are selection-conditional unless the nonnegative-margin/source selection is imposed.
+At (x_0=1), the inherited B-history segment is empty. The prices (q_A) and (p_B), directed only to that segment, remain indeterminate even under nonnegative-margin restrictions. Active allocation, active profits, consumer surplus, and welfare are invariant to those unused prices.
 
-## 15. Frozen strong consumer-surplus result
+Therefore strong-HBP CS/profit statements for (x_0<1) are selection-conditional unless the source/nonnegative-margin member is imposed, and full price-vector uniqueness is never asserted at (x_0=1).
 
-Under the source/nonnegative-margin strong-HBP selection,
-\[
+## 15. Refrozen strong consumer-surplus result
+
+For nondegenerate (x_0<1), under the source/nonnegative-margin strong-HBP selection,
+[
 CS^d-CS^u
 =
-\frac{\tau(1-x_0)(16-7x_0-13s)}9.
-\]
+rac{	au(1-x_0)(16-7x_0-13s)}9.
+]
 
 The accepted strong-HBP CS threshold survives on the corrected pure-uniform domain under this selection.
+
+At (x_0=1), the CS gap is zero and the full strong-HBP price vector is not unique because the B-history segment is empty.
 
 ## 16. Frozen strong welfare result
 
@@ -383,17 +402,17 @@ for \(x_0<1\), with equality only at the degenerate limit \(x_0=1\).
 
 This result is selection-invariant.
 
-## 17. Frozen accepted-manuscript Results 1–7 impact
+## 17. Refrozen accepted-manuscript Results 1–7 impact
 
-| Result | Frozen corrected status |
+| Result | Refrozen corrected status |
 |---|---|
-| Result 1 | outside maintained \(\sigma<\tau\) reassessment domain; not affected by UPE correction |
-| Result 2 | qualitative market-share sign survives; displayed weak-branch difference is wrong; equilibrium statement restricted to \(x_0\ge x_H\) |
-| Result 3 | invalidated as stated; weak CS reversal disappears under primitive branch-correct integration |
-| Result 4 | invalidated as a weak-domain pure-equilibrium claim; on the pure overlap \(\pi_B^d<\pi_B^u\) |
+| Result 1 | outside maintained (sigma<	au) reassessment domain; not affected by UPE correction |
+| Result 2 | survives on the corrected pure domain; strict share ranking applies only to nondegenerate comparisons and becomes equality at (x_0=1); displayed weak-branch difference is wrong |
+| Result 3 | invalidated as stated; Eq. (15) itself is correct on the switching branch, Eq. (16) reverses its sign, and no-switch branch accounting differs |
+| Result 4 | invalidated as stated over the full weak domain because Eq. (22) is a switching-branch formula; on the weak pure overlap (pi_B^d<pi_B^u) |
 | Result 5 | survives on corrected weak pure-equilibrium domain |
-| Result 6 | survives on corrected pure domain under source/nonnegative-margin HBP selection |
-| Result 7 | survives on corrected pure domain; welfare is selection-invariant |
+| Result 6 | survives for nondegenerate (x_0<1) on corrected pure domain under source/nonnegative-margin selection; at (x_0=1) CS gap is zero and full price vector is nonunique |
+| Result 7 | survives on corrected pure domain; welfare is selection-invariant and equals uniform at (x_0=1) |
 
 ## 18. Proposition maturity classification
 
@@ -402,13 +421,15 @@ This result is selection-invariant.
 | UPE-2012-1 complete pure correspondence | PROVED |
 | Eq. (12) exact failure witness | PROVED |
 | equality singleton result | PROVED |
-| uniform strategy-domain invariance | PROVED |
-| weak CS branch correction and sign | PROVED |
+| uniform strategy-domain invariance | PROVED after joint margin--demand recertification |
+| weak CS branch/source correction and sign | PROVED |
+| weak profile B-profit branch correction | PROVED |
 | weak smaller-firm profit ranking on pure overlap | PROVED |
+| strong-domain counterexample to overbroad weak profit wording | PROVED |
 | weak welfare ranking on pure overlap | PROVED |
-| strong CS ranking | CONDITIONAL on source/nonnegative-margin HBP selection |
-| strong welfare ranking | PROVED on corrected pure domain |
-| mixed equilibrium below \(x_H\) | OUT OF SCOPE / UNRESOLVED, not a proposition claimed by the paper |
+| strong CS ranking | CONDITIONAL on source/nonnegative-margin HBP selection for nondegenerate (x_0<1); zero gap at (x_0=1) |
+| strong welfare ranking | PROVED on corrected pure domain; equality at (x_0=1) |
+| mixed equilibrium below (x_H) | OUT OF SCOPE / UNRESOLVED |
 
 ## 19. Frozen portability classification
 
@@ -434,51 +455,40 @@ Not certified:
 
 No Stage-7.5A rescue/generalization program is authorized.
 
-## 20. Frozen formal-verification state
+## 20. Formal-verification state after Astra rollback
 
-**FORMAL VERIFICATION PASS.**
+**REOPENED — fresh post-Astra CI required before refreeze.**
 
-Toolchain:
+Toolchain remains Lean 4.19.0 with mathlib `c44e0c8ee63ca166450922a373c7409c5d26b00b`.
 
-- Lean 4.19.0;
-- mathlib \`c44e0c8ee63ca166450922a373c7409c5d26b00b\`.
+Formal coverage classification remains **PROOF-CRITICAL CORE**, not full economic model.
 
-Formal coverage classification:
-
-**PROOF-CRITICAL CORE**, not full economic model.
-
-Machine-checked components include:
+The revised formal target set includes:
 
 - B source-vs-kink payoff factorization;
-- \(x_u<x_H<1\);
-- exact \(719/1800\) counterexample;
+- (x_u<x_H<1);
+- exact (719/1800) counterexample;
 - equality-kink A gain;
-- exact Eq. (15) discrepancy point;
-- rejected upstream CS regression exact positive value;
+- accepted Eq. (15) identity with the primitive switching-branch CS formula;
+- accepted Eq. (16) sign inversion;
+- exact weak no-switch and strong-domain profit regressions;
+- no-switch CS regression exact positive value;
 - weak-welfare endpoint identity;
 - weak/pure overlap polynomial and closed-form root.
 
-Not formalized:
+The CI guard itself is part of the recertification: sentinel inputs containing `by sorry` and `axiom bad : False` must be detected before the project-source scan is accepted.
 
-- continuum demand derivation;
-- full clipping partition from primitives;
-- Nash definition;
-- complete alternative-equilibrium search;
-- mixed equilibrium;
-- source provenance.
+Not formalized: continuum demand derivation, full clipping partition from primitives, Nash definition, complete alternative-equilibrium search, mixed equilibrium, or source provenance.
 
-## 21. Frozen closest-paper / novelty distinction
+## 21. Refrozen closest-paper / novelty distinction
 
 The contribution is not “kinked Bertrand games may lack pure equilibrium.”
 
-The contribution is the exact source-specific reassessment of the GSS (2012) benchmark:
+The contribution is the exact source-specific reassessment of the GSS (2012) benchmark: accepted Eq. (12) requires an additional global-best-response restriction, the restriction is characterized exactly by (x_H(s)), the complete pure correspondence is derived, and downstream accepted-manuscript welfare/profit/CS results are reclassified accordingly.
 
-- accepted Eq. (12) requires an additional global-best-response restriction;
-- the restriction is characterized exactly by \(x_H(s)\);
-- the complete pure correspondence is derived;
-- downstream accepted-manuscript welfare/profit/CS results are reclassified accordingly.
+The author-posted Umezawa (2023) corrigendum is a close methodological correction precedent and is explicitly cited. It corrects a nearby uniform-pricing regime inference, but the accessible corrigendum does not state the GSS-specific (x_H(s)) threshold.
 
-No prior correction or parent theorem located at Stages 2/6 absorbs this source-specific result.
+In the accessible versions inspected at Stage 6, no prior source was located that supplies the GSS-specific (x_H(s)) theorem. The project does not claim universal non-absorption across uninspected proprietary versions, appendices, or every possible specialization.
 
 ## 22. Frozen interpretation
 
@@ -556,8 +566,10 @@ requires explicit change control and rollback to the earliest affected stage.
 
 Stage 9–14 may improve reproducibility, exposition, journal fit, formatting, figures, references, and submission compliance, but may not silently change the frozen theory.
 
-## 26. Stage-8 verdict
+## 26. Stage-8 post-Astra refreeze status
 
-**GO — CANONICAL THEORY FROZEN.**
+The headline UPE theorem, mixed-strategy scope, weak/strong welfare rankings, and MODEL-SPECIFIC classification survive. The source-fidelity, profit-branch, endpoint, proof-completeness, literature, and formal-target records have been rewritten.
 
-The project may enter Stage 9.
+**REFREEZE PENDING ONLY THE FRESH POST-ASTRA FORMAL / REPRODUCIBILITY CI.**
+
+Once those gates pass, this document is to be marked **GO — CANONICAL THEORY REFROZEN AFTER ASTRA AUDIT** without any further mathematical change.
