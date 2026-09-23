@@ -10,7 +10,7 @@ Reconstruct the global uniform-price game, characterize its pure-strategy equili
 
 ## Current status
 
-**Stage 10 is CLOSED/GO — MANUSCRIPT CONSTRUCTION PASS.** Stages 1–4, 4A, 6, 7, 7.5, 7.5A, 8, 9, and 10 have passed; the next canonical gate is Stage 11 — Robustness / Referee Attack Gate. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
+**Stage 14 is CLOSED with CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED.** Stages 1–14 of the research/manuscript pipeline have been completed through local submission QA. The sole remaining pre-submission dependency is reconciliation against the authenticated Information Economics and Policy Editorial Manager record and its generated review PDF. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
 No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
@@ -74,4 +74,15 @@ The frozen theory now reproduces from clean CI checkout with Python 3.12/SymPy 1
 
 ## Stage 10 manuscript construction
 
-A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final CI build is 18 pages. Stage-8 theory was not changed.
+A complete publication-facing manuscript now builds reproducibly from `manuscript/main.tex`. It contains the complete pure-equilibrium theorem, exact counterexample, corrected consumer-surplus and profit comparisons, welfare results, accepted Results 1–7 impact table, explicit strategy/selection/formal-verification scope, related literature, discussion, conclusion, and three appendices. The final IEP-integrated CI build is 20 pages. Stage-8 theory was not changed.
+
+
+## Stage 11–14 completion
+
+Stage 11 hostile-referee review found no certification regression; close literature was strengthened without changing theory. Stage 12 selected **Information Economics and Policy** as the primary target. Stage 13 produced the IEP-facing manuscript, title page, one-page cover letter, highlights, declarations, and submission preflight.
+
+Stage 14 passed clean-package extraction/rebuild, full manuscript/title/cover compilation, exact/symbolic/Lean regressions, embedded-font checks, all-page PDF visual inspection, figure/table artwork QA, and final checksum/provenance recording.
+
+The canonical Stage-14 state is **CONDITIONAL PASS — AUTHENTICATED PORTAL PREFLIGHT REQUIRED** because the live IEP Guide body is not retrievable in the automated environment and current portal-only fields/file designations must be checked in the authenticated Editorial Manager record before any submit action.
+
+No Stage 15 freeze or actual submission has occurred. See `results/stage14_submission_qa.md`, `results/stage14_visual_qa.md`, `results/stage14_closure.md`, and `submission/journal_requirements_ledger.md`.
