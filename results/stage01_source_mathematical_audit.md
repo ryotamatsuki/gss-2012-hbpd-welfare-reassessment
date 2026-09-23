@@ -70,7 +70,7 @@ The accepted manuscript's equation numbering in the final strong-dominance pages
 
 With
 [
-s=sigma/	au,quad a=(p_A-c)/	au,quad b=(p_B-c)/	au,quad d=b-a,
+s=sigma/\tau,quad a=(p_A-c)/\tau,quad b=(p_B-c)/\tau,quad d=b-a,
 ]
 the two primitive thresholds are
 [
@@ -83,7 +83,7 @@ q_A(d)=operatorname{clip}(t_A,0,x_0)+operatorname{clip}(t_B-x_0,0,1-x_0).
 
 For `0<s<1`, define
 [
-L=-1-s,quad alpha=2x_0-1-s,quad eta=2x_0-1+s,quad U=1+s.
+L=-1-s,quad alpha=2x_0-1-s,quad \beta=2x_0-1+s,quad U=1+s.
 ]
 This yields the exhaustive five-piece partition: full B capture; A→B-only switching; no-switch plateau; B→A-only switching; full A capture. Simultaneous two-way switching is impossible because `t_A-t_B=s>0`.
 
@@ -91,7 +91,7 @@ This yields the exhaustive five-piece partition: full B capture; A→B-only swit
 
 At
 [
-(	au,sigma,x_0,c)=(1,1/2,3/5,0),
+(\tau,sigma,x_0,c)=(1,1/2,3/5,0),
 ]
 the accepted-manuscript Eq. (12) candidate is
 [
@@ -137,7 +137,7 @@ The weak-HBP interior solution is reproduced from the two independent history se
 The strong-HBP source member `q_A=c` is reproduced under a nonnegative-margin/no-loss strategy convention. If prices below marginal cost are admitted, the B-history segment has a payoff-equivalent zero-sales family. In normalized margins `u=(q_A-c)/τ`:
 [
 3-s-4x_0le ule0,qquad
-(p_B-c)/	au=u+2x_0-1+s.
+(p_B-c)/\tau=u+2x_0-1+s.
 ]
 All members have the same no-poaching allocation and the same social welfare, but prices, profits, and consumer surplus redistribute with `u`. Under the natural restriction `p_i,q_ige c`, the family collapses to the source member `u=0`.
 
@@ -148,7 +148,7 @@ This is a strategy-domain/selection qualification, not evidence that the source 
 With full market coverage,
 [
 W=CS+pi_A+pi_B
-=eta-c-	auint_0^1|z-y(z)|,dz-sigma N_{m sw}.
+=\beta-c-\tauint_0^1|z-y(z)|,dz-sigma N_{\rm sw}.
 ]
 Prices cancel as transfers. This identity is reproduced against the direct consumer-surplus and profit evaluators.
 
