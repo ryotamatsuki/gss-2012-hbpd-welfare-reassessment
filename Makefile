@@ -1,6 +1,6 @@
 PYTHON ?= python3
 
-.PHONY: python-checks exact symbolic downstream tests generate verify-generated manuscript-audit lean manuscript all clean
+.PHONY: python-checks exact symbolic downstream tests generate verify-generated manuscript-audit lean manuscript submission all clean
 
 python-checks: exact symbolic downstream tests
 
