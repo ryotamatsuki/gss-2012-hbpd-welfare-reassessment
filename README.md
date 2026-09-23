@@ -10,20 +10,20 @@ Reconstruct the global uniform-price game, characterize its pure-strategy equili
 
 ## Current status
 
-**Canonical Stage 0 — HOLD.** The complete HECER 2010 author version is directly available and equation-level work is underway. The full Version of Record body has not been compared, and the prior-disclosure search is preliminary. Provisional Stage 4 mathematics is explicitly exploratory and does not bypass Stages 1–3.
+**Stage 4A is CLOSED/PASS.** Stages 1–4, 4A, 6, and 7 have GO/PASS artifacts on the research line; the next pre-freeze gate is Stage 7.5/7.5A. A lawful post-referee accepted manuscript is the controlling equation-level source. Exact Springer VOR equation text remains unavailable, so source-facing discrepancy claims remain accepted-manuscript-qualified.
 
 No publication-facing VOR correction theorem is frozen. The historical audit in `ryotamatsuki/ozshypapers` is treated only as a hypothesis and regression source; the derivations in this repository are independent.
 
-## Current mathematical lead (not yet certified)
+## Certified pure-strategy equilibrium result
 
-The clean-room full-demand derivation yields the provisional pure-equilibrium boundary
+The clean-room derivation and independent Stage-4A audit certify the pure-equilibrium boundary
 
 \[
 x_0\ge x_H(s)=\frac12-\frac{s}{3}+\frac{\sqrt{3s(s+6)}}6,
 \qquad s=\sigma/\tau\in(0,1).
 \]
 
-The candidate source profile is a pure equilibrium above this boundary, including equality; below it the current candidate result is no pure-strategy equilibrium. This remains subject to independent Stage 4A certification. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
+The accepted-manuscript source profile is the unique pure equilibrium on and above this boundary; below it there is no pure-strategy equilibrium. Mixed equilibrium is not characterized, so no claim of general equilibrium nonexistence is made.
 
 The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails direct primitive reproduction because it uses the one-way-switch formula outside its domain. Direct integration gives positive CS gaps throughout the weak-HBP profile domain; the printed Result 2 sign reversal does not survive. An analogous strong-HBP branch error affects Result 4 outside the uniform pure-equilibrium region. See `derivations/consumer_surplus_primitive_reconstruction.md` and `derivations/welfare_and_result_impact.md`.
 
@@ -50,6 +50,8 @@ The upstream negative consumer-surplus regression at (s=0.99,x_0=0.501) fails di
 * `code/uniform_game_cleanroom.py` — exact-rational clean-room regressions and primitive evaluators.
 * `code/symbolic_reconstruction.py` — SymPy integration and welfare identity checks.
 * `results/stage04_global_uniform_game_progress.md` — work completed, checks, and open gates.
-* `results/stage04a_independent_certificate.md` — current adversarial certification record.
+* `results/stage04a_independent_certificate.md` — closed independent adversarial certificate.
+* `results/stage04a_formal_verification_target_map.md` — mandatory Stage-7.5A Lean handoff map.
+* `results/mixed_equilibrium_scope_decision.md` — frozen Route-B scope decision.
 
 The canonical stage route and completion status are tracked in `PROJECT_STATUS.md`.
