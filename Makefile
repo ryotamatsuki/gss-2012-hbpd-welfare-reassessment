@@ -34,6 +34,8 @@ manuscript: manuscript-audit
 	bibtex build/manuscript/main
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build/manuscript manuscript/main.tex
+	@if grep -Eq 'There were undefined references|There were undefined citations|Label\(s\) may have changed' build/manuscript/main.log; then cat build/manuscript/main.log; exit 1; fi
 
 all: python-checks generate verify-generated lean manuscript
 
