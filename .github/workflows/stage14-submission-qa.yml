@@ -69,6 +69,7 @@ jobs:
           python code/audit_submission_package.py
           python code/audit_manuscript_claims.py
           make python-checks
+          make verify-generated
 
       - name: No unresolved refs or placeholders
         shell: bash
