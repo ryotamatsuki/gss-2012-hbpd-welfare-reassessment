@@ -4,6 +4,12 @@
 
 Thomas Gehrig, Oz Shy, and Rune Stenbacka (2012), “A Welfare Evaluation of History-Based Price Discrimination,” *Journal of Industry, Competition and Trade* 12(4), 373–393, DOI \`10.1007/s10842-011-0111-8\`.
 
+## Canonical workflow
+
+`research-paper-workflow` v2.5 @ `46d17bc4c1036955103224a5c0358a70edd2cb90` for current exposition/submission work. Frozen scientific stages remain governed by their recorded certification commits; v2.5 is applied as a backward-compatible exposition retrofit.
+
+Retrofit evidence: `results/exposition_streamlining_v2_5_retrofit.md` — PASS, no manuscript content change required.
+
 ## Current canonical position
 
 **Stage 14 — CONDITIONAL PASS / CLOSED after independent-audit remediation. Authenticated IEP portal preflight is the sole remaining pre-submission condition. Stage 15 is not entered.**
